@@ -1,0 +1,206 @@
+.ThankYouPage{
+    .orderThank{
+        margin: 2% auto 4%;
+    }
+    .thankYouGrid{
+            padding: 2% 0%;
+
+        .thankTitle
+        {
+            font-size: 37px;
+            font-family: CeraPro-Medium;
+            margin-bottom:0px;
+        }
+        .img-responsive {
+            width: 100%;
+            height: auto;
+        }
+        .backorder {
+            font-size: 14px;
+            font-family: CeraPro-Medium;
+        }
+        .placedTitle
+        {
+            font-size: 19px;
+            font-family: CeraPro-Medium;
+            margin-bottom: 10px;
+        }
+        .rightBlock {
+            padding-top: 5%;
+            width: 100%;
+           
+        }
+    }
+    .ctnShopping
+    {
+        //display: block;
+        //width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.1875rem;
+        background-color: #fd8024;
+        color: black;
+        padding: 0.9375rem;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 4px;
+        border-color: #fd8024;
+        font-family: CeraPro-Medium;
+        outline: none;
+    }
+    .orderInfo{
+        border-width: 1px 1px 0px;
+        border-style: solid;
+        border-color: #e0e0e0;
+        margin-bottom: 20px;
+        .OrderDetailsDiv{
+            border-bottom: 1px solid #dee2e6;
+            .logoDiv{
+                padding: 10px 10px 0;
+                .tblLogo
+                {
+                    vertical-align: bottom;
+                    border-style: none;
+                }
+               .detailsTitle{
+                font-size: 16px;
+                font-family: CeraPro-Regular;
+                margin-bottom: 0px;
+                font-family: CeraPro-Medium;
+               }
+               .logoOrder{
+    
+               }
+            }
+            .OrderDateNumber{
+                padding: 20px 10px 0;
+                text-align: right;
+                ul {
+                    margin-bottom: 0px;
+                    li{
+                        padding: 0 5px;
+                        .mainTitle{
+                            font-size: 0.875rem;
+                            line-height: 1.1875rem;
+                            font-weight: 500;
+                            font-family: CeraPro-Medium;
+                            margin-bottom: 0px;
+                        }
+                        .dataTitle{
+                            font-size: 0.9rem;
+                            line-height: 1.1875rem;
+                            font-weight: 400;
+                            font-family: CeraPro-Regular;
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+                
+            }
+        }
+      
+        .orderStatus{
+            padding: 10px 10px 8px;
+            border-bottom: 1px solid #dee2e6;
+           
+          .statusShiped{
+            ul {
+                margin-bottom: 0px;
+                li{
+                    padding: 0 5px;
+                    .mainTitle{
+                        font-size: 0.875rem;
+                        line-height: 1.1875rem;
+                        font-weight: 500;
+                        font-family: CeraPro-Medium;
+                        margin-bottom:13px;
+                    }
+                    .dataTitle{
+                        font-size: 13px;
+                        line-height: 1.1875rem;
+                        font-family: CeraPro-Regular;
+                        margin-bottom:4px;
+                    }
+                    .dataTitlelast{
+                        font-size: 13px;
+                        line-height: 1.1875rem;
+                        font-family: CeraPro-Regular;
+                        padding: 10px 0px 0px;
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+          }
+          .tracking{
+            text-align: right;
+            padding-bottom: 15px;
+            ul {
+                margin-bottom: 0px;
+                li{
+                    padding: 0 5px;
+                    .mainTitle{
+                        font-size: 0.875rem;
+                        line-height: 1.1875rem;
+                        font-weight: 500;
+                        font-family: CeraPro-Medium;
+                        margin-bottom: 0px;
+                    }
+                    .dataTitle{
+                        font-size: 0.9rem;
+                        line-height: 1.1875rem;
+                        font-weight: 400;
+                        font-family: CeraPro-Regular;
+                        margin-bottom: 0px;
+                    }
+                    a{
+                        text-decoration: none;
+                        button.trackPkg{
+                            display: block;                           
+                             border-collapse: collapse;
+                             text-align: center;
+                             font-weight: 500;
+                             font-size: 0.875rem;
+                             line-height: 1.1875rem;
+                             background-color: #fff;
+                             color: rgb(0, 0, 0);
+                             padding: 0.7375rem 2rem;
+                             border-width: 1px;
+                             border-style: solid;
+                             border-radius: 4px;
+                             border-color: #006db7;
+                             font-family: CeraPro-Medium;
+                             outline: none;
+                             &:hover{
+                                 background-color: #e0e0e0;
+                                 border-color: #e0e0e0;
+                             }&:focus{
+                                  background-color: #e0e0e0 !important;
+                                  border-color: #e0e0e0;
+                             }
+                     }
+                    }
+  
+                }
+            }
+          }
+        }
+        .blankSpace{
+            min-height: 50px;
+        }
+      
+    }
+}
+
+html[dir="rtl"] .ThankYouPage .list-inline {
+    padding-left: 13px;
+    list-style: none;
+    padding-right: 1px;
+    text-align: right;
+}
+html[dir="rtl"] .ThankYouPage .thankYouGrid .rightBlock {
+    padding-top: 5%;
+    width: 100%;
+    text-align: right;
+}

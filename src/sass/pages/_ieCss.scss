@@ -1,0 +1,43 @@
+@media screen and (min-width:0\0) and (min-resolution: +72dpi) {
+    // IE9+ CSS
+    .header .navBarHeader .menuItem ul li {
+        position: static;
+    }
+    .searchMain .search input::-ms-clear {
+        display: none;
+    }
+
+    .w-100 input::-ms-clear {
+        display: none;
+    }
+    .MyaccountInfo .rightSideContent .InputField .avtarDiv ul li img.arrow{
+        width: auto;
+    }
+    .checkOutForm input::-ms-clear {
+        display: none;
+    }
+    .checkOutForm textarea::-ms-clear {
+        display: none;
+    }
+    .inputControlmb-0 input::-ms-clear {
+        display: none;
+    }
+ }
+
+
+
+// IOS css start
+ @supports (-webkit-touch-callout: none) {
+    .cartPage .QtyCounter .plus{
+        width:50px;
+    }
+    .cartPage .QtyCounter input {       
+        width: 130px;
+    }
+    .cartPage .QtyCounter {
+        width: 140px;
+    }
+    .cartPage .QtyCounter .minus {
+        width: 40px;
+    }
+  }

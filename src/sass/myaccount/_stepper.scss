@@ -1,0 +1,349 @@
+
+.StepperH{
+    .stripeDiv{
+        margin-bottom: 70px;
+        .greentext{
+            color: green;
+            font-size: 0.8rem;
+             line-height: 1.1875rem;
+             font-weight: 400;
+             font-family: CeraPro-Regular;
+             margin-bottom: 5px;
+        }
+        .greyColor{
+            background-color: #eae7e7;
+            width: 100%;
+            height: 8px;
+            display: block;
+            border-radius: 10px;
+            overflow: hidden;
+            .greenColor{
+                background-color: green;
+                width: 50%;               
+                height: 8px;
+                display: block;
+    
+            }
+        
+        }
+      
+        .custRow{
+            margin: -8px 0px 0px;
+            position: relative;           
+           
+            .circle{
+                height: 8px;
+                width:8px;
+                border-radius: 50%;
+                background-color: black;              
+             
+            }
+            
+            .CircleCenter{
+                position: absolute;
+                left: 50%;              
+                transform: translateX(-50%);
+               
+            }
+            .TitleCenter{
+                position: absolute;
+                left: 50%;         
+                
+                transform: translate(-50%,20px);
+            }
+            .First{
+                position: absolute;
+                left: 0%;
+                text-align: center;
+                top: 0;
+                .circleTitle{
+                    position: absolute;
+                    left: 0;
+                    transform: translate(-0%,10px);
+                }
+                img{
+                    position: absolute;
+                    left: 0;
+                    top: 10px;
+                    width: 11px;
+                   }
+            }
+            .Second{
+                position: absolute;
+                left: 33.33%;
+                text-align: center;
+                top: 0;
+                img{
+                    position: absolute;
+                    left: -5px;
+                    top: 10px;
+                    width: 11px;
+                   }
+            }
+            .third{
+                position: absolute;
+                left: 66.66%;
+                text-align: center;
+                top: 0;
+                img{
+                    position: absolute;
+                    left: -5px;
+                    top: 10px;
+                    width: 11px;
+                   }
+            }
+            .fourth{
+                position: absolute;
+                left: 99.5%;
+                text-align: center;
+                top: 0;   
+                img{
+                    position: absolute;
+                    left: -2px;
+                    top: 10px;
+                    width: 11px;
+                   }             
+                .circleTitle{
+                    position: absolute;
+                    right: 0;
+                    transform: translate(-0%,10px);
+                }
+            }
+            .circleTitle{
+                color: black;
+                font-size: 0.8rem;
+                line-height: 1.1875rem;
+                font-weight: 400;
+                font-family: CeraPro-Regular;
+                margin-bottom: 0px;
+                min-width: 60px;
+               }
+        }
+       
+       
+    }
+ }
+ .verticleStepper{  
+    border-width: 1px 1px 7px;
+    border-style: solid;
+    border-color: #e0e0e0;
+
+    .titleLabel{        
+        background-color: #f8f8f8;
+       p{
+        padding: 10px 15px 10px;       
+        font-family: CeraPro-Regular;
+        font-size: 1rem;
+        font-weight: 500;
+        color: black;
+        margin-bottom: 0;
+        border-bottom: 1px solid #e0e0e0;
+       }
+    }
+    .stepsVerticle{
+        padding: 25px 15px 10px;  
+        .events {
+            padding: 0px;
+            padding-bottom: 20px;
+            .dateLabel{
+                font-size: 0.875rem;
+                color: #000;
+                text-decoration: none;
+                font-family: CeraPro-Medium;
+                font-weight: 500;
+                margin-bottom: 0px;
+            }
+            .timeLabel{
+                font-size: 0.875rem;
+                color: #000;
+                text-decoration: none;
+                font-family: CeraPro-Regular;
+                font-weight: 500;
+            }
+            li {
+                display: flex;
+            }
+            .timed {
+                position: relative;
+                color: #ccc;
+                min-width: 130px;
+                padding-top: 15px;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    z-index: 2;
+                    right: -1px;
+                    top: 50%;
+                    transform: translateX(50%);
+                    border-radius: 50%;
+                    background: #FFCF00;
+                    border: 2px #FFCF00 solid;
+                    width: .4em;
+                    height: .4em;
+                }
+            }
+            .active{
+                &::after {
+                    content: "";
+                    position: absolute;
+                    z-index: 2;
+                    right: -1px;
+                    top: 50%;
+                    transform: translateX(50%);
+                    border-radius: 50%;
+                    background: #FFCF00;
+                    border: 2px #FFCF00 solid;
+                    width: .8em;
+                    height: .8em;
+                }
+            }
+            .dots {
+                padding: 15px 1em 0em 2em;
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    z-index: 1;
+                    left: 0;
+                    height: 100%;
+                    border-left: 2px #FFCF00 solid;
+                }
+            }
+            strong {
+                display: block;
+            }
+        }
+         
+        .DPD{
+            border-top: 2px solid #e0e0e0;
+            padding: 20px 0px 5px;
+         .DLabel{
+            font-size: 0.875rem;
+            color: #000;
+            text-decoration: none;
+            font-family: CeraPro-Medium;
+            font-weight: 500;
+            margin-bottom: 0px;
+         }
+        }
+    }
+ }
+ html[dir="rtl"] {
+	.trackingPage {
+		.mainStepper {
+			.stepperTitle {
+				text-align: right;
+			}
+		}
+	}
+	.StepperH {
+		.stripeDiv {
+			.custRow {
+				.fourth {
+					position: absolute;
+					left: 0%;
+					text-align: center;
+					top: 0;
+					.circleTitle {
+						position: absolute;
+						right: auto;
+						transform: translate(0%, 10px);
+						left: 0;
+					}
+				}
+				.First {
+					position: absolute;
+					left: auto;
+					text-align: center;
+					top: 0;
+					right: 0;
+					.circleTitle {
+						position: absolute;
+						left: auto;
+						transform: translate(0%, 10px);
+						right: 0;
+					}
+				}
+				.third {
+					position: absolute;
+					left: 33.33%;
+					text-align: center;
+					top: 0;
+				}
+				.Second {
+					position: absolute;
+					left: 66.66%;
+					text-align: center;
+					top: 0;
+				}
+			}
+		}
+	}
+	.verticleStepper {
+		.stepsVerticle {
+			.events {
+				.timed {
+					&::after {
+						right: auto;
+						left: -1px;
+					}
+				}
+				.active {
+					&::after {
+						right: auto;
+						left: -7px;
+					}
+				}
+				.dots {
+					&::before {
+						left: auto;
+						height: 100%;
+						border-left: none;
+						border-right: 2px #FFCF00 solid;
+						right: -6px;
+					}
+					padding: 15px 2em 0em 1em;
+					position: relative;
+				}
+			}
+			padding: 25px 15px 10px;
+			text-align: right;
+		}
+	}
+}
+
+@media (max-width:767px){
+    .StepperH {
+        .stripeDiv {
+            .custRow {
+                .circleTitle {
+                    font-size: 0.7rem;
+                }
+            }
+        }
+    }
+    .trackingPage {
+        .mainStepper {
+            .stepperTitle {
+                font-size: 1.2rem;
+            }
+        }
+        .Support {
+            margin-bottom: 20px;
+        }
+    }
+    .verticleStepper {
+        .stepsVerticle {
+            .events {
+                .timed {
+                    position: relative;
+                    color: #ccc;
+                    min-width: 70px;
+                    padding-top: 15px;
+                }
+            }
+        }
+        margin-bottom: 20px;
+    }
+    
+}

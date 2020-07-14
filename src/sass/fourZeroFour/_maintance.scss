@@ -1,0 +1,39 @@
+.maintancePage{
+    text-align: center;
+    background-color: #f8f8f8;
+    .headerYellow{
+        text-align: center;
+        padding: 12px 0px;
+        background-color: rgb(255, 207, 0);
+    }
+   
+    .inside{
+        max-width:1200px;
+        margin: 0 auto;
+        text-align: center;
+        img.imgMain{
+            margin-bottom: 15px;            
+            max-width: 100%;
+            padding: 30px 0;
+            }
+            .maintanceText{
+                padding: 0 15px;
+                .service{
+                    font-size: 0.975rem;
+                    font-weight: 500;
+                    color: #5d5e5f;
+                    text-align: center;
+                    font-family: CeraPro-Medium;
+                    margin-bottom: 10px;
+                }
+                .serviceMessage{
+                    font-size: 0.975rem;
+                    font-weight: 500;
+                    color: #5d5e5f;
+                    text-align: center;
+                    font-family: CeraPro-Medium;
+                }
+            }
+    }
+
+}

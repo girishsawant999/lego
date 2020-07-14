@@ -1,0 +1,225 @@
+.Holding{
+  .topBanner{
+      a{     
+        img{
+            max-width: 100%;
+            vertical-align: middle;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;            
+        }
+      }   
+  }
+  .secondSection{
+    padding: 30px 0px;
+    background-color: #fdfdfd;
+    .mainHeading{
+      font-size: 1rem;
+      line-height: 1.1875rem;
+      font-weight: 500;     
+      font-family: CeraPro-Medium;    
+      color: black;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .emailInputs{
+      width: 100%;
+      background-color: #fbfbfb;
+      box-sizing: border-box;
+      box-shadow: #dfdfdf 0px 6px 0px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #dfdfdf;
+      border-image: none;
+      border-image: initial;
+      padding: 20px 20px 15px 20px;
+      .form-control{
+        font-family: CeraPro-Regular;        
+      }
+      .emailLabel{      
+        font-size: 1rem;
+        line-height: 1.1875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-family: CeraPro-Medium;
+        margin-bottom: 6px;
+        color: black;    
+        letter-spacing: 1px;    
+      }
+      label{
+        font-size: 13px;
+        font-weight: 400;
+        color: #656565;
+        line-height: 1.5;
+        width: 100%;
+        display: block;
+        float: none;
+        margin-bottom: 5px;
+        text-align: left;
+        font-family: CeraPro-Regular;
+        color: black;
+      }
+      .form-group {       
+        margin: 0px 0px 6px;
+    }
+    .buttonSubmit{
+      display: inline-block;
+      width: auto;
+      border-collapse: collapse;
+      text-align: center;
+      font-weight: 500;
+      font-size: 16px;
+    font-family: CeraPro-Medium;
+    line-height: 1.1875rem;
+    background-color: #006db7;
+    color: white;
+    padding: 0.7375rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    border-color: #006db7;
+    margin-top: 15px;
+    }
+    .buttonSubmit:hover {
+      color: rgb(0, 0, 0);
+      background: rgb(255, 255, 255);
+    }
+    }
+    .ThanksMessage{
+      margin-top: 15px;
+    p{
+      font-family: CeraPro-Regular;
+      margin-bottom: 0;
+      padding: 0.55rem 1.25rem;
+    }
+    }
+    .rightImage{ 
+      img{
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+   
+
+  }
+  .socialDiv{
+    text-align: center;
+    background-color: rgb(255, 207, 0);
+    padding: 15px 0px 45px;
+    p{
+      font-family: CeraPro-Medium;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: black;
+      text-decoration: none;
+     }    
+  }
+}
+.followUs ul li a img {
+  width: 35px;
+  border: 1px solid #e4e1e1;
+  border-radius: 100px;
+}
+html[dir="rtl"] .Holding .secondSection .emailInputs .emailLabel{
+  text-align: right;
+}
+html[dir="rtl"] .Holding .secondSection .emailInputs label{
+  text-align: right;
+}
+html[dir="rtl"] .Holding .secondSection .emailInputs{
+  text-align: right;
+}
+.mobHeading{
+ display: none;
+}
+.Holding .alignRight {
+  text-align: right;
+  padding-right: 66px; 
+  padding-top: 12px;
+  a{
+    color: white;
+    font-family: CeraPro-Medium;
+    font-size: 1rem;
+  }
+}
+.Holding .topBarHold{  
+  background-color: #000;
+  padding: 8px 0px;
+}
+
+html[dir="rtl"] .Holding .alignRight {
+  text-align: left;
+  padding-right: 0px;
+  padding-top: 12px;
+  padding-left: 66px;
+}
+
+.mob_div{
+  display: none;
+}
+
+@media (max-width:767px){
+  .mob_div{
+    display: block;
+  }
+  .web_div{
+    display: none;
+  }
+  .Holding .secondSection .mainHeading{
+    font-size: 0.875rem;
+  }
+  .Holding .secondSection .emailInputs .emailLabel {
+    font-size: 0.875rem;
+  }
+  .Holding .secondSection .ThanksMessage p{
+    font-size: 0.875rem;
+  }
+  .Holding .secondSection .emailInputs .form-control {
+    font-size: 0.875rem;
+}
+  .Holding .secondSection .emailInputs .buttonSubmit{
+  font-size: 0.875rem;
+}
+
+.Holding .topBanner a img {
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%;
+
+  object-fit: cover;
+}
+.Holding .secondSection .rightImage img {
+  max-width: 100%;
+  width: 100%;
+  // height: 250px;
+  object-fit: cover;
+}
+.Holding .secondSection {
+  padding: 0px 0px 15px;
+  background-color: #fdfdfd;
+}
+.Holding .socialDiv {
+  text-align: center;
+  background-color: #ffcf00;
+  padding: 15px 0px 50px;
+}
+}
+@media (max-width:991px){
+  .Holding .secondSection .emailInputs{
+    margin-bottom: 15px;
+  }
+  .columnReverse{
+    flex-direction: column-reverse;
+  }
+  .Holding .secondSection .mainHeading {   
+    margin-top: 15px;
+}
+.webHeading{
+   display: none;
+}
+.mobHeading{
+  display: block;
+ }
+}

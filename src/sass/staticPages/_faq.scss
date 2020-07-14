@@ -1,0 +1,134 @@
+.faqBlue {
+    background: #016db6;
+    color: white;
+    padding: 20px;  
+    font-family: CeraPro-Regular;
+    padding: 30px 0% 30px;
+    .Title{
+        font-family: CeraPro-Medium;
+        font-size: 33px;
+        text-align: center;
+    }
+}
+.faqPage {
+    text-align: center;
+    padding: 30px 0px;
+    .aboutusTitlediv {
+        padding: 0%;
+        margin: 64px 0;
+    }
+    .aboutusTitle {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .u-type-lg {
+        font-weight: 700 !important;
+        line-height: 1.25 !important;
+    }
+    .aboutusContentdiv {
+     
+    }
+    .aboutusContentmaindiv {
+        text-align: left;
+        flex-basis: 66.66666667%;
+        max-width: 66.66666667%;
+        margin: 0 auto;
+    }
+    .aboutusContenthead {
+        font-size: 1.4375rem;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-top: 32px;
+        font-family: CeraPro-Regular;
+        color: #333;
+    }
+    .aboutusContentmain {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        font-family: CeraPro-Regular;
+        color: #333;
+    }
+    .aboutusContentmaindiv
+    {
+        .quesAns{
+            .quesDiv{
+                margin-bottom: 0px;               
+                font-family: CeraPro-Medium;
+                font-size: 1rem;
+              
+             }
+             .AnsDiv{
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                font-family: CeraPro-Regular;
+                color: #333;
+             
+             }
+             .mb-0{
+                margin-bottom: 0px;
+             }
+             ul{
+                li{
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    font-family: CeraPro-Regular;
+                    color: #333; 
+                }
+            }
+        }
+    }
+    
+  
+    @media (min-width: 56.25em) {
+        .u-type-lg {
+            font-size: 2.5625rem!important;
+        }
+        .aboutusContenthead {
+            font-size: 1.625rem;
+        }
+    }
+
+    @media (min-width: 75em) {
+        .u-type-lg {
+            font-size: 2.875rem!important;
+        }
+        .aboutusContentmaindiv {
+            flex-basis: 66.66666667%;
+            max-width: 66.66666667%;
+        }
+    }
+    /*
+    @media (min-width: 37.5em) {
+        .aboutusContentmaindiv {
+            flex-basis: 83.33333333%;
+            max-width: 83.33333333%;
+        }
+    }*/
+
+ 
+}
+html[dir="rtl"] .faqPage .aboutusContentmain {  
+    text-align: right;
+}
+html[dir="rtl"] .faqPage .aboutusContentmaindiv{
+    text-align: right; 
+}
+html[dir="rtl"] .faqPage .aboutusContentmaindiv .quesAns .quesDiv {
+
+    font-weight: 600;
+}
+@media (max-width:767px){
+    .faqPage .aboutusContentmaindiv {
+        text-align: left;
+        flex-basis: 90%;
+        max-width: 90%;
+    }
+    html[dir="rtl"] .faqPage .aboutusContentmaindiv {
+        text-align: right;
+        flex-basis: 90%;
+        max-width: 90%;
+    }
+}

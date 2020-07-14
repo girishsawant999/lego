@@ -1,0 +1,73 @@
+.beforeLogin{
+    padding: 30px 0px 0px;
+    .boxLogin{
+        max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    a{
+        text-decoration: none;
+    }
+    .titleBag{
+        font-size: 1.2rem;
+    line-height: 2.6875rem;
+    font-weight: 400;
+    font-family: CeraPro-Medium;
+  
+    }
+    .signtext{
+        font-size: 0.875rem;
+        line-height: 1.1875rem;
+        font-weight: 400;
+        font-family: CeraPro-Regular;
+    }
+    .continueShop{
+        font-size: 0.875rem;
+        line-height: 1.1875rem;
+        font-weight: 400;
+        font-family: CeraPro-Regular;
+        cursor: pointer;
+        img{
+            width: 8px;
+            margin: 0px 5px;
+        }
+    }
+    button.signin{
+        display: block;
+        margin: 0 auto;
+        border-collapse: collapse;
+        text-align: center;
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 1.1875rem;
+        background-color: #006DB7;
+        color: white;
+        padding: 0.7375rem;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 4px;
+        border-color: #006DB7;
+        font-family: CeraPro-Medium;
+        outline: none;
+        margin-bottom: 10px;
+        &:hover{
+            background-color: white;
+            border-color: #006DB7;
+            color:black;
+        }&:focus{
+             background-color: #E7F3FF !important;
+                border-color: #006DB7;
+                color:black;
+        }
+    }
+    }
+}
+
+html[dir="rtl"]  .beforeLogin .boxLogin .continueShop img {  
+    transform: rotate(180deg);
+}
+@media (max-width:767px){
+    .beforeLogin .boxLogin .titleBag {
+        font-size: 1rem;       
+    }
+}

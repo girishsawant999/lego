@@ -1,0 +1,196 @@
+.ForgotUser {
+	font-family: Lato,sans-serif;
+	background-color: #f2f5f7 !important;
+	//padding-bottom: 9%;
+	height: 100vh;
+	.form-group {
+		margin-bottom: 26px;
+		margin-top: 0px;
+	}
+	label {
+		display: inline-block;
+		margin-bottom: 0.5rem;
+		width: 100%;
+		position: relative;
+		font-family: inherit;
+		font-weight: 700;
+		font-size: .75rem;
+		color: #333;
+		display: inline-block;
+	}
+	#login-box {
+		.form-group {
+			.form-control {
+				font-size: 1rem;
+				font-family: inherit;
+				width: 100%;
+				height: 50px;
+				line-height: 45px;
+				font-weight: 500;
+				display: block;
+				padding-left: 16px;
+				padding-right: 16px;
+				background-color: #fff;
+				border-radius: 4px;
+				font-family: CeraPro-Regular;
+				border: 2px solid #c9c9c9;
+			}
+		}
+	}
+}
+#login-column {
+	width: 495px;
+}
+.backButton {
+	position: absolute;
+	top: 12px;
+	left: 16px;
+	border: 0;
+	cursor: pointer;
+	background-size: contain;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 24px;
+	z-index: 6;
+}
+.back-icon {
+	width: 18px;
+}
+#login {
+	.container {
+		#login-row {
+			#login-column {
+				#login-box {
+					background-color: #f2f5f7;
+					border: 4px solid #fff;
+					max-width: 495px;
+					padding: 0 54px 35px;
+					#login-form {
+						padding: 20px;
+						#register-link {
+							margin-top: -85px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.account-icon {
+	width: 108px;
+	padding-bottom: 15px;
+	padding-top: 4%;
+}
+.form-group {
+	margin-bottom: 1rem;
+	margin-top: 16px;
+}
+.main-title-sign {
+	font-weight: 700;
+	color: #000;
+	text-align: center;
+	margin-top: 10px;
+	font-size: 1.8125rem;
+	line-height: 2.125rem;
+	font-family: CeraPro-Regular;
+	text-align: center;
+}
+.sub-head-line {
+	font-size: 13px;
+    line-height: 1.0625rem;
+    font-weight: 400;
+    color: #646464;
+    text-align: center;
+    margin-top: 20px;
+    font-family: CeraPro-Regular;
+    color: #545454;
+}
+.forgot-user2 {
+	margin: 16px auto;
+	text-align: center;
+}
+.forgot-user1 {
+	color: #fff;
+	background-color: #006cb6;
+}
+.forgot-user2.forgot-user1 {
+	background-color: transparent;
+}
+.forgot-user {
+	font-family: inherit;
+	font-size: 1.125rem;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border-radius: 4px;
+	height: 50px;
+	padding-left: 25px;
+	padding-right: 25px;
+	min-width: 175px;
+	outline: none;
+	border: none;
+	display: inline-block;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.back-link {
+	color: #006cb6;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 14px;
+    height: auto;
+    line-height: 15px;
+    font-family: CeraPro-Regular;
+    border: inherit;
+}
+input::placeholder {
+	color: #aba9a9;
+  }
+  label, input {
+	font-family: CeraPro-Regular;
+  }
+
+
+
+@media (max-width: 767px){
+   
+    .omb_login .omb_socialButtons a {
+        font-size: 12px;
+    }
+
+    #login .container #login-row #login-column #login-box {
+        background-color: #f2f5f7;
+        border: 0px solid #fff;
+        max-width: 495px;
+        padding: 0 16px;
+	}
+	.ForgotUser {
+		font-family: CeraPro-Regular;
+		background-color: #f2f5f7 !important;
+		height: calc(100% - 100px);
+	}
+    
+}
+
+html[dir="rtl"] .SignIn label {
+    text-align: right;
+}
+html[dir="rtl"] .ForgotUser label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    position: relative;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: .75rem;
+    color: #333;
+    display: inline-block;
+    text-align: right;
+}
+html[dir="rtl"] .ForgotUser .back-icon {
+    width: 14px;
+    transform: rotate(180deg);
+}

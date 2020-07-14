@@ -1,0 +1,713 @@
+
+
+.orderNumber{  
+    .descBackgroudPro {
+        padding: 0% 0%;
+        background-color: #CEE9D8;
+        width: 100%;
+        display: flex;
+
+        img{
+            float: left;
+            width: 130px;
+            height: 90px;
+            padding: 1% 0px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        p.productDes {
+            font-family: CeraPro-Medium;
+            font-size: 14px;
+            margin-top: 2%;
+        }
+    }
+    .orderNumtitle{
+        font-size: 1.5rem;
+        line-height: 2.6875rem;
+        font-weight: 400;
+        font-family: CeraPro-Medium;
+        margin-bottom: 0;
+    }
+    .topImage {
+        text-align: right;
+    }
+    .bBottom {
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .orderNumInfo{
+        border-width: 1px 1px 7px;
+        border-style: solid;
+        border-color: #e0e0e0;
+        margin-bottom: 20px;
+        padding: 15px;
+        margin-top: 15px;
+        .brRight{
+            border-right:1px solid #e0e0e0;
+        }
+        .OrderAddress{
+            p.heading-title{
+                font-size: 1rem;
+                line-height: 1.1875rem;
+                font-weight: 500;
+                font-family: CeraPro-Medium;
+                margin-bottom: 10px;
+                text-transform: uppercase;       
+            }
+            .DeliveryTo{
+                .add{
+                    font-size: 0.9rem;
+                    line-height: 1.1875rem;
+                    font-weight: 500;
+                    font-family: CeraPro-Medium;
+                }
+                .addText{
+                    font-size: 0.9rem;
+                    line-height: 1.1875rem;
+                    font-weight: 400;
+                    font-family: CeraPro-Regular;
+                }
+            }
+        }
+        .OrderShipping{
+            p.heading-title{
+                        font-size: 1rem;
+                        line-height: 1.1875rem;
+                        font-weight: 500;
+                        font-family: CeraPro-Medium;
+                        margin-bottom: 10px;
+                        text-transform: uppercase;
+            }
+            p.DeliveryAddress{
+                font-size: 0.9rem;
+                line-height: 1.1875rem;
+                font-weight: 400;
+                font-family: CeraPro-Regular;
+            }
+        }
+        .OrderPayment{
+            p.heading-title{
+                font-size: 1rem;
+                line-height: 1.1875rem;
+                font-weight: 500;
+                font-family: CeraPro-Medium;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+    }
+                p.DeliveryAddress{
+                    font-size: 0.9rem;
+                    line-height: 1.1875rem;
+                    font-weight: 400;
+                    font-family: CeraPro-Regular;
+                }
+}
+      
+      
+    }
+    
+
+    .orderProduct{
+        padding: 15px 0;
+        margin: 15px 0px;
+        border-bottom: 2px solid #dee2e6;
+        .OrderImage{
+            text-align: center;
+         img{
+            max-height: 10rem;
+            max-width: 100%;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+         }
+        }
+        .OrderDetails{
+            .Ptitle{
+                color: black;
+                font-size: 1rem;
+                line-height: 1.1875rem;
+                font-weight: 500;
+                font-family: CeraPro-Medium;
+                margin-bottom: 5px;
+            }
+            .color{
+                margin-bottom: 5px;
+                .colorLabel{
+                    font-size: 0.9rem;
+                    line-height: 1.1875rem;
+                    font-weight: 500;
+                    font-family: CeraPro-Medium;                   
+                }
+                .colorC{
+                    font-size: 0.9rem;
+                    line-height: 1.1875rem;
+                    font-weight: 400;
+                    font-family: CeraPro-Regular;                   
+                }
+            }
+            .size{
+                margin-bottom: 5px;
+                .sizeLabel{
+                    font-size: 0.9rem;
+                    line-height: 1.1875rem;
+                    font-weight: 500;
+                    font-family: CeraPro-Medium;
+                   
+                }
+                .sizeS{
+                    font-size: 0.9rem;
+                    line-height: 1.1875rem;
+                    font-weight: 400;
+                    font-family: CeraPro-Regular;
+                }
+            }
+            .NumberId{
+                font-size: 0.9rem;
+                line-height: 1.1875rem;
+                font-weight: 400;
+                font-family: CeraPro-Regular;
+            }
+        }
+        .OrderTotals{
+            text-align: right;
+            .now{
+                margin-bottom: 5px;
+                
+                .nowN{
+                    font-size: 0.9rem;
+                    line-height: 1.1875rem;
+                    font-weight: 400;
+                    font-family: CeraPro-Regular;                   
+                }
+            }
+            .was{
+                margin-bottom: 5px;
+                text-decoration: line-through;               
+                .wasW{
+                    font-size: 0.9rem;
+                    line-height: 1.1875rem;
+                    font-weight: 400;
+                    font-family: CeraPro-Medium;                 
+                }
+            }
+            .Percentage{
+                margin-bottom: 5px;
+                .PerP{
+                    font-size: 0.9rem;
+                    line-height: 1.1875rem;
+                    font-weight: 400;
+                    font-family: CeraPro-Regular;                   
+                }
+                }
+                .Qty{
+                    margin-bottom: 5px;
+                    .QtyQ{
+                        font-size: 0.9rem;
+                        line-height: 1.1875rem;
+                        font-weight: 400;
+                        font-family: CeraPro-Regular;                       
+                    }
+                }
+            }
+           
+        }
+    
+    
+ 
+   .oderNumSummary{
+    background-color: #F8F8F8;
+    padding: 0px 15px 15px;
+    border-width: 1px 1px 7px;
+    border-style: solid;
+    border-color: #e0e0e0;
+    margin-bottom: 5%;
+       .head-summary{
+        font-size: 1rem;
+        line-height: 1.1875rem;
+        font-weight: 500;
+        font-family: CeraPro-Medium;
+        margin-bottom: 0px;
+        text-transform: uppercase;
+        padding: 15px;
+       }
+       .orderSumDiv{
+           padding: 15px;
+           background-color: #efefef;
+           .help{
+            font-size: 0.85rem;
+            line-height: 1.1875rem;
+            font-weight: 400;
+            font-family: CeraPro-Regular;
+            margin-bottom: 5px;
+            a{
+                text-decoration: none;
+                color: black;
+            }
+           }
+           .orderSub{
+            font-size: 0.95rem;
+            line-height: 1.1875rem;
+            font-weight: 400;
+            font-family: CeraPro-Regular;
+            margin-bottom: 5px;
+         
+           }
+           .orderSaving{
+            font-size: 0.95rem;
+            line-height: 1.1875rem;
+            font-weight: 400;
+            font-family: CeraPro-Regular;
+            margin-bottom: 5px;
+        }
+        .orderAmt{
+            font-size: 0.95rem;
+            line-height: 1.1875rem;
+            font-weight: 400;
+            font-family: CeraPro-Medium;
+            margin-bottom: 5px;
+        }
+        .orderper{
+            margin-bottom: 5px;
+            .PerP{
+                font-size: 0.95rem;
+                line-height: 1.1875rem;
+                font-weight: 400;
+                font-family: CeraPro-Regular;
+                               
+            }
+        }
+
+       }
+       .orderTatalAmt{
+        text-align: right;
+        .orderper{
+            margin-bottom: 5px;
+            .orderperLabl{
+                font-size: 0.95rem;
+                line-height: 1.1875rem;
+                font-weight: 400;
+                font-family: CeraPro-Regular;
+            }
+        }
+        .orderperAmt{
+            margin-bottom: 5px;
+            .orderperAmount{
+                font-size: 0.95rem;
+                line-height: 1.1875rem;
+                font-weight: 400;
+                font-family: CeraPro-Medium;
+                margin-bottom: 5px;
+            }
+        }
+       }
+   }
+ 
+    .needHelp{
+        border-width: 1px 1px 7px;
+        border-style: solid;
+        border-color: #e0e0e0;
+        margin-top: 15px;
+        padding: 10px 20px 0px 15px;
+        .ImgSmall{
+            img{
+
+            }
+        }
+        .needbox{
+            padding-top: 10px;
+            p.Title{
+                font-size: 1.2rem;
+                line-height: 1.1875rem;
+                font-weight: 400;
+                font-family: CeraPro-Bold;
+                margin-bottom: 0;
+            }
+            p.text-cont{
+                font-size: 0.875rem;
+                line-height: 1.1875rem;
+                font-weight: 400;
+                font-family: CeraPro-Regular;
+                margin-top: 20px;
+              
+            }
+            p.text-service{
+                font-size: 0.875rem;
+                line-height: 1.1875rem;
+                font-weight: 400;
+                font-family: CeraPro-Regular;
+                color:#006db7; 
+                cursor: pointer;
+                
+            }
+            p.text-learn{
+                font-size: 0.875rem;
+                line-height: 1.1875rem;
+                font-weight: 400;
+                font-family: CeraPro-Regular;
+                color:#006db7;
+                cursor: pointer; 
+               
+            }
+        }
+
+    }
+}
+.oderSummaryTitle{
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-bottom: none;   
+      p{
+        font-size: 1.2rem;
+        line-height: 1.5625rem;
+        font-weight: 400;
+        font-family: CeraPro-Medium;
+        margin-bottom: 0px;
+      }
+}
+
+html[dir="rtl"] {
+	.orderNumber {
+        .orderNumtitle {
+            text-align: right;
+            direction: rtl;
+            display: flex;
+        }
+        .oderNumSummary 
+        {
+            .head-summary{
+                text-align: right;
+            }
+           
+            .orderSumDiv {
+                .orderSub{
+                    text-align: right;
+                }
+                .orderSaving{
+                    text-align: right;
+                }
+                .orderAmt{
+                    text-align: right;
+                }
+                .orderper{
+                    text-align: right;
+                }
+            }
+            .orderTatalAmt{
+                text-align: left;
+                .orderper{
+                    text-align: left;
+                }
+            }
+            .orderSumDiv 
+            .help{
+                text-align: right;
+            } 
+        }
+        .orderNumInfo{
+            text-align: right;
+            .brRight{
+                border-left: 1px solid #e0e0e0;
+                border-right:none;
+
+            }
+        }
+        .orderProduct{
+            .OrderDetails{
+                text-align: right;
+            }
+            .OrderTotals {
+                text-align: left;
+            }
+        }
+		.orderhistroyTitle {
+			text-align: right;
+		}
+		.orderSubtitle {
+			text-align: right;
+		}
+		.backorder {
+			text-align: right;
+		}
+		.SummaryTable {
+			text-align: right;
+			th {
+				&:first-child {
+					text-align: right;
+				}
+				&:last-child {
+					text-align: left;
+				}
+			}
+			td {
+				&:first-child {
+					text-align: right;
+				}
+				&:last-child {
+					text-align: left;
+				}
+			}
+		}
+		.ButtonDiv {
+			.PreviousBtn {
+				margin-left: auto;
+				margin-right: 0;
+			}
+			.nextBtn {
+				margin-left: 0;
+				margin-right: auto;
+			}
+		}
+		.topImage {
+			text-align: left;
+		}
+		.needHelp {
+			.needbox {
+				padding-top: 10px;
+				text-align: right;
+			}
+		}
+		.orderInfo {
+			.OrderDetailsDiv {
+				.logoDiv {
+					padding: 10px 10px 0;
+					text-align: right;
+				}
+				.OrderDateNumber {
+					padding: 20px 10px 0;
+					text-align: left;
+				}
+			}
+			.orderStatus {
+				text-align: right;
+				.tracking {
+					text-align: left;
+					padding-bottom: 15px;
+				}
+			}
+		}
+	}
+	.oderSummaryTitle {
+		text-align: right;
+	}
+}
+
+.summaryMobile{
+display: none;
+}
+@media (max-width:767px){
+    .orderNumber .orderProduct .OrderTotals .now .nowN{
+        font-size: 0.8rem;
+    }
+    .orderNumber .orderProduct .OrderTotals .Percentage .PerP{
+        font-size: 0.8rem;
+    }
+    .orderNumber .oderNumSummary .orderSumDiv .orderSub{
+        font-size: 0.8rem;
+    }
+    .orderNumber .orderProduct .OrderTotals .Qty .QtyQ{
+        font-size: 0.8rem;
+    }
+    .orderNumber .orderNumInfo .OrderAddress p.heading-title , .orderNumber .orderNumInfo .OrderShipping p.heading-title ,.orderNumber .orderNumInfo .OrderPayment p.heading-title{
+        font-size: 0.9rem;
+    }
+    .orderNumber .oderNumSummary .head-summary{
+        font-size: 0.9rem;        
+        padding: 15px 0;
+    }
+    .orderNumber .oderNumSummary .orderTatalAmt .orderper .orderperLabl{
+        font-size: 0.8rem;
+    }
+    .orderNumber .oderNumSummary .orderTatalAmt .orderperAmt .orderperAmount{
+        font-size: 0.8rem;
+    }
+    .orderNumber .oderNumSummary .orderSumDiv .orderAmt{
+        font-size: 0.8rem;
+    }
+    .oderSummaryTitle {       
+        border-bottom: 1px solid #dee2e6;
+    }
+    .orderNumber .orderNumtitle {
+        font-size: 1.1rem;
+      
+    }
+    .orderNumber .pL0{
+     padding-left: 0px;
+    }
+    // .orderNumber .pR0{
+    //     padding-right: 0px;
+    //    }
+   
+    .summaryMobile{
+        display: block;
+        border-width: 0px 1px 7px;
+        border-style: solid;
+        border-color: #e0e0e0;
+        .even{
+           background-color: #F8F8F8;
+        }
+        .odd{
+          background-color: #E7F3FF;
+        }
+        .cardBox{
+            padding: 10px 10px 0;
+            border-bottom: 1px solid #dee2e6;
+            .alignRight{
+                text-align: right;
+            }
+            .DataTabs{
+                margin-bottom: 12px;
+                .LabelHead{
+                    font-size: 0.8rem;
+                    line-height: 1.1875rem;
+                    font-weight: 500;
+                    font-family: CeraPro-Medium;
+                    margin-bottom: 0px;
+                }
+                .LabelData{
+                    font-size: 0.8rem;
+                    line-height: 1.1875rem;
+                    font-weight: 500;
+                    font-family: CeraPro-Regular;
+                    margin-bottom: 0px;
+                }
+            }
+           
+        }
+        .totalAll{
+            background-color: white;
+            padding: 10px;
+            .SubTotal{
+                font-size: 0.8rem;
+                line-height: 1.1875rem;
+                font-weight: 500;
+                font-family: CeraPro-Medium;
+                margin-bottom: 0px;
+               }
+               .orderTotal{
+                font-size: 0.9rem;
+                line-height: 1.1875rem;
+                font-weight: 500;
+                font-family: CeraPro-Medium;
+                margin-bottom: 0px;
+               }
+               .vatTotal{
+                font-size: 0.9rem;
+                line-height: 1.1875rem;
+                font-weight: 400;
+                font-family: CeraPro-Regular;
+                margin-bottom: 0px; 
+               }
+               .dataRightDiv{
+                   text-align: right;
+               }
+               .reCol{
+                color: #d6511d;
+               }
+
+        }
+        }
+
+        html[dir="rtl"] {
+            .orderNumber .pL0{
+                padding-left: 15px;
+                padding-right: 0px;
+               }
+               .orderNumber .pR0{
+                   padding-right: 15px;
+                   padding-left:0px;
+                  }
+            .summaryMobile {
+                .cardBox {
+                    .alignRight {
+                        text-align: left;
+                    }
+                    .alignLeft {
+                        text-align: right;
+                    }
+                }
+                .totalAll {
+                    .dataRightDiv {
+                        text-align: left;
+                    }
+                    .dataLeftDiv {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+        
+    .SummaryTable{
+        display: none;
+        }
+        .OrderDetails {
+            .orderhistroyTitle {
+                font-size: 1.2rem;
+            }
+            .orderSubtitle {
+                font-size: 1rem;
+            }
+            .SummaryTable {
+                th {
+                    font-size: 0.875rem;
+                }
+            }
+            .p-0 {
+                padding: 0px;
+            }
+            .topImage {
+                img {
+                    max-width: 100%;
+                }
+            }
+            .orderInfo {
+                .OrderDetailsDiv {
+                    .OrderDateNumber {
+                        padding: 4px;
+                        text-align: left;
+                        ul {
+                            padding: 4px;
+                            padding-inline-start: 0px;
+                            text-align: left;
+                        }
+                    }
+                }
+                .orderStatus {
+                    .statusShiped {
+                        ul {
+                            li {
+                                padding: 0 5px;
+                                display: block;
+                            }
+                        }
+                        margin-bottom: 10px;
+                    }
+                    .tracking {
+                        text-align: left;
+                        padding-bottom: 15px;
+                    }
+                    padding: 4px;
+                }
+            }
+        }
+        html[dir="rtl"] {
+            .orderNumber {
+                .orderInfo {
+                    .OrderDetailsDiv {
+                        .OrderDateNumber {
+                            ul {
+                                padding: 4px;
+                                padding-inline-start: 0px;
+                                text-align: right;
+                            }
+                        }
+                    }
+                    .orderStatus {
+                        .tracking {
+                            text-align: right;
+                            padding-bottom: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        
+    
+}

@@ -1,0 +1,166 @@
+.fourZero
+{
+    .jByEOj {
+        width: 100%;
+        max-width: 100rem;
+        margin: 0px auto 0rem;
+        height:100vh;
+    }
+    .fDUYrY {
+        margin-bottom: -1.875rem;
+        background-image: url(../../assets/images/bg-emmet-c0e6973100929a1561fd388c5026c9e7.jpg);
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        -webkit-box-align: center;
+        align-items: center;
+        padding-top: 1.5625rem;
+        overflow: hidden;
+        height: inherit;
+        //height: 100vh;
+    }
+    
+    .iSgWqR {
+        width: 45%;
+        margin-top: -0.4375rem;
+        margin-bottom: -20%;
+        left: 0px;
+    }
+    .dPxVVf {
+        height: 100%;
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        
+    }
+    .dzLNQU {
+        font-size: 16vw;
+        line-height: 1;
+        color: rgb(255, 255, 255);
+        font-family: CeraPro-Regular;
+    }
+    .hoaZnZ {
+        color: rgb(255, 255, 255);
+        font-size: 1rem;
+        line-height: 1.5625rem;
+        font-weight: 500;
+        text-transform: inherit;
+        font-family: CeraPro-Medium;
+    }
+    .hjDSIP {
+        margin-top: 1.25rem;
+    }
+    .hjHIQN {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        font-weight: 500;
+    }
+    .dqpbzE:hover {
+        color: rgb(255, 255, 255);
+        background: rgb(0, 0, 0);
+    }
+    .dqpbzE {
+        display: inline-block;
+        width: auto;
+        border-collapse: collapse;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        color: rgb(0, 0, 0);
+        font-size: 1rem;
+        line-height: 1.5625rem;
+        font-weight: 500;
+        text-transform: none;
+        border-width: 1px;
+        border-style: solid;
+        background: rgb(255, 255, 255);
+        border-color: transparent;
+        border-radius: 4px;
+        padding: 0.625rem 1.125rem;
+        font-family: CeraPro-Medium;
+    }
+    .ifWWhX {
+        margin-left: 0.75rem;
+    }
+    .bgViWV {
+        transform: rotate(0deg);
+        display: block;
+        transition: transform 0.1s linear 0s;
+    }
+    svg{
+        width: 16;
+        height: 16;
+    }
+}
+
+
+@media screen and (min-width: 601px)
+{
+    .fDUYrY {
+        position: relative;
+        display: flex;
+        padding: 50% 0px 0px;
+        height: auto;
+        background-repeat: no-repeat;
+
+    }
+    .iSgWqR {
+        position: absolute;
+        top: -1.5625rem;
+        margin: 0px 0px -1.875rem 5%;
+    }
+    
+    .dPxVVf {
+        padding-right: 6.25rem;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+    
+}
+
+@media screen and (min-width: 901px){
+
+    .fourZero {
+        min-height: calc(85vh - 4.24rem);
+    }
+
+}
+
+
+html[dir=rtl] .fourZero .dPxVVf {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    left: 0;
+}
+html[dir=rtl] .fourZero .iSgWqR {
+    width: 45%;
+    margin-top: -0.4375rem;
+    margin-bottom: -20%;
+    right: 0px;
+}
+html[dir=rtl] .fourZero .bgViWV {
+    transform: rotate(180deg);
+}
+html[dir=rtl] .fourZero .ifWWhX {
+    margin-right: 0.75rem;
+}
+
+@media (max-width:767px) {
+    .fourZero .jByEOj {       
+        height: 420px;
+    }
+    .fourZero .fDUYrY {    
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

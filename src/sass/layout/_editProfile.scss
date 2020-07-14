@@ -1,0 +1,517 @@
+
+.editProfile {
+	font-family: Lato,sans-serif;
+	background-color: #f2f5f7 !important;
+	//padding-bottom: 9%;
+
+	.main-title-sign {
+		font-weight: 700;
+		color: #000;
+		text-align: center;
+		margin-top: 10px;
+		font-size: 1.8125rem;
+		line-height: 2.125rem;
+		text-align: center;
+	}
+	.sub-head-line {
+		font-size: .875rem;
+		line-height: 1.0625rem;
+		font-weight: 400;
+		color: #646464;
+		text-align: center;
+		margin-top: 20px;
+		color: #545454;
+	}
+
+	.back-icon {
+		width: 14px;
+		overflow: hidden;
+		position: absolute;
+		top: 16px;
+		right: 21px;
+		border: 0;
+		cursor: pointer;
+		background-size: contain;
+		background-color: transparent;
+		width: 24px;
+		height: 24px;
+		z-index: 6;
+		text-indent: -9999px;
+	}
+
+
+	.avtarpart{
+
+		margin: 32px auto;
+		font-size: 14px;
+		text-align: center;
+		
+		.editprofile.subheader {
+			height: 16.5px;
+			color: #333;
+			font-size: .6875rem;
+			font-weight: 700;
+			line-height: 16px;
+			margin-bottom: 0px;
+		}
+		.avatar-picker {
+			width: 100%;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.avatar-picker-container {
+			padding-top: 20px;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: horizontal;
+			-webkit-box-direction: normal;
+			-webkit-flex-direction: row;
+			-ms-flex-direction: row;
+			flex-direction: row;
+			-webkit-box-align: baseline;
+			-webkit-align-items: baseline;
+			-ms-flex-align: baseline;
+			align-items: baseline;
+			-webkit-box-pack: center;
+			-webkit-justify-content: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+		}
+		.arrow.arrow-left {
+			background-image: url(../../assets/images/leftAvtar.svg);
+			margin-right: 30px;
+		}
+		.arrow.arrow-right {
+			background-image: url(../../assets/images/rightAvtar.svg);
+			margin-left: 30px;
+		}
+		
+		.avtarGrid
+		{
+			display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		}
+		.Avatar-pd {
+			min-width: 50px;
+			min-height: 50px;
+			display: inline-block;
+			width: 80px;
+			height: 80px;
+			max-width: 88px;
+			max-height: 88px;
+			background: #fff;
+			-webkit-box-shadow: 0 1px 3px 1px #ccc;
+			box-shadow: 0 1px 3px 1px #ccc;
+			border-radius: 50%;
+			border: 3px solid #fff;
+			position: relative;
+			z-index: 2;
+		}
+		.avtarCircle
+		{
+			width: 100%;
+			height: 100%;
+		}
+		.arrow {
+			background-color: transparent;
+			border: 0;
+			background-repeat: no-repeat;
+			background-position: 50%;
+			background-size: 30px 30px;
+			height: 48px;
+			width: 48px;
+			display: inline-block;
+			position: relative;
+			bottom: 20px;
+			cursor: pointer;
+		}
+		.avtarImg
+		{
+			background-image: url(../../assets/images/avatar1.png);
+			background-color: rgb(255, 255, 255);
+			border-radius: 50%;
+			background-size: 134%;
+			background-position: bottom;
+			padding-top: 100%;
+			width: 100%;
+			background-repeat: no-repeat;
+			z-index: 1;
+			position: relative;
+		}
+
+		
+		.lastThreeTab
+		{
+			margin: 32px auto;
+			font-size: 14px;
+			text-align: center;
+
+		.editprofile.subheader {
+			height: 16.5px;
+			color: #333;
+			font-size: .6875rem;
+			font-weight: 700;
+			line-height: 16px;
+			text-align: left;
+			width: 100%;
+		}
+		.navigation {
+			list-style: none;
+			padding-left: 0px;	
+			margin: 32px auto;
+			font-size: 14px;
+			text-align: center;		
+		}
+		.navigation li:not(:last-child) {
+			margin-bottom: 10px;
+		}
+		.optionBtn {
+			width: 100%;
+			min-width: 280px;
+			margin: 0 auto;
+		}
+		.optionBtn-grid {
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			position: relative;
+			color: #333;
+			height: 49px;
+			border: 2px solid #c9c9c9;
+			border-radius: 4px;
+			background-color: #fff;
+			background-size: 10px 16px;
+			text-align: left;
+			background-position: right 16px top 15px;
+			background-repeat: no-repeat;
+			padding-right: 32px;
+			padding-left: 16px;
+		}
+		.optionBtn-py {
+			width: 100%;
+			font-size: .875rem;
+			position: relative;
+			z-index: 0;
+		}
+		span.optionSpan {
+			position: relative;
+			font-size: .875rem;
+			font-weight: 500;
+			line-height: 45px;
+			display: block;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+		button.optionbtnstyle {
+			background-color: transparent;
+			border: 0;
+			background-image: url(../../assets/images/edit-50.svg);
+			background-size: 18px 17px;
+			background-repeat: no-repeat;
+			background-position: 50%;
+			width: 49px;
+			height: 49px;
+			position: absolute;
+			right: -34px;
+			top: -2px;
+			cursor: pointer;
+		}
+		.btttonSize
+		{
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			position: relative;
+			color: #333;
+			font-size: .875rem;
+			font-weight: 500;
+			height: 49px;
+			width: 100%;
+			border: 2px solid #c9c9c9;
+			border-radius: 4px;
+			background-color: #fff;
+			text-align: left;
+			padding-right: 32px;
+			padding-left: 16px;
+			cursor: pointer;
+			padding-left: 45px;
+		}
+		.afterselectbtn{
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			position: relative;
+			color: #333;
+			height: 49px;
+			border: 2px solid #c9c9c9;
+			border-radius: 4px;
+			background-color: #fff;
+			background-size: 10px 16px;
+			text-align: left;
+			background-position: right 16px top 15px;
+			background-repeat: no-repeat;
+			padding-right: 32px;
+			padding-left: 16px;
+		}
+		.twoIconLeft {
+			background-image: url(../../assets/images/left-a.svg);
+			margin-right: 15px;
+			left: 0;
+		}
+		.btnRightIcon {
+			background-image: url(../../assets/images/right-2.svg);
+			margin-left: 15px;
+			right: 0;
+		}
+		
+		.twoIconLeftBlur {
+			opacity: .3;
+			cursor: default;
+		}
+		.btnToIcon {
+			position: absolute;
+			cursor: pointer;
+			background-color: transparent;
+			border: 0;
+			background-repeat: no-repeat;
+			background-position: 50%;
+			background-size: 22px 22px;
+			height: 49px;
+			width: 49px;
+			display: block;
+			top: -2px;
+			z-index: 1;
+		}
+		.centerLinePy {
+			text-align: center;
+			margin-left: 16px;
+			padding: 0 16px 0 6px;
+		}
+		.centerLine {
+			width: 100%;
+			font-size: .875rem;
+			position: relative;
+			z-index: 0;
+		}
+		.centerLinePySpan {
+			position: relative;
+			font-size: .875rem;
+			font-weight: 500;
+			line-height: 45px;
+			display: block;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+
+		.AnchorButton__icon--1eJ1WHx:before {
+			background-image: url(../../assets/images/errofile_icon.svg);
+			display: block;
+			position: absolute;
+			top: 11px;
+			width: 21px;
+			height: 21px;
+			background-size: 21px 21px;
+			background-repeat: no-repeat;
+			content: "";
+			left: 12px;
+		}
+		.AnchorButton__icon--1eJ1WHx:after {
+			display: block;
+			position: absolute;
+			content: "";
+			top: 15px;
+			right: 11px;
+			width: 16px;
+			height: 15px;
+			background-image: url(../../assets/images/right-0.svg);
+			background-size: 10px 16px;
+			background-repeat: no-repeat;
+		}
+		.AnchorButton__icon--1eJ1WHx1:before {
+			background-image: url(../../assets/images/esecurity_icon.svg);
+			display: block;
+			position: absolute;
+			top: 11px;
+			width: 21px;
+			height: 21px;
+			background-size: 21px 21px;
+			background-repeat: no-repeat;
+			content: "";
+			left: 12px;
+		}
+		.AnchorButton__icon--1eJ1WHx1:after {
+			display: block;
+			position: absolute;
+			content: "";
+			top: 15px;
+			right: 11px;
+			width: 16px;
+			height: 15px;
+			background-image: url(../../assets/images/right-0.svg);
+			background-size: 10px 16px;
+			background-repeat: no-repeat;
+		}
+		.AnchorButton__icon--1eJ1WHx2:before {
+			background-image: url(../../assets/images/elogout_icon.svg);
+			display: block;
+			position: absolute;
+			top: 11px;
+			width: 21px;
+			height: 21px;
+			background-size: 21px 21px;
+			background-repeat: no-repeat;
+			content: "";
+			left: 12px;
+		}
+		.AnchorButton__icon--1eJ1WHx2:after {
+			display: block;
+			position: absolute;
+			content: "";
+			top: 15px;
+			right: 11px;
+			width: 16px;
+			height: 15px;
+			background-image: url(../../assets/images/right-0.svg);
+			background-size: 10px 16px;
+			background-repeat: no-repeat;
+		}
+		.AnchorButton__icon--1eJ1WHx:hover {
+			border-color: #979797;
+			background-color: hsla(0,0%,100%,.85);
+			background-color: white;
+		}
+		.AnchorButton__icon--1eJ1WHx1:hover {
+			border-color: #979797;
+			background-color: hsla(0,0%,100%,.85);
+			background-color: white;
+		}
+		.AnchorButton__icon--1eJ1WHx2:hover {
+			border-color: #979797;
+			background-color: hsla(0,0%,100%,.85);
+			background-color: white;
+		}
+		
+		}
+
+	}
+
+	.btnSavegrid{
+		margin: 16px auto;
+		text-align: center;
+	}
+	.btnSave{
+		color: #fff;
+		font-family: inherit;
+		font-size: 1.125rem;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		border-radius: 4px;
+		height: 50px;
+		padding-left: 25px;
+		padding-right: 25px;
+		min-width: 175px;
+		outline: none;
+		border: none;
+		display: inline-block;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background-color: #b9b9b9;
+	}
+}
+
+
+html[dir="rtl"]  .editProfile .avtarpart .arrow.arrow-left {
+    margin-left: 30px;
+    transform: rotate(180deg);
+	margin-right: auto;	
+}
+html[dir="rtl"]  .editProfile .avtarpart .arrow.arrow-right {
+	margin-right: 30px;
+	margin-left: auto;
+	transform: rotate(180deg);
+}
+html[dir="rtl"] .SignIn label {
+    text-align: right;
+}
+html[dir="rtl"] .editProfile .back-icon {
+    width: 24px;
+    top: 16px;
+	left: 21px;
+	right: auto;
+ }
+ html[dir="rtl"]  .editProfile .avtarpart .lastThreeTab .editprofile.subheader {
+	text-align: right;
+ }
+ html[dir="rtl"] .editProfile .avtarpart .lastThreeTab button.optionbtnstyle {
+    right: auto;
+	left: -24px;
+ }
+ html[dir="rtl"] .editProfile .avtarpart .lastThreeTab .optionBtn-grid {
+	padding-left: 32px;
+    padding-right: 16px;
+	text-align: right;
+ }
+ html[dir="rtl"] .editProfile .avtarpart .lastThreeTab .navigation {
+    list-style: none;
+	padding-right: 0px;
+ }
+ html[dir="rtl"] .editProfile .avtarpart .lastThreeTab .AnchorButton__icon--1eJ1WHx:before {
+    left: auto;
+    right: 12px;
+}
+html[dir="rtl"] .editProfile .avtarpart .lastThreeTab .AnchorButton__icon--1eJ1WHx:after {
+    right: auto;
+	left: 11px;
+}
+html[dir="rtl"] .editProfile .avtarpart .lastThreeTab .AnchorButton__icon--1eJ1WHx1:before {
+    left: auto;
+    right: 12px;
+}
+html[dir="rtl"] .editProfile .avtarpart .lastThreeTab .AnchorButton__icon--1eJ1WHx1:after {
+    right: auto;
+	left: 11px;
+}
+html[dir="rtl"] .editProfile .avtarpart .lastThreeTab .AnchorButton__icon--1eJ1WHx2:before {
+    left: auto;
+    right: 12px;
+}
+html[dir="rtl"] .editProfile .avtarpart .lastThreeTab .AnchorButton__icon--1eJ1WHx2:after {
+    right: auto;
+	left: 11px;
+}
+html[dir="rtl"] .editProfile .avtarpart .lastThreeTab .btttonSize {
+    padding-left: auto;
+	padding-right: 45px;
+	text-align: right;
+}
+html[dir="rtl"] .editProfile .avtarpart .lastThreeTab .btnRightIcon {
+    margin-right: 15px;
+	left: 0;
+	right: auto;
+	margin-left: auto;
+    transform: rotate(180deg);
+}
+html[dir="rtl"] .editProfile .avtarpart .lastThreeTab .twoIconLeft {
+    margin-left: 15px;
+	right: 0;
+	left: auto;
+	margin-right: auto;
+    transform: rotate(180deg);
+}
+

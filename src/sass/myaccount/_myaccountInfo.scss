@@ -1,0 +1,346 @@
+.MyaccountInfo{
+    .pd-0{
+        padding: 0px;
+    }
+
+    .rightSideContent{
+        background-color: #f2f5f7;
+        padding: 20px 15px 0;
+        min-height: 600px;
+        .mBottom{
+            border-bottom: 1px solid #e2e3e4;
+        }
+        .editAlignProfile{
+            text-align:right;
+            padding-right: 47px;
+        }
+        .accountTitle{
+            font-size: 1rem;
+            line-height: 1.1875rem;
+            font-weight: 500;
+            font-family: CeraPro-Bold;
+            margin-bottom: 0px;
+            text-transform: uppercase;
+            padding-top: 5px;
+        }
+        .LogOutDiv{
+            padding-right: 33px;
+            padding-bottom: 4px;
+            button{
+                display: block;               
+                border-collapse: collapse;
+                text-align: center;
+                font-weight: 500;
+                font-size: 0.875rem;
+                line-height: 1.1875rem;
+                background-color: #006db7;
+                color: white;
+                padding: 0.4375rem;
+                border-width: 1px;
+                border-style: solid;
+                border-radius: 4px;
+                border-color: #006db7;
+                font-family: CeraPro-Medium;
+                outline: none;
+                margin-left: auto;
+
+                &:hover{
+                    background-color: white;
+                    color: black;
+                }&:focus{
+                     background-color: #E7F3FF !important;
+                        border-color: #e1dfdf;
+                        color: black;
+                }
+            }
+        }
+        .InputField{
+            background-color: #eef1f3;
+                padding: 15px 15px 15px 20px;
+                min-height: 600px;
+                .editAddress {
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    font-family: CeraPro-Regular;
+                    margin-bottom: 0px;
+                    border-bottom: 1px solid #bec0c1;
+                    display: inline-block;
+                    cursor: pointer;
+                }
+                .avtarDiv{
+                   text-align: center;
+                    // border-bottom: 1px solid #bec0c1;
+                    // margin-bottom: 10px;
+                    
+                    .avtarText{                      
+                             font-size: 12px;
+                             font-family: CeraPro-Medium; 
+                    }
+                    .avtarNick{
+                        font-size: 14px;
+                        font-family: CeraPro-Medium; 
+                        margin-bottom: 0px;
+                    }
+                    ul{
+                        li{
+                            vertical-align: middle;
+                            img.arrow{
+                                cursor: pointer;
+                                padding: 5px;
+                                width: 27px;
+                            }
+                            .avtarImage{
+                                cursor: pointer;
+                                padding: 5px;
+                                width: 74px;
+                                height:74px;
+                                border-radius: 50%;
+                                background-color: white;
+                                -webkit-box-shadow: 0 1px 3px 1px #ccc;
+                                box-shadow: 0 1px 3px 1px #ccc;
+                                overflow: hidden;
+                                margin: 0px 10px;
+                                display: flex;
+                                img.avtarImg{
+                                    width: 100%;
+                                    object-fit: cover;                                
+                                    border-radius: 50%;
+                                }
+                            }
+                          
+                        }
+                    }
+                }
+ 
+                form{
+                    .form-group{
+                        margin-top: 0;
+                        position: relative;
+                        label {
+                            margin-bottom: 0;
+                             font-size: 12px;
+                             font-family: CeraPro-Medium;
+                          
+                        }
+                        input.form-control{
+                            display: block;
+                            width: 100%;
+                            height: calc(1.5em + 0.75rem + 2px);
+                            padding: 0.375rem 0px;
+                            font-size: 0.875rem;
+                            font-weight: 400;
+                            line-height: 1.5;
+                            color: #495057;
+                            background-clip: padding-box;
+                            border: none;
+                            border-bottom: 1px solid #bec0c1;
+                            border-radius: 0.25rem;
+                            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                            border-radius: 0px;
+                            background-color: #eef1f3;
+                            font-family: CeraPro-Regular;
+                            &:focus{
+                                box-shadow: none;
+                            }
+                        }
+                        input.nickName{
+                            display: block;
+                            width: 100%;
+                            height: 45px;
+                            padding: 0px 25px;
+                            font-size: 0.875rem;
+                            font-weight: 400;
+                            line-height: 1.5;
+                            color: #495057;
+                            background-clip: padding-box;
+                            border: 2px solid #c9c9c9;
+                            font-size: 0.875rem;
+                            font-weight: 400;
+                            line-height: 1.5;
+                            color: #495057;
+                            background-clip: padding-box;
+                            border: 2px solid #c9c9c9;                         
+                            border-radius: 0.25rem;
+                            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                            border-radius: 4px;
+                            background-color: #fff;
+                            font-family: CeraPro-Regular;
+                            &:focus{
+                                box-shadow: none;
+                            }
+                           
+                        }
+                        .editImg{
+                            position: absolute;
+                            right: 13px;
+                            top: 13px;
+                            cursor: pointer;
+                        }
+                        .ImageRight{
+                            position: absolute;
+                            right: 0px;
+                            top: 9px;
+                            cursor: pointer;
+                            padding: 5px;
+                            width: 27px;
+                            display: none;
+                           
+   
+                        }
+                        .ImageLeft{
+                            position: absolute;
+                            left: 0px;
+                            top: 9px;
+                            cursor: pointer;
+                            padding: 5px;
+                            width: 27px;
+                            display: none;
+                        }
+                    }
+                }
+        }
+        .AddressDiv{
+            background: #F2F5F7;
+            padding: 15px 15px 15px 20px;
+            min-height: 615px;
+            .matop{
+                margin-top: 20px;
+            }
+            .AddLabel{
+                font-size: 0.875rem;
+                line-height: 1.1875rem;
+                font-weight: 500;
+                font-family: CeraPro-Medium;
+                margin-bottom: 0px;
+                text-transform: uppercase;
+            }
+            .editAddress{
+                font-size: 0.875rem;  
+                font-weight: 500;
+                font-family: CeraPro-Regular;
+                margin-bottom: 0px;
+                border-bottom: 1px solid #bec0c1;
+                display: inline-block;
+                cursor: pointer;
+               
+            }
+            .AddressText{
+                font-size: 0.875rem;
+                font-weight: 500;
+                font-family: CeraPro-Regular;
+                margin-bottom: 0px;           
+               
+                cursor: pointer;
+                margin: 19px 0px 0;
+            }
+    
+        }
+    }
+}
+
+html[dir="rtl"] .MyaccountInfo .rightSideContent .editAlignProfile {
+    text-align: left;
+    padding-left: 33px;
+    /* background-color: white; */
+    padding-right: 0px;
+}
+html[dir="rtl"] {
+	.MyaccountInfo {
+		.rightSideContent {
+			.accountTitle {
+				text-align: right;
+			}
+			.LogOutDiv {
+				button {
+					margin-left: 0px;
+					margin-right: auto;
+				}
+				padding-right: 0;
+				padding-bottom: 4px;
+				padding-left: 20px;
+			}
+			.InputField {
+				text-align: right;
+				.avtarDiv {
+					ul {
+						li {
+							img.arrow {
+								transform: rotate(180deg);
+							}
+						}
+					}
+				}
+				form {
+					.form-group {
+						.editImg {
+							position: absolute;
+							right: auto;
+							left: 13px;
+							cursor: pointer;
+						}
+					}
+				}
+			}
+			.AddressDiv {
+				.AddLabel {
+					text-align: right;
+				}
+				.AddressText {
+					text-align: right;
+				}
+				.alignRight {
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+.del_Right{
+    text-align: right;
+    padding-right: 32px;
+}
+
+html[dir="rtl"] .del_Right{
+    text-align: left;
+    padding-right:0px;
+    padding-left: 32px;
+}
+@media (max-width: 767px){
+    .MyaccountInfo {
+        padding: 0px 15px;        
+
+        .rightSideContent {
+            .editAlignProfile {
+                text-align: right;
+                padding-right: 15px;
+            }
+            
+            .LogOutDiv {
+                padding-right: 0px;
+                padding-bottom: 4px;
+            }
+            .InputField {
+                min-height: auto;
+            }
+        }
+    }
+    html[dir="rtl"] {
+        .MyaccountInfo {
+            .rightSideContent {
+                .LogOutDiv {
+                    padding-right: 0;
+                    padding-bottom: 4px;
+                    padding-left: 0px;
+                }
+                .editAlignProfile {
+                    text-align: left;
+                    padding-left: 12px;
+                    /* background-color: white; */
+                    padding-right: 0px;
+                }
+            }
+        }
+    }
+    
+}
+

@@ -1,0 +1,165 @@
+.sideBarContent{
+    background: #eaedef;
+    padding: 0 !important;
+    
+.profileSidebar {
+    min-height: 600px;
+	.profile-side-bar {
+		.sidebar-links {
+			list-style-type: none;
+			-webkit-padding-start: 0;
+			padding-inline-start: 0;
+			li {
+				a {
+					font-family: CeraPro-Regular;
+					font-size: 0.875rem;
+					font-weight: 500;
+					color: black;
+					text-decoration: none;
+					display: block;
+					text-align: center;
+					padding: 10px 0;
+					transition: background 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+					position: relative;
+					&:hover {
+						background-color: #006db7;
+						font-family: CeraPro-Regular;
+						color: white;
+						&:after {
+							border-right: none;
+							width: 0px;
+							height: 0px;
+							position: absolute;
+							right: -7px;
+							display: block;
+							top: 50%;
+							transform: translateY(-50%);
+							content: "";
+							border-top: 8px solid transparent;
+							border-bottom: 8px solid transparent;
+							border-left: 8px solid #006db7;
+							z-index: 1;
+						}
+					}
+				}
+			}
+			li.ActiveClass {
+				a {
+					background-color: #006db7;
+					font-family: CeraPro-Regular;
+					color: white;
+					&:after {
+						border-right: none;
+						width: 0px;
+						height: 0px;
+						position: absolute;
+						right: -7px;
+						display: block;
+						top: 50%;
+						transform: translateY(-50%);
+						content: "";
+						border-top: 8px solid transparent;
+						border-bottom: 8px solid transparent;
+						border-left: 8px solid #006db7;
+						z-index: 1;
+					}
+				}
+			}
+		}
+		.headingTitle {
+			font-size: 1rem;
+			line-height: 1.1875rem;
+			font-weight: 500;
+			font-family: CeraPro-Medium;
+			margin-bottom: 0px;
+			text-transform: uppercase;
+			text-align: center;
+			padding: 25px 0 10px;
+			// background-color: #dcdcdc;
+			background-color: #eaedef;
+			a{
+				text-decoration: none;
+				color: black;
+			}
+		}
+		.Name {
+			font-family: CeraPro-Regular;
+			font-size: 0.875rem;
+			font-weight: 500;
+			color: black;
+			text-decoration: none;
+			display: block;
+			text-align: center;
+			padding: 10px 0;
+			margin-bottom: 0px;
+		}
+	}
+}
+
+}
+html[dir="rtl"] {
+	.sideBarContent {
+		.profileSidebar {
+			.profile-side-bar {
+				.sidebar-links {
+					li.ActiveClass {
+						a {
+							&:after {
+								right: auto;
+								left: -8px;
+								transform: translateY(-50%) rotate(180deg);
+								border-top: 8px solid transparent;
+								border-bottom: 8px solid transparent;
+								border-left: 8px solid #006db7;
+							}
+						}
+					}
+					li {
+						a {
+							&:hover {
+								&:after {
+									right: auto;
+									left: -8px;
+									transform: translateY(-50%) rotate(180deg);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media (max-width: 767px){
+    .sideBarContent {
+        .profileSidebar {
+            min-height: auto;
+            .profile-side-bar {
+                .sidebar-links {
+                    li {
+                        a {
+                            &:hover {
+                                background-color: #eaedef;
+                                font-family: CeraPro-Regular;
+                                color: black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .MyaccountInfo {
+        .rightSideContent {
+            .AddressDiv {
+                min-height: auto;
+            }
+        }
+    }
+    .mobHide {
+        display: none;
+    }
+    
+}

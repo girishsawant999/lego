@@ -1,0 +1,866 @@
+.PdpAccordian{
+    .m_list{			
+		li{
+			margin: 0;
+			a{		
+			
+			display: block;
+			color: rgb(0, 0, 0);			
+			border-bottom: 1px solid rgb(224, 224, 224);
+			padding: 0.9375rem 1.25rem;
+			background: rgb(248, 248, 248);
+			font-family: CeraPro-Regular;
+			font-size: 0.875rem;
+			font-weight: 500;
+			
+		}	
+		.borderBottom{
+			border: none;
+		}	
+		
+		}
+		.borderTop{
+			border-top: 1px solid rgb(224, 224, 224);
+		}
+	}
+	.Collapsible_text_container {
+		position: relative;	
+        border-top: 1px solid rgb(224, 224, 224);
+        background-color: #f8f8f8;
+        padding: 1.5625rem 0px;
+        cursor: pointer;
+        .HeadTitle{
+            h4{
+                font-size: 1.5rem;
+                line-height: 2.3125rem;
+                font-family: CeraPro-Medium;
+                font-weight: 500;
+            }
+        }
+        .posRel{
+            position: relative; 
+            .iconOuter{
+                position: absolute;
+                right: 0;
+                top: -40px;
+            }         
+        }
+        
+	}
+
+	.open{
+		.Collapsible_arrow_container{            
+		   
+			.Collapsible_text{
+				font-size: 0.875rem;
+				text-transform: uppercase;
+				color: rgb(0, 0, 0);
+				display: flex;
+				-webkit-box-pack: justify;
+				justify-content: space-between;
+				-webkit-box-align: center;
+				align-items: center;
+				cursor: pointer;
+				font-weight: 500;
+				border-bottom: 1px solid rgb(224, 224, 224);
+				padding: 0.9375rem 1.25rem;
+				background: rgb(248, 248, 248);				
+			}
+		
+		
+		}
+	}
+
+    .accFeature {
+        padding: 1rem 0px 1rem;
+        .headTitleMain {
+            margin-bottom: 1.25rem;
+            color: black;
+            font-family: CeraPro-Regular;
+            font-size: 2rem;
+            line-height: 2.6875rem;
+        }
+        .PreOrder {
+            background-color: #fff;
+            padding:0px;
+            .topImage{               
+                .t-img{
+                    vertical-align: middle;
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .headTitle {
+                font-size: 1.125rem;
+                line-height: 1.75rem;
+            }
+      
+        }
+     
+   
+    }
+  
+}
+
+.PdpAccordian .plusIcon:before{
+    display: block;
+    content: "";
+    position: absolute;    
+    top: 50%;
+    left: 50%;
+    background: black;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    transform: translate(-50%, -50%);
+    width: 0.1875rem;
+    height: 1.25rem;
+}
+.PdpAccordian .plusIcon:after {
+    display: block;
+    content: "";
+    position: absolute;    
+    top: 50%;
+    left: 50%;
+    background: black;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;   
+    width: 0.1875rem;
+    height: 1.25rem;
+    transform: translate(-50%, -50%) rotate(-90deg);
+   
+}
+
+.PdpAccordian .plusIcon{
+    position: relative;   
+    margin-left: 1.125rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(224, 224, 224);
+    border-image: initial;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 1.875rem;
+    height: 1.875rem;
+}
+
+.open .plusIcon:before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+.open .plusIcon:after {
+    transform: translate(-50%, -50%) rotate(-270deg);    
+}
+
+.PdpAccordian {
+    .SpeciContent{
+        padding: 1.125rem 0px;
+        .featureInfo{
+            padding-right: 5rem;
+            p.textinfo{
+                font-size: 1rem;
+                line-height: 1.5625rem;
+                font-weight: 400;
+                font-family: CeraPro-Regular;
+            }
+            ul.listInfo{
+                padding-left: 1.875rem;
+                margin: 1.125rem 0px;
+                margin-left: 1.5625rem;
+                font-family: CeraPro-Regular;
+                li{
+                    font-family: CeraPro-Regular;
+                    list-style-type: disc;
+                    padding-bottom: 1.5625rem;
+                }
+            }
+            .BuildingBtn{
+                width: auto;
+                border-collapse: collapse;
+                text-align: center;
+                font-weight: 500;
+                font-size: 1rem;
+                line-height: 1.1875rem;
+                background-color: rgb(0, 109, 183);
+                color: rgb(255, 255, 255);
+                padding: 0.9375rem;
+                border-width: 1px;
+                border-style: solid;
+                border-radius: 4px;
+                border-color: rgb(0, 109, 183);
+                margin: 0.9375rem 0px;
+                font-family: CeraPro-Regular;
+                &:hover{
+                    background-color: white;
+                    color: black;
+                }
+            }
+        }
+        .featureImage{           
+            img{
+                max-width: 100%;
+                height: auto;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+    } 
+    .returnInfo{
+        ul.listInfo{
+            padding-left: 3.5rem;
+            margin: 1.125rem 0px;
+            margin-left: 1.5625rem;
+            font-family: CeraPro-Regular;
+            li{
+                font-family: CeraPro-Regular;
+                list-style-type: disc;               
+                margin-bottom: 0.75rem;  
+            }
+        }
+        .retunText{
+            font-size: 1rem;
+            line-height: 1.5625rem;
+            font-weight: 400;
+            font-family: CeraPro-Regular;
+        }
+    }
+}
+
+
+.AccodionReview{
+    padding: 1.125rem 0px;
+ 
+    margin-bottom: 15px;
+    .leftReview{
+       .titlerating{
+        font-size: 1rem;
+        line-height: 1.5625rem;
+        font-weight: 400;
+        font-family: CeraPro-Regular;
+        margin-bottom: 0px;
+       }
+       .greenText{
+        color: rgb(0, 133, 55);
+        font-size: 1rem;
+        line-height: 1.5625rem;
+        font-weight: 400;
+        font-family: CeraPro-Regular;
+        span{
+            padding: 0px 2px;
+        }
+       }
+       .main_Ul{
+           li {
+               vertical-align: middle;
+               a{
+                   img{
+                    width: 1.5625rem;
+                   
+                   
+                   }
+               }
+               .reviewPoint{
+                   font-size: 16px;
+                   font-weight: 500;
+                   font-family: CeraPro-Medium;
+                   color: black;
+               }
+               .reviewText{
+                font-size: 16px;
+                font-weight: 400;
+                font-family: CeraPro-Regular;
+                color: black;
+               }
+           }
+       }
+       .ratingDiv{
+        border-right: 1px solid #cccccc;
+         .ratingTitle{
+            font-size: 1rem;
+            line-height: 1.5625rem;
+            font-weight: 400;
+            font-family: CeraPro-Regular;
+         }
+         
+        ul{
+            .progressBar{
+              max-width: 170px;
+              width: 100%;
+              .progressbar-container{
+                  background-color: #E0E0E0;
+                  border-radius: 20px;
+                .progressbar-progress{
+                    height: 20px !important;
+                    border-radius: 20px !important;
+                    background-color: #FFCF00 !important;
+                  }
+              }
+              
+            }
+            li{
+                vertical-align: middle;
+            }
+            .starNo{
+                font-size: 1rem;
+                line-height: 1.5625rem;
+                font-weight: 400;
+                font-family: CeraPro-Regular;
+             }
+             .startRate{
+                font-size: 1rem;
+                line-height: 1.5625rem;
+                font-weight: 400;
+                font-family: CeraPro-Regular;
+            }
+        }
+       }
+       .expRating{
+        .ratingTitle{
+            font-size: 1rem;
+            line-height: 1.5625rem;
+            font-weight: 400;
+            font-family: CeraPro-Regular;
+         }
+         .ratingTitle2{
+            font-size: 1rem;
+            line-height: 1.5625rem;
+            font-weight: 400;
+            font-family: CeraPro-Regular;
+            margin-top: 15px;
+            margin-bottom: 0px;
+         }
+         .exp_Ul{
+            li {
+                vertical-align: middle;
+                a{
+                    svg{
+                     width: 1.5625rem;
+                    
+                    
+                    }
+                }
+                .expPoint{
+                    font-size: 16px;
+                    font-weight: 500;
+                    font-family: CeraPro-Medium;
+                    color: black;
+                }               
+            }
+        }
+       }
+    }
+    .WriteReview{
+        text-align: right;
+        .WriteReviewBtn{
+            display: inline-block;
+            width: auto;
+            border-collapse: collapse;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.875rem;
+            line-height: 1.1875rem;
+            background-color: rgb(0, 109, 183);
+            color: rgb(255, 255, 255);
+            padding: 0.9375rem;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 4px;
+            border-color: rgb(0, 109, 183);
+            font-family: CeraPro-Medium;
+            &:hover{
+                background-color: white;
+                color: black;
+            }
+    }
+}
+.ReviewDropDown{
+    padding: 1.25rem 0px;
+
+    .italicText{
+        font-size: 0.875rem;
+        line-height: 1.1875rem;
+        font-weight: 400;
+        font-style: italic;
+        font-family: CeraPro-Regular;
+    }
+}
+.reviewDrop{
+    p.reviewHead{
+        font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    font-family: CeraPro-Medium;
+    }
+    .Review_Drop{
+        position: relative;
+        .select-side {
+            right: 37px;
+            position: absolute;
+            top: 30px;
+        }
+        select{
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(224, 224, 224);
+            border-image: initial;
+            background: rgb(255, 255, 255);
+            padding: 0.75rem 0px 0.75rem 1.25rem;
+            height: 3.45rem;
+            border-radius: 0px;
+            &:focus{
+                border-color: #e0e0e0 !important;               
+            }
+        }
+        img{
+            position: absolute;
+            right: 15px;
+            width: 15px;
+            top: 22px;
+        }
+    }
+  
+}
+.reviewPosted{
+    padding: 1rem 0px;
+    border-top: 1px solid #cccccc;
+    .date{
+        font-size: 1rem;
+        line-height: 1.5625rem;
+        font-weight: 400;
+        font-family: CeraPro-Regular;
+        margin-bottom: 15px;
+       }
+       
+    .r_Ul{
+        li{
+            vertical-align: middle;
+               a{
+                   img{
+                    width: 1.5625rem;
+                   
+                   
+                   }
+               }
+               .reviewPoint{
+                font-size: 16px;
+                font-weight: 500;
+                font-family: CeraPro-Medium;
+                color: black;
+            }
+        
+        }
+    }
+    .reviewMain{
+        font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    }
+    .reviewName{
+        .r_name {
+            a{
+                font-size: 0.875rem;
+                line-height: 1.1875rem;
+                font-weight: 400;
+                border-right: 1px solid grey;
+                padding-right: 5px;
+                font-family: CeraPro-Regular;
+                margin-right: 5px;
+            }
+        }
+        .r_ct{
+            font-size: 0.875rem;
+            line-height: 1.1875rem;
+            font-weight: 400;
+            font-family: CeraPro-Regular;
+        }
+    }
+    .greenText{
+        color: rgb(0, 133, 55);
+        font-size: 1rem;
+        line-height: 1.5625rem;
+        font-weight: 400;
+        font-family: CeraPro-Regular;
+        span{
+            padding: 0px 2px;
+        }
+       }
+       .r_outre{
+        .r_p{
+            font-size: 1rem;
+            line-height: 1.5625rem;
+            font-weight: 500;
+            font-family: CeraPro-Medium;
+           }
+           .r_self{
+            font-weight: 400;
+            text-transform: inherit;
+            line-height: 1.75rem;
+            font-family: CeraPro-Regular;
+           }
+           .r_Text{
+            font-weight: 400;
+            text-transform: inherit;
+            line-height: 1.75rem;
+            font-family: CeraPro-Regular;
+           }
+       }
+       .exp_Ul{
+        li{
+            vertical-align: middle;
+               a{
+                   svg{
+                    width: 1.5625rem;
+                   
+                   
+                   }
+               }
+               .expPoint {
+                font-size: 16px;
+                font-weight: 500;
+                font-family: CeraPro-Medium;
+                color: black;
+            }
+        
+        }
+    }
+    .titlerating{
+        font-size: 1rem;
+        line-height: 1.5625rem;
+        font-weight: 400;
+        font-family: CeraPro-Regular;
+        margin-bottom: 0px;
+       }
+       .ratingTitle2 {
+        font-size: 1rem;
+        line-height: 1.5625rem;
+        font-weight: 400;
+        font-family: CeraPro-Regular;
+        margin-top: 15px;
+        margin-bottom: 0px;
+    }
+    .buildDiv{
+        .build{
+            font-size: 1rem;
+            line-height: 1.5625rem;
+            font-weight: 500;
+            font-family: CeraPro-Medium;
+           }
+           .build-text{
+            font-weight: 400;
+            text-transform: inherit;
+            line-height: 1.75rem;
+            font-family: CeraPro-Regular;
+           }
+    }
+  
+      
+}
+.helpDiv{
+    p{
+        font-size: 1rem;
+        line-height: 1.5625rem;
+        font-weight: 400;
+        font-family: CeraPro-Regular;
+        margin-top: 15px;
+        margin-bottom: 10px;  
+    }
+    .LikeList{
+        li{
+            padding: 2px;
+            .ImgThumb{
+
+            }
+            .ThumbDigit{
+                font-family: CeraPro-Regular;
+                font-size: 0.75rem;
+                line-height: 1.1875rem;
+                font-weight: 500;
+            }
+        }
+    }
+}
+    
+}
+
+html[dir="rtl"] .PdpAccordian .accFeature .headTitleMain {  
+    text-align: right;
+}
+html[dir="rtl"] .PdpAccordian .Collapsible_text_container{
+    display: block;
+    background-color: #f8f8f8 !important;
+}
+html[dir="rtl"] .PdpAccordian .Collapsible_text_container .HeadTitle h4 {
+    text-align: right;
+}
+html[dir="rtl"] .PdpAccordian .Collapsible_text_container .posRel .iconOuter {  
+    right: auto; 
+    left: 0;
+}
+
+html[dir="rtl"] .PdpAccordian .SpeciContent .featureInfo {
+    padding-right: 0;
+    padding-left: 5rem;
+    text-align: right;
+}
+html[dir="rtl"]  .PdpAccordian .returnInfo ul.listInfo {  
+    text-align: right;
+}
+html[dir="rtl"] .PdpAccordian .returnInfo .retunText {  
+    text-align: right;
+}
+
+
+html[dir="rtl"] .AccodionReview .leftReview{
+    text-align: right;
+}
+html[dir="rtl"] .AccodionReview .leftReview .main_Ul{
+    padding-right: 0px;
+}
+html[dir="rtl"] .AccodionReview .leftReview .main_Ul .starList{
+    padding-right: 0px;
+}
+
+html[dir="rtl"] .AccodionReview .leftReview .main_Ul li {
+    vertical-align: middle;
+    margin-right: 0px;
+    margin-left: 0.5rem;
+}
+html[dir="rtl"] .AccodionReview .leftReview .ratingDiv {
+    border-left: 1px solid #cccccc;
+    border-right: none;
+}
+html[dir="rtl"] .AccodionReview .WriteReview {
+    text-align: left;
+}
+html[dir="rtl"] .AccodionReview .leftReview .ratingDiv ul{
+    padding-right: 0px;
+}
+html[dir="rtl"] .AccodionReview .leftReview .ratingDiv ul li {
+    vertical-align: middle;
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+html[dir="rtl"] .AccodionReview .ReviewDropDown {
+    padding: 1.25rem 0px;
+    text-align: right;
+}
+html[dir="rtl"] .AccodionReview .reviewDrop .Review_Drop img {
+    position: absolute;
+    right: auto;
+    width: 15px;
+    top: 22px;
+    left: 15px;
+}
+html[dir="rtl"]  .AccodionReview .reviewDrop .Review_Drop select {   
+    padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+  
+}
+html[dir="rtl"] .AccodionReview .leftReview .expRating .exp_Ul , html[dir="rtl"] .AccodionReview .leftReview .expRating .exp_Ul .starList{
+    padding-right: 0px;
+}
+html[dir="rtl"] .AccodionReview .leftReview .expRating .exp_Ul li {
+    vertical-align: middle;
+    margin-right: 0px;
+    margin-left: 0.5rem;
+}
+html[dir="rtl"] .AccodionReview .reviewPosted {
+
+    text-align: right;
+}
+html[dir="rtl"] .AccodionReview .reviewPosted .r_Ul , html[dir="rtl"] .AccodionReview .reviewPosted .r_Ul .starList{
+    padding-right: 0px;
+}
+html[dir="rtl"] .AccodionReview .reviewPosted .r_Ul li {
+    vertical-align: middle;
+    margin-right: 0px;
+    margin-left: 0.5rem;
+}
+html[dir="rtl"] .AccodionReview .reviewPosted .reviewName .r_name a {
+    border-left: 1px solid grey;
+    margin-right: 0px;
+    margin-left: 5px;
+    border-right: none;
+    padding-left: 5px;
+    padding-right: 0;
+}
+html[dir="rtl"] .AccodionReview .reviewPosted .reviewName{
+    display: flex;
+    direction: rtl;
+}
+html[dir="rtl"]  .AccodionReview .reviewPosted .reviewName .r_ct {
+
+    display: contents;
+}
+html[dir="rtl"] .AccodionReview .helpDiv {
+    text-align: right;
+}
+html[dir="rtl"] .AccodionReview .helpDiv .LikeList{
+    padding-right: 0px;
+}
+html[dir="rtl"] .AccodionReview .helpDiv .LikeList li {
+    padding: 2px;
+    margin-right: 0px;
+    margin-left: 0.5rem;
+}
+html[dir="rtl"] .AccodionReview .reviewPosted .expRating .exp_Ul{
+    padding-right: 0px;
+}
+html[dir="rtl"] .AccodionReview .reviewPosted .expRating .exp_Ul .starList{
+    padding-right: 0px;
+}
+html[dir="rtl"] .AccodionReview .reviewPosted .exp_Ul li {
+    vertical-align: middle;
+    margin-right: 0px;
+    margin-left: 0.5rem;
+}
+@media (max-width:767px)
+{
+    .PdpAccordian .accFeature .headTitleMain {       
+        font-size: 1.25rem;
+        line-height: 1.9375rem;
+        font-weight: 400;
+    }
+    .PdpAccordian .Collapsible_text_container .HeadTitle h4 {       
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+    .PdpAccordian .Collapsible_text_container .HeadTitle h4{
+        margin-bottom: 0px;
+    }
+    .PdpAccordian .plusIcon{
+        position: relative;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: 1.125rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(224, 224, 224);
+    border-image: initial;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    }
+    .PdpAccordian .plusIcon:before, .PdpAccordian .plusIcon:after {
+        display: block;
+        content: "";
+        position: absolute;
+        width: 0.078125rem;
+        height: 0.75rem;
+        top: 50%;
+        left: 50%;
+        background: rgb(0, 0, 0);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    }
+    .PdpAccordian .Collapsible_text_container {
+        position: relative;
+        border-top: 1px solid #e0e0e0;
+        background-color: #f8f8f8;
+        padding: 1rem 0px;
+        cursor: pointer;
+    }
+    .PdpAccordian .Collapsible_text_container .posRel .iconOuter {
+        position: absolute;
+        right: 15px;
+        top: -23px;
+    }
+    .PdpAccordian .SpeciContent .row{
+        flex-direction: column-reverse;
+    }
+    .PdpAccordian .SpeciContent .featureInfo {
+        padding-right: 0;
+    }
+    .PdpAccordian .SpeciContent .featureInfo ul.listInfo {
+        margin-left: 0;        
+    }
+    .PdpAccordian .returnInfo ul.listInfo {
+        padding-left: 0;        
+    }
+    html[dir="rtl"] .PdpAccordian .SpeciContent .featureInfo {
+        padding-right: 0;
+        padding-left: 0;
+        text-align: right;
+    }
+    html[dir="rtl"] .PdpAccordian .SpeciContent .featureInfo ul.listInfo {
+        margin-left: 0;
+    }
+    html[dir="rtl"] .PdpAccordian .returnInfo ul.listInfo {
+        padding-left: 3.5rem;
+        margin: 1.125rem 0px;
+        margin-left: 0;
+        font-family: CeraPro-Regular;
+    }
+    html[dir="rtl"] .PdpAccordian .plusIcon {		
+		margin-left: 0;
+    }
+    .AccodionReview .leftReview .ratingDiv {
+        border-right: none;
+    }
+    .AccodionReview .leftReview .ratingDiv ul .startRate {
+         
+        display: block;
+        text-align: center;
+    }
+    .AccodionReview .leftReview .ratingDiv ul .starNo {
+          
+        display: block;
+        text-align: center;
+    }
+    .AccodionReview .leftReview .ratingDiv ul .progressBar {
+        // max-width: 150px;
+        // width: 100%;
+    }
+    
+ 
+}
+
+.AbsoluteReview{
+  .absText{
+    font-size: 1rem;
+    line-height: 1.5625rem;
+    font-weight: 400;
+    font-family: CeraPro-Regular;
+    margin-bottom: 5px;
+    margin-top: 50px;
+  }
+  .dateText{
+    font-size: 1rem;
+    line-height: 1.5625rem;
+    font-weight: 400;
+    font-family: CeraPro-Regular;
+    margin-bottom: 10px;
+    font-style: italic;
+    .texBold{
+        font-family: CeraPro-Medium;
+        
+    }
+  }
+  .decText{
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+    font-weight: 400;   
+    font-family: CeraPro-Regular;
+  }
+}
+.Inappropriate{
+    text-align: right;
+  p{
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+    font-weight: 400;
+    font-style: italic;
+    font-family: CeraPro-Regular;
+  }
+}
+html[dir="rtl"] 
+{
+    .AbsoluteReview{
+        text-align: right;
+    }
+    .AbsoluteReview .dateText {
+        direction: rtl;
+        display: flex;
+    }
+    .Inappropriate{
+        text-align: left;
+         }
+}
+
+
+

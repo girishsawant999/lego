@@ -1,0 +1,1521 @@
+.styles_overlay__CLSq- {
+   padding: 0px !important;
+}
+#productRecommModal
+{
+    max-width: 505px;
+    width: 100%;
+    top: 137.8px;
+    display: block;
+    padding-bottom: 2%;
+    margin-bottom: 1%;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+
+    .fa-search:before {
+        content: "\f002";
+        top: 38px;
+        left: 33px;
+        position: absolute;
+        color: #BFBFBF;
+    }
+    .list-group-item:first-child {
+        border-width: 0px 0 1px;
+    }
+    ul.list-group {
+    height: 285px !important;
+    overflow-y: auto !important;
+    }
+    li.list-group-item.d-flex.justify-content-between.align-items-center {
+        /* font-size: 12px; */
+        color: #2a2a2a;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 14px;
+        background-color: #ffffff;
+        display: block;
+        padding: 12px 25px;
+    }
+    .backlist li.list-group-item
+    {
+        background-color: #f8f8f8 !important;
+        border-radius: 0px;
+    }
+    .product-list-grid
+    {
+        margin: 3%;
+    }
+    .browse-title
+    {
+        border-style: solid;
+    color: #2a2a2a;
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    border-color: #b3b3b3;
+    border-width: 1px 0;
+    padding: 15px 25px 12px;
+    }
+    img.expRating {
+        width: 9px;
+    }
+    .recommendationsmodel {
+        color: #2a2a2a;
+        font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 500;
+        text-transform: capitalize;
+        line-height: 1;
+        font-size: 18px;
+        padding: 0px 20px 24px;
+    }
+    .modal-body {
+        padding: 1rem 20px;
+    }
+    .modal-footer {
+        padding-top: 5%;
+    }
+    .browse-product
+    {
+        color: #31a1e0;
+    font-weight: 500;
+    text-transform: capitalize;
+    display: block;
+    margin-top: 30px;
+    text-align: left;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    }
+    .browse-btn
+    {
+        padding-left: 0;
+    padding-right: 0;
+    margin-top: 25px;
+    border-radius: 0px;
+    width: 113px;
+    zoom: 1;
+    box-sizing: border-box;
+    padding: 14px 0px 12px;
+    overflow: visible;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border: 1px solid #004f84;
+    border-width: 1px 1px 2px;
+    background: -moz-linear-gradient(top,#008bea 0%,#0088c9 27%,#006DB7 100%);
+    background: -webkit-linear-gradient(top,#008bea 0%,#0088c9 27%,#006DB7 100%);
+    background: linear-gradient(to bottom,#008bea 0%,#0088c9 27%,#006DB7 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008bea',endColorstr='#006DB7',GradientType=0);
+    -moz-box-shadow: inset 0px 0px 2px rgba(255,255,255,0.3),inset 0px 1px 0 rgba(255,255,255,0.3);
+    -webkit-box-shadow: inset 0px 0px 2px rgba(255,255,255,0.3), inset 0px 1px 0 rgba(255,255,255,0.3);
+    box-shadow: inset 0px 0px 2px rgba(255,255,255,0.3), inset 0px 1px 0 rgba(255,255,255,0.3);
+    font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: 10px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+    color: #ffffff;
+    text-shadow: 0 1px 0 #004f84;
+    margin: 0;
+    border-radius: 0px;
+    vertical-align: middle;
+    }
+    .tower
+    {
+        width: 100px;
+    }
+    .product-name
+    {
+        font-weight: 400;
+        font-size: 14px;
+        color: #2a2a2a !important;
+        float: left;
+        margin: 0 0 10px;
+        line-height: 1.5;
+        width: 122px;
+    }
+    .add-btn
+    {
+        padding-left: 0;
+    padding-right: 0;
+    margin-top: 25px;
+    border-radius: 0px;
+    width: 100%;
+    zoom: 1;
+    box-sizing: border-box;
+    padding: 14px 0px 12px;
+    overflow: visible;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border: 1px solid #004f84;
+    border-width: 1px 1px 2px;
+    background: -moz-linear-gradient(top,#008bea 0%,#0088c9 27%,#006DB7 100%);
+    background: -webkit-linear-gradient(top,#008bea 0%,#0088c9 27%,#006DB7 100%);
+    background: linear-gradient(to bottom,#008bea 0%,#0088c9 27%,#006DB7 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008bea',endColorstr='#006DB7',GradientType=0);
+    -moz-box-shadow: inset 0px 0px 2px rgba(255,255,255,0.3),inset 0px 1px 0 rgba(255,255,255,0.3);
+    -webkit-box-shadow: inset 0px 0px 2px rgba(255,255,255,0.3), inset 0px 1px 0 rgba(255,255,255,0.3);
+    box-shadow: inset 0px 0px 2px rgba(255,255,255,0.3), inset 0px 1px 0 rgba(255,255,255,0.3);
+    font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: 10px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+    color: #ffffff;
+    text-shadow: 0 1px 0 #004f84;
+    margin: 0;
+    border-radius: 0px;
+    vertical-align: middle;
+    }
+    .form-control
+    {
+        border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    margin: 0;
+    border-color: #fff;
+    -moz-box-shadow: 0 1px 0 #dfdfdf,inset 0 0 8px rgba(206,206,206,.5);
+    -webkit-box-shadow: 0 1px 0 #dfdfdf, inset 0 0 8px rgba(206,206,206,.5);
+    font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    border-right-width: 0;
+    border: 1px solid rgba(136,135,135,.36);
+    background-clip: padding-box;
+    background-color: #fff;
+    box-shadow: 0 1px 0 rgba(255,255,255,.65), inset 0 1px 4px rgba(0,0,0,.12);
+    //background-image: url(../../assets/images/yellowsmall.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    color: #2a2a2a;
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    line-height: 1;
+    -moz-osx-font-smoothing: grayscale;
+    background-position: 8px -942px;
+    padding: 7px 12px 4px 30px;
+    height: auto;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    outline: none;
+    float: none;
+    width: 100%;
+    }
+}
+.styles_modal__gNwvD {
+    max-width: 800px;
+    position: relative;
+    padding: 1.2rem;
+    padding-bottom: 5%;
+}
+#sumitReviewModel{
+    max-width: 728px;
+    width:100%;
+    margin-bottom: 1%;
+
+    .reviewTitle {
+        text-transform: capitalize;
+        background-size: 50px;
+        margin: 0 0 25px;
+        padding-left: 12px;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 50px;
+    }
+
+    .reviewTitle span{
+        padding-left: 12px;
+    }
+    .left-side-img
+    {
+        padding:0px 0px 4px 72px;
+    }
+    .bookShop {
+        width: 80%;
+        height: auto;
+        float: none;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .bookshop-img-title {
+        width: auto;
+        text-align: left;
+        font-size: 14px;
+        margin-bottom: 10px;
+        width: auto;
+        text-align: left;
+        color: rgb(42, 42, 42) !important;
+    }
+    .productDetail
+    {
+        padding-top: 0;
+        overflow: hidden;
+        border-width: 0;
+        padding-bottom: 0;
+
+        .rating-dec{
+            margin-bottom: 40px;
+            padding-top: 0;
+            border-width: 0;
+        }
+        .rating-title
+        {
+            color: #2a2a2a;
+            font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 20px;
+            font-weight: 500;
+            text-transform: capitalize;
+            line-height: 1;
+        }
+    }
+    .reviewSectionBody
+    {
+        .reviewField
+        {
+            margin-bottom: 30px;
+        }
+        .overall-rating
+        {
+            font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.5;
+            color: #2a2a2a;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .RatingLabel
+        {
+            font-size: 14px;
+            font-weight: 500;
+            color: #2a2a2a;
+            line-height: 1.5;
+            width: 100%;
+            display: block;
+            float: none;
+            margin-bottom: 5px;
+        }
+        .reviewRadioField
+        {
+            margin-bottom: 20px;
+            clear: left;
+            overflow: visible;
+            zoom: 1;
+            font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.5;
+            color: #2a2a2a;
+            font-size: 14px;
+        }
+        .play-exp-sec
+        {
+            font-size: 14px;
+            font-weight: 500;
+            color: #2a2a2a;
+            line-height: 1.5;
+            width: 100%;
+            display: flex;
+            float: none;
+            margin-bottom: 0px
+        }
+        .right-rating
+        {
+            clear: right;
+            float: right;
+            overflow: hidden;
+            width: 363px;  
+            margin-left: 2%;          
+        }
+        .left-dec
+        {
+            width: 80px;
+        }
+        .left-dec input[type="radio"], input[type="checkbox"] {
+            height: 26px;
+            width: 26px;
+            vertical-align: middle;
+        }
+        .left-dec label
+        {
+            padding-left: 10px;
+            line-height: 31px;
+            /* height: 31px; */
+            cursor: pointer;
+        }
+
+        .right-ret-title
+        {
+            margin-bottom: 5px;
+        }
+
+        .extra-space
+        {
+            margin-bottom: 30px;
+        }
+        .range-title
+        {
+            vertical-align: sub;
+            font-weight: 500;
+            margin-left: 10px;
+            line-height: 30px;
+            color: #7e7e7e;
+        }
+        .rangeslider-horizontal{
+            height: 12px;
+            border-radius: 0px !important;
+        }
+        .rangeslider, .rangeslider .rangeslider__fill {
+            display: block;
+            box-shadow:unset;
+        }
+        .rangeslider-horizontal .rangeslider__fill {
+            height: 100%;
+            border-radius: 0px;
+            background-color: unset;
+        }
+        .rangeslider .rangeslider__handle {
+            background: #fff;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            display: inline-block;
+            position: absolute;
+            background-image: url(../../assets/images/yellowsmall.png);
+            /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 -1px 3px rgba(0, 0, 0, 0.4); */
+        }
+        
+            
+
+        .overall_hover_title{
+         vertical-align: sub;
+         font-weight: 500;
+         margin-left: 10px;
+         line-height: 1.5;
+         color: #7e7e7e;
+         font-size: 22px;
+        }
+        .build-time label {
+            font-size: 14px;
+            font-weight: 400;
+            color: #7e7e7e;
+            line-height: 1.5;
+            width: 100%;
+            display: block;
+            float: none;
+            margin-bottom: 5px;
+        }
+        
+        .build-time .form-control {
+            word-wrap: normal;
+            appearance: none;
+            -moz-osx-font-smoothing: grayscale;
+            width: 75px;
+            border-style: solid;
+            border-width: 1px;
+            background-color: #ffffff;
+            border-color: #ffffff;
+            -moz-box-shadow: 0 1px 0 #dfdfdf,inset 0 0 8px rgba(206,206,206,.5);
+            -webkit-box-shadow: 0 1px 0 #dfdfdf, inset 0 0 8px rgba(206,206,206,.5);
+            padding: 15px 30px 15px 16px;
+            height:50px;
+            font-size: 16px;
+            text-transform: capitalize;
+            line-height: 1 !important;
+            outline: 1px solid #e0e0e0;
+        }
+        .select-down
+        {
+            height: 7px;
+            width: 12px;
+            position: absolute;
+            cursor: pointer;
+            right: 48px;
+            top: 63%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            opacity: 1;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-color: transparent;
+            border: 0;
+            background-image: url(../../assets/images/sprite.png);
+        }
+        
+
+    }
+    .aboutme-section
+    {
+        border-width: 1px 1px 0px;
+        background-color: rgb(248, 248, 248);
+        border-color: rgb(224, 224, 224);
+        border-width: 0px 1px;
+        border-style: solid;
+        border-color: rgb(224, 224, 224);
+        border-width: 1px 1px 0px;
+        zoom: 1;
+        width: 100%;
+        padding: 0px 40px 40px;
+    
+        .aboutHeader {
+            margin-bottom: 40px;
+            zoom: 1;
+            padding: 40px 0px 0px;
+        }
+        .aboutHeader span {
+            color: rgb(42, 42, 42);
+        font-family: Lego, "Sansa Pro", SansaSoftStdNormal, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: capitalize;
+        line-height: 1;
+        }
+        .about-form{
+            box-sizing: border-box;
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgb(223, 223, 223) 0px 6px 0px;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 120px;
+            position: relative;
+            width: 457px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(223, 223, 223);
+            border-image: initial;
+            padding: 25px 25px 10px 18px;
+        }
+        .select-down
+        {
+            height: 7px;
+            width: 12px;
+            position: absolute;
+            cursor: pointer;
+            right: 26px;
+            top: 70%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            opacity: 1;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-color: transparent;
+            border: 0;
+            background-image: url(../../assets/images/sprite.png);
+        }
+        .form-control {
+            word-wrap: normal;
+            appearance: none;
+            -moz-osx-font-smoothing: grayscale;
+            width: 100% !important;
+            border-style: solid;
+            border-width: 1px;
+            background-color: #ffffff;
+            border-color: #ffffff;
+            -moz-box-shadow: 0 1px 0 #dfdfdf,inset 0 0 8px rgba(206,206,206,.5);
+            -webkit-box-shadow: 0 1px 0 #dfdfdf, inset 0 0 8px rgba(206,206,206,.5);
+            padding: 15px 30px 15px 16px;
+            height:50px;
+            font-size: 16px;
+            text-transform: capitalize;
+            line-height: 1 !important;
+            outline: 1px solid #e0e0e0;
+        }
+        Label {
+            font-size: 14px;
+            font-weight: 400;
+            color: #7e7e7e;
+            line-height: 1.5;
+            width: 100%;
+            display: block;
+            float: none;
+            margin-bottom: 5px;
+        }
+        .about-subsection    {
+            box-sizing: border-box;
+            border: 1px solid #dfdfdf;
+            background-color: #ffffff;
+            box-shadow: 0 6px 0 #dfdfdf;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 120px;
+            padding: 25px 25px 10px 18px;
+            position: relative;
+            width: 457px;
+        }
+
+    }  
+    .share-option
+    {
+        background-color: #f8f8f8;
+        border-color: #e0e0e0;
+        border-width: 0 1px;
+        width: 100%;
+        clear: both;
+        padding: 0 40px 40px;
+        zoom: 1;
+
+        .share-heading
+        {
+            border-style: solid;
+            border-color: #e0e0e0;
+            border-width: 1px 0 0;
+            padding: 40px 0 0;
+            margin-bottom: 40px;
+            zoom: 1;
+        }
+        .share-heading span {
+            color: #2a2a2a;
+            font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 20px;
+            font-weight: 500;
+            text-transform: capitalize;
+            line-height: 1;
+        }
+        .share-body-start
+        {
+            box-sizing: border-box;
+            border: 1px solid #dfdfdf;
+            background-color: #ffffff;
+            box-shadow: 0 6px 0 #dfdfdf;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 120px;
+            padding: 25px 25px 10px 18px;
+            position: relative;
+            width: 457px;
+        }
+        .form-control {
+            word-wrap: normal;
+            appearance: none;
+            -moz-osx-font-smoothing: grayscale;
+            width: 100% !important;
+            border-style: solid;
+            border-width: 1px;
+            background-color: #ffffff;
+            border-color: #ffffff;
+            -moz-box-shadow: 0 1px 0 #dfdfdf,inset 0 0 8px rgba(206,206,206,.5);
+            -webkit-box-shadow: 0 1px 0 #dfdfdf, inset 0 0 8px rgba(206,206,206,.5);
+            padding: 15px 30px 15px 16px;
+            height:50px;
+            font-size: 16px;
+            text-transform: capitalize;
+            line-height: 1 !important;
+            outline: 1px solid #e0e0e0;
+        }
+        Label {
+            font-size: 14px;
+            font-weight: 400;
+            color: #7e7e7e;
+            line-height: 1.5;
+            width: 100%;
+            display: block;
+            float: none;
+            margin-bottom: 5px;
+        }
+        .tooltip-icon
+        {
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            cursor: pointer;
+            right: 13px;
+            top: 13%;
+            transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            background-repeat: no-repeat;
+            background-image: url(../../assets/images/info_icon.png);
+        }
+
+        .share-sub-option
+        {
+            box-sizing: border-box;
+            border: 1px solid #dfdfdf;
+            background-color: #ffffff;
+            box-shadow: 0 6px 0 #dfdfdf;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 120px;
+            padding: 25px 25px 10px 18px;
+            position: relative;
+            width: 457px;
+        }
+        .select-down
+        {
+            height: 7px;
+            width: 12px;
+            position: absolute;
+            cursor: pointer;
+            right: 26px;
+            top: 70%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            opacity: 1;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-color: transparent;
+            border: 0;
+            background-image: url(../../assets/images/sprite.png);
+        }
+
+    } 
+    .recommendations-section
+    {
+        background-color: #f8f8f8;
+        border-color: #e0e0e0;
+        border-width: 0 1px;
+        padding: 0 40px 40px;
+        zoom: 1;
+
+        .recommendations-head
+        {
+            border-style: solid;
+            border-color: #e0e0e0;
+            border-width: 1px 0 0;
+            padding: 40px 0 0;
+            margin-bottom: 20px;
+            zoom: 1;
+        }
+        .recommendations-head span {
+            color: #2a2a2a;
+            font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 20px;
+            font-weight: 500;
+            text-transform: capitalize;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+       
+    }
+    .uploadimg-section
+    {
+        background-color: #f8f8f8;
+        border-color: #e0e0e0;
+        border-width: 0 1px;
+        border-bottom-width: 0;
+        padding: 0 40px 40px;
+        zoom: 1;
+    
+    .uploadimg-heading
+    {
+        border-style: solid;
+        border-color: #e0e0e0;
+        border-width: 1px 0 0;
+        padding: 40px 0 0;
+        margin-bottom: 40px;
+        zoom: 1;
+        margin-bottom: 30px;
+    }
+    .uploadimg-heading span {
+        color: #2a2a2a;
+        font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: capitalize;
+        line-height: 1;
+    }
+    .upload-img-title
+    {
+        font-size: 14px;
+        font-weight: 400;
+        color: #7e7e7e;
+        line-height: 1.5;
+        width: 100%;
+        display: block;
+        float: none;
+        margin-bottom: 20px;
+    }
+    .guidline-title
+    {
+        color: #2a2a2a;
+        font-size: 18px;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 15px;
+        text-transform: capitalize;
+        zoom: 1;
+    }
+    .guidline-list
+    {
+        background-color: #aed5f1;
+        padding: 15px;
+        margin-bottom: 17%;
+    }
+    .guidline-list li {
+        color: #2a2a2a;
+        font-size: 12px;
+        line-height: 1.5;
+        box-sizing: border-box;
+        padding: 0;
+        right: 0;
+        top: 50px;
+        clear: right;
+    }
+  }
+  .video-share
+  {
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-width: 1px 0 0;
+    padding: 40px 0 27px;
+    position: relative;
+    clear: both;
+    margin-bottom: 0;
+
+    .share-video-grid
+    {
+        margin-bottom: 20px;
+        clear: left;
+        overflow: visible;
+        zoom: 1;
+        float: left;
+    }
+    .share-title
+    {
+        color: #2a2a2a;
+    font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-transform: none;
+    display: block;
+    margin-bottom: 30px;
+    }
+    .form-control {
+        word-wrap: normal;
+        appearance: none;
+        -moz-osx-font-smoothing: grayscale;
+        width: 100% !important;
+        border-style: solid;
+        border-width: 1px;
+        background-color: #ffffff;
+        border-color: #ffffff;
+        -moz-box-shadow: 0 1px 0 #dfdfdf,inset 0 0 8px rgba(206,206,206,.5);
+        -webkit-box-shadow: 0 1px 0 #dfdfdf, inset 0 0 8px rgba(206,206,206,.5);
+        padding: 15px 30px 15px 16px;
+        height:50px;
+        font-size: 16px;
+        text-transform: capitalize;
+        line-height: 1 !important;
+        outline: 1px solid #e0e0e0;
+    }
+    .upload-caption
+    {
+    top: 75%;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    }
+    .uplod-fix
+    {
+        margin-bottom: 0%;
+        position: relative;
+        min-height: 287px;
+        height: auto;
+    }
+    .upload-caption form {
+        margin-top: 15%;
+    }
+
+    .review-footer
+    {
+        padding: 0 40px 40px;
+    }
+    
+
+  }
+  .review-footer-title{
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-width: 1px 0 0;
+    padding-top: 40px;
+}
+.review-cancel {
+    font-size: 14px;
+    font-weight: 400;
+    color: #31a1e0;
+    line-height: 2.4;
+    width: 100%;
+    display: block;
+    float: none;
+    margin-bottom: 20px;
+}
+.review-link{    
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+    font-size: 11px;
+    text-decoration: underline;
+    color: #31a1e0;
+}
+.FooterLinks {
+    clear: both;
+    margin-top: 30px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+    .product-add
+    {
+        font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        font-size: 10px;
+        text-decoration: none;
+        text-align: center;
+        line-height: 1;
+        white-space: nowrap;
+        -webkit-font-smoothing: antialiased;
+        color: #ffffff;
+        text-shadow: 0 1px 0 #004f84;
+        display: inline-block;
+        zoom: 1;
+        box-sizing: border-box;
+        margin: 0 10px 0 0;
+        padding: 14px 70px 12px;
+        overflow: visible;
+        vertical-align: top;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        border: 1px solid #004f84;
+        border-width: 1px 1px 2px;
+        background: -moz-linear-gradient(top,#008bea 0%,#0088c9 27%,#006DB7 100%);
+        background: -webkit-linear-gradient(top,#008bea 0%,#0088c9 27%,#006DB7 100%);
+        background: linear-gradient(to bottom,#008bea 0%,#0088c9 27%,#006DB7 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008bea',endColorstr='#006DB7',GradientType=0);
+        -moz-box-shadow: inset 0px 0px 2px rgba(255,255,255,0.3),inset 0px 1px 0 rgba(255,255,255,0.3);
+        -webkit-box-shadow: inset 0px 0px 2px rgba(255,255,255,0.3), inset 0px 1px 0 rgba(255,255,255,0.3);
+        box-shadow: inset 0px 0px 2px rgba(255,255,255,0.3), inset 0px 1px 0 rgba(255,255,255,0.3);
+        background-color: #666666;
+        border-color: #666666;
+        padding-left: 0;
+        padding-right: 0;
+        width: 168px;
+        border-radius: 0px;
+    }
+    .recommendationsmodel {
+        color: #2a2a2a;
+        font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 500;
+        text-transform: capitalize;
+        line-height: 1;
+        font-size: 18px;
+        padding: 0 25px 25px;
+    }
+    div.uploader {
+        display: inline-block;
+        zoom: 1;
+        box-sizing: border-box;
+        margin: 0 10px 0 0;
+        vertical-align: top;
+        transition: all 0.3s ease 0s;
+        border: 1px solid #004f84;
+        border-width: 1px 1px 2px;
+        background: -moz-linear-gradient(top,#008bea 0%,#0088c9 27%,#006DB7 100%);
+        background: -webkit-linear-gradient(top,#008bea 0%,#0088c9 27%,#006DB7 100%);
+        background: linear-gradient(to bottom,#008bea 0%,#0088c9 27%,#006DB7 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008bea',endColorstr='#006DB7',GradientType=0);
+        -moz-box-shadow: inset 0px 0px 2px rgba(255,255,255,0.3),inset 0px 1px 0 rgba(255,255,255,0.3);
+        -webkit-box-shadow: inset 0px 0px 2px rgba(255,255,255,0.3), inset 0px 1px 0 rgba(255,255,255,0.3);
+        box-shadow: inset 0px 0px 2px rgba(255,255,255,0.3), inset 0px 1px 0 rgba(255,255,255,0.3);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+        height: 40px;
+        width: 168px !important;
+        max-width: 168px;
+    }
+    .BVPhotoUploadWidget .BVField {
+        clear: none;
+        margin-bottom: 0;
+    }
+    div.uploader span.action {
+        font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        font-size: 10px;
+        text-decoration: none;
+        white-space: nowrap;
+        -webkit-font-smoothing: antialiased;
+        color: #ffffff;
+        text-shadow: 0 1px 0 #004f84;
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        text-align: center;
+        z-index: 4;
+        width: 100%;
+    }
+    div.uploader input {
+        float: right;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        cursor: pointer;
+        z-index: 20;
+    }
+    .uploadContainerUploadedImage {
+        color: #646464;
+        font-size: 12px;
+        clear: none;
+        display: inline-block;
+        position: relative;
+        zoom: 1;
+        margin: 25px 0 0;
+        padding: 0;
+        width: 100%;
+
+        .BVPhotoButtonRemove {
+            font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.5;
+            color: #2a2a2a;
+            font-size: 14px;
+            position: absolute;
+            left: 0;
+            top: 30px;
+        }
+        .bv-off-screen {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(1px,1px,1px,1px);
+            padding: 0;
+            border: 0;
+        }
+        .BVPhotoButtonRemove a:after {
+            background-image: url(../../assets/images/remove.png);
+            background-repeat: no-repeat;
+            color: #2a2a2a;
+            vertical-align: middle;
+            content: "";
+            -moz-osx-font-smoothing: grayscale;
+            width: 23px;
+            height: 23px;
+            background-size: 23px;
+            background-position: 0 -725px;
+            display: inline-block;
+            line-height: 1;
+            text-align: center;
+        }
+        .BVPhotoButtonRemove a, .BVPhotoButtonRemove a:visited, .BVPhotoButtonRemove a:hover, .BVPhotoButtonRemove a:focus, .BVPhotoButtonRemove a:active {
+            font-size: 12px;
+            color: #2a2a2a;
+            text-decoration: none;
+        }
+        .UploadedImageThumbnail {
+            max-width: 100%;
+            float: left;
+            height: auto;
+            margin-left: 61px;
+            display: block;
+            overflow: hidden;
+        }
+        
+        .UploadedImageThumbnail img {
+            border-width: 0;
+            width: 120%;
+            margin-left: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            -ms-interpolation-mode: bicubic;
+            zoom: 1;
+        }
+        .box-aa
+        {
+            box-shadow: 0 1px 0 #dfdfdf, inset 0 0 8px rgba(206,206,206,.5);
+            border-radius: 0px;
+            font-size: 14px;
+        }
+        
+    }
+    .uploadVideoComment
+    {
+        color: #7e7e7e;
+        font-size: 12px;
+        line-height: 1.5;
+        padding-top: 5px;
+        margin-bottom: 0px;
+    }
+    .videoTag
+    {
+        font-size: 14px;
+    font-weight: 400;
+    margin-top: 4px;
+    }
+
+}
+
+
+@media (max-width: 767px){
+
+    #sumitReviewModel .aboutme-section .about-form {
+        width: 100%;
+        padding:25px 2px 10px 5px;
+    }
+    #sumitReviewModel .FooterLinks {
+        text-align: left;
+    }
+    .review-footer {
+        margin-top: 14%;
+        text-align: center;
+    }
+    .full-widtt-mob .product-add {
+        width: 100% !important;
+    }
+    #sumitReviewModel .bookshop-img-title {
+        text-align: center;
+    }
+    #sumitReviewModel .uploadimg-section {
+        padding: 0 20px 40px;
+    }
+    #sumitReviewModel .review-cancel {
+        margin-top: 5%;
+    }
+    #sumitReviewModel .recommendations-section {
+        padding: 0 20px 40px;
+    }
+    #sumitReviewModel .reviewSectionBody .build-time .form-control {
+        width: 100%;
+    }
+    #sumitReviewModel .aboutme-section {
+       padding: 0px 17px 40px;
+    }
+    #sumitReviewModel .aboutme-section .about-subsection {
+        width: 100%;
+        padding:25px 2px 10px 5px;
+    }
+    #sumitReviewModel .share-option {
+       padding: 0 17px 40px;
+    }
+    #sumitReviewModel .share-option .share-body-start {
+       width: 100%;
+       padding:25px 2px 10px 5px;
+    }
+    #sumitReviewModel .share-option .share-sub-option {
+       width: 100%;
+       padding:25px 2px 10px 5px;
+    }
+
+    #productRecommModal ul.list-group {
+        height: 332px !important;
+        overflow-y: auto !important;
+    }
+    #productRecommModal .recommendationsmodel {
+        padding: 0px 38px 24px 20px;
+    }
+
+    html[dir="rtl"] #sumitReviewModel .reviewSectionBody .select-down {
+        left: 30px !important;
+        right: auto;
+        top: 63%;
+    }
+    html[dir="rtl"] #sumitReviewModel .aboutme-section .about-form {
+        padding: 25px 0px 10px 0px !important;
+    }
+    html[dir="rtl"] #sumitReviewModel .aboutme-section .about-subsection {
+        padding: 25px 0px 10px 0px !important;
+    }
+    html[dir="rtl"] #sumitReviewModel .share-option .share-body-start {
+        padding: 25px 0px 10px 0px !important;
+    }
+    html[dir="rtl"] #sumitReviewModel .share-option .share-sub-option {
+        padding: 25px 0px 10px 0px !important;
+    }
+    html[dir="rtl"] #sumitReviewModel .reviewSectionBody .build-time .form-control {
+        padding: 15px 20px 15px 20px !important;
+    }
+}
+
+html[dir="rtl"] #productRecommModal .recommendationsmodel {
+    text-align: right !important;
+}
+html[dir="rtl"] #productRecommModal .fa-search:before {
+    top: 38px;
+    right: 33px;
+    left: auto;
+}
+html[dir="rtl"] #productRecommModal .mr-3, .mx-3 {
+    margin-left: 1rem !important;
+    margin-right: auto;
+}
+html[dir="rtl"] #productRecommModal .browse-product {
+    text-align: right;
+}
+html[dir="rtl"] #productRecommModal .browse-title {
+    text-align: right;
+}
+html[dir="rtl"] #productRecommModal .list-group {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1px;
+    margin-bottom: 0;
+    padding-left: auto;
+}
+html[dir="rtl"] #productRecommModal img.expRating {
+    width: 9px;
+    transform: rotate(180deg);
+}
+html[dir="rtl"] #sumitReviewModel .reviewTitle {
+    text-transform: capitalize;
+    background-size: 50px;
+    margin: 0 0 25px;
+    padding-left: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 50px;
+    float: right;
+    text-align: right;
+    width: 100%;
+}
+html[dir="rtl"] #sumitReviewModel .share-option .select-down {
+    left: 26px;
+    right: auto;
+}
+html[dir="rtl"] #sumitReviewModel .aboutme-section .select-down {
+    left: 26px;
+    right: auto;
+}
+html[dir="rtl"]  #sumitReviewModel .productDetail .rating-dec {
+    text-align: right;
+}
+html[dir="rtl"] #sumitReviewModel .bookshop-img-title {
+    text-align: right;
+}
+html[dir="rtl"] .list-inline {
+    padding-left: 0;
+    list-style: none;
+    padding-right: 0px;
+}
+html[dir="rtl"] #sumitReviewModel .video-share .share-title {
+    text-align: right;
+}
+html[dir="rtl"]  #sumitReviewModel .review-cancel {
+    text-align: right;
+}
+html[dir="rtl"] #sumitReviewModel .FooterLinks {
+    text-align: right;
+}
+html[dir="rtl"] #sumitReviewModel .left-side-img {
+    padding: 0px 72px 4px 0px;
+}
+html[dir="rtl"] #sumitReviewModel .reviewSectionBody .overall-rating {
+    font-family: 'Lego','Sansa Pro',SansaSoftStdNormal,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    color: #2a2a2a;
+    font-size: 14px;
+    margin-bottom: 30px;
+    float: right;
+    text-align: right;
+}
+html[dir="rtl"] #sumitReviewModel .reviewSectionBody .play-exp-sec {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2a2a2a;
+    line-height: 1.5;
+    width: 100%;
+    display: flex;
+    float: none;
+    margin-bottom: 0px;
+    text-align: right;
+}
+html[dir="rtl"] #sumitReviewModel .reviewSectionBody .range-title {
+    vertical-align: sub;
+    font-weight: 500;
+    margin-left: 10px;
+    line-height: 30px;
+    float: left;
+}
+html[dir="rtl"] #sumitReviewModel .reviewSectionBody .left-dec label {
+    padding-right: 10px;
+}
+html[dir="rtl"] #sumitReviewModel .reviewSectionBody .select-down {
+    height: 7px;
+    width: 12px;
+    position: absolute;
+    cursor: pointer;
+    left: 49px;
+    right: auto;
+    top: 63%;
+}
+html[dir="rtl"] #sumitReviewModel .aboutme-section .aboutHeader {
+    margin-bottom: 40px;
+    float: right;
+}
+html[dir="rtl"] #sumitReviewModel .aboutme-section .about-form {
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: #dfdfdf 0px 6px 0px;
+    display: inline-block;
+    /* vertical-align: top; */
+    margin-left: 151px;
+    position: relative;
+    width: 100%;
+    margin-right: auto;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #dfdfdf;
+    border-image: none;
+    border-image: initial;
+    padding: 25px 25px 10px 18px;
+}
+html[dir="rtl"] #sumitReviewModel .aboutme-section Label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #7e7e7e;
+    line-height: 1.5;
+    width: 100%;
+    display: block;
+    float: none;
+    margin-bottom: 5px;
+    text-align: right;
+}
+html[dir="rtl"] #sumitReviewModel .aboutme-section .about-subsection {
+    box-sizing: border-box;
+    border: 1px solid #dfdfdf;
+    background-color: #ffffff;
+    box-shadow: 0 6px 0 #dfdfdf;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 150px;
+    padding: 25px 25px 10px 18px;
+    position: relative;
+    width: 100%;
+    margin-right: auto;
+}
+html[dir="rtl"] .list-inline-item:not(:last-child) {
+    margin-left: 0.5rem;
+    margin-right: auto;
+}
+html[dir="rtl"] #sumitReviewModel .share-option .share-heading {
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-width: 1px 0 0;
+    padding: 40px 0 0;
+    margin-bottom: 40px;
+    zoom: 1;
+    text-align: right;
+}
+html[dir="rtl"] #sumitReviewModel .share-option .share-body-start {
+    box-sizing: border-box;
+    border: 1px solid #dfdfdf;
+    background-color: #ffffff;
+    box-shadow: 0 6px 0 #dfdfdf;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 150px;
+    padding: 25px 25px 10px 18px;
+    position: relative;
+    width: 100%;
+    margin-right: auto;
+}
+html[dir="rtl"] #sumitReviewModel .share-option .share-sub-option {
+    box-sizing: border-box;
+    border: 1px solid #dfdfdf;
+    background-color: #ffffff;
+    box-shadow: 0 6px 0 #dfdfdf;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 150px;
+    padding: 25px 25px 10px 18px;
+    position: relative;
+    width: 100%;
+    margin-right: auto;
+}
+html[dir="rtl"] #sumitReviewModel .share-option Label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #7e7e7e;
+    line-height: 1.5;
+    width: 100%;
+    display: block;
+    float: none;
+    text-align: right;
+    margin-bottom: 5px;
+}
+html[dir="rtl"] #sumitReviewModel .share-option .tooltip-icon {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    cursor: pointer;
+    left: 13px;
+    right: auto;
+    top: 13%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    background-repeat: no-repeat;
+}
+html[dir="rtl"] .text-muted {
+    color: #6c757d !important;
+    float: right;
+}
+
+html[dir="rtl"] #sumitReviewModel .recommendations-section .recommendations-head {
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-width: 1px 0 0;
+    padding: 40px 0 0;
+    margin-bottom: 20px;
+    zoom: 1;
+    text-align: right;
+}
+html[dir="rtl"] .recommendations-section .full-width
+{
+    text-align: right;
+}
+html[dir="rtl"] #sumitReviewModel .uploadimg-section .uploadimg-heading {
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-width: 1px 0 0;
+    padding: 40px 0 0;
+    margin-bottom: 40px;
+    zoom: 1;
+    margin-bottom: 30px;
+    text-align: right;
+}
+html[dir="rtl"] #sumitReviewModel .uploadimg-section .guidline-title {
+    color: #2a2a2a;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    zoom: 1;
+    text-align: right;
+}
+html[dir="rtl"] .uploadimg-section .full-width
+{
+    text-align: right;
+}
+html[dir="rtl"] #sumitReviewModel .uploadimg-section .upload-img-title {
+    font-size: 14px;
+    font-weight: 400;
+    color: #7e7e7e;
+    line-height: 1.5;
+    width: 100%;
+    display: block;
+    float: none;
+    margin-bottom: 20px;
+    text-align: right;
+}
+html[dir="rtl"] #sumitReviewModel .uploadimg-section .guidline-list li {
+    color: #2a2a2a;
+    font-size: 12px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    padding: 0;
+    right: 0;
+    top: 50px;
+    clear: right;
+    text-align: right;
+}
+html[dir="rtl"] #sumitReviewModel .product-add {
+   margin: 0 0px 0 0;
+}
+
+.rangeslider{ 
+    width: 50%; 
+} 
+  
+.myslider { 
+    -webkit-appearance: none; 
+    background: #FCF3CF  ; 
+    width: 50%; 
+    height: 20px; 
+    opacity: 2; 
+   } 
+  
+  
+.myslider::-webkit-slider-thumb { 
+    -webkit-appearance: none; 
+    cursor: pointer; 
+    background-image: url("https://lego.ugc.bazaarvoice.com/static/1360redes3/slider_handle.png");
+    width: 5%; 
+    height: 20px; 
+} 
+  
+  
+.myslider:hover { 
+    opacity: 1; 
+} 
+
+.BVErrors {
+    padding: 0 40px 40px;
+    border-width: 0;
+}
+.BVErrors .BVHeader, .BVErrors .BVMESectionHeader {
+    color: #f00;
+    text-transform: none;
+}
+.BVMESectionHeader {
+    -webkit-font-smoothing: antialiased;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+}
+.BVErrorsBody ul {
+    color: #f00;
+    list-style: disc;
+}
+.BVErrorsBody li {
+    list-style: disc !important;
+}
+.star-rating {
+    background: url('../../assets/images/grayratingbox.png') !important;
+}
+
+//add style for 'on' mode
+.star-rating .star-value{
+    background: url('../../assets/images/rating-strip.png') !important;
+}
+
+.starRatingPadding{
+    padding-right: 10px
+}
+
+.ratingStripImage{
+    width: 50px;
+    height: 50px;
+    background: url('../../assets/images/grayratingbox.png') no-repeat;
+    display: inline-block;
+}
+.ratingStripImageHover{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background:url('../../assets/images/rating-strip.png') ;
+}

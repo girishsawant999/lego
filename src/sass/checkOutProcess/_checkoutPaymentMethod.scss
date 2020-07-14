@@ -1,0 +1,1413 @@
+.checkoutPaymentMethod
+{
+    margin:2% auto 4%;
+
+    .lastcheck
+    {
+      width: 100%;
+      margin-left: 15px;
+    }
+    .customcheckLast {
+      width: 23px;
+    float: left;
+    height: 20px;
+    margin-top: 3px;
+
+    }
+    .lastcheck span {
+      font-size: 20px;
+      padding-top: 0px;
+      font-size: 15px;
+      cursor: pointer;
+  }
+  .lastcheck .linkBlue {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    margin-left: 1%;
+}
+
+    .StepContainerShipping
+    {
+        width:100%;
+
+        .AddressWrapper
+        {
+            position: relative;
+            pointer-events: auto;
+            padding: 0rem 0px;
+            width: 100%;
+        }
+        .step-title
+        {
+            color: inherit;
+            font-size: 17px;
+            font-weight: 500;
+            text-transform: inherit;
+            //margin-block-start: 1em;
+            margin-block-end: 0em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding: 0px 12px 17px;
+            font-family: CeraPro-medium;
+        }
+        .border-margin
+        {
+          margin: 0px 26px;
+        }
+      
+        .step-section { 
+            display: flex;
+            flex-direction: row;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            padding: 1.25rem 0px;
+            .Collapsible_text_container {
+              position: relative;
+              padding: 0.9375rem 1.25rem;
+              border-top: none;
+              background-color: #F0EFEB;
+          }
+         
+        }
+        .rwt__tab {
+          background: transparent;
+          border: 0;
+          font-family: inherit;
+          text-align: left;
+          font-size: inherit;
+          padding: 1rem 0rem !important;
+          margin-left: 0px !important;
+          font-weight: bold;
+          margin-right: 1.125rem !important;
+          transition: background 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .rwt__tab:focus {
+          outline: 0;
+          background-color: inherit;
+          background-color:inherit;
+        }
+        #one  {
+            margin-bottom: 1.125rem;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(224, 224, 224);
+            border-image: initial;
+            padding: 1.125rem;
+            border-top: inherit;
+        }
+        .rwt__tablist:not([aria-orientation="vertical"]) .rwt__tab[aria-selected="true"]:after {
+          bottom: -1px;
+          left: 0;
+          width: 100%;
+          border-bottom: 2px solid rgb(0, 109, 183);
+      }
+        .StepBadge {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            padding: 0px 11px;
+        }
+        .StatusIconCircle {
+            width: 1.875rem;
+            height: 1.875rem;
+            background-color: rgb(0, 109, 183);
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            border-width: 1px;
+            border-style: solid;
+            border-image: initial;
+            border-color: rgb(0, 109, 183);
+            border-radius: 50%;
+        }
+        .StatusIconText
+        {
+            color: #fff;
+            font-size: 18px;
+            //line-height: 1.9375rem;
+            font-weight: 500;
+            font-family: CeraPro-medium;
+            text-transform: inherit;
+            font-family: CeraPro-Regular;
+        }
+        .StatusTitle {
+            color: rgb(0, 0, 0);
+            font-size: 19px;
+           // line-height: 1.9375rem;
+            font-weight: 500;
+            margin-left: 0.9375rem;
+            text-transform: inherit;
+            font-family: CeraPro-Regular;
+        }
+        hr {
+            margin-bottom: 0px !important;
+        }
+    }
+
+
+
+    input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+        font-size: 0.75em;
+        color: rgb(117, 117, 117);
+        -webkit-transition: all 0.125s ease;
+        transition: all 0.125s ease;
+        top: 17px;
+    left: 16px; 
+    padding: 0px 15px;
+       }
+       
+       .styled-input {
+         //float: left;
+         //margin: 2rem 0 1rem;
+         position: relative;
+         width: 50%;
+         padding:5px 3px 0px;
+       }
+       .lonvYJ .styled-input {
+        float: left;
+      }
+       
+       .styled-input label {
+         color: #999;
+         padding: 1rem;
+         position: absolute;
+         top: 4px;
+         left: 14px;
+         -webkit-transition: all 0.25s ease;
+         transition: all 0.25s ease;
+         pointer-events: none;
+       }
+       .inputControl {
+        padding: 5px 3%;
+        width: 100%;
+        //margin-bottom: 10px;
+    }
+       
+       .styled-input.wide { width: 100%; }
+       
+       input,
+       textarea {
+         padding:1rem 18px 0px;
+         border: 0;
+         width: 100%;
+         font-size: 1rem;
+         -webkit-box-flex: 1;
+            flex-grow: 1;
+            width: 100%;
+            color: rgb(44, 44, 44);
+            height: 3.45rem;
+            background: rgb(255, 255, 255);
+            //padding: 1.125rem 1.25rem 0px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(224, 224, 224);
+            border-image: initial;
+            overflow: visible;
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+       }
+       
+       input ~ span,
+       textarea ~ span {
+         display: block;
+         width: 0;
+         height: 3px;
+         background: rgb(0, 133, 55);
+         //position: absolute;
+         bottom: 0;
+         left: 0;
+         -webkit-transition: all 0.125s ease;
+         transition: all 0.125s ease;
+       }
+       
+       input:focus,
+       textarea:focus { outline: 0; }
+
+       
+       
+       input:focus ~ span,
+       textarea:focus ~ span {
+         width: 100%;
+         -webkit-transition: all 0.075s ease;
+         transition: all 0.075s ease;
+        
+       }
+       
+       textarea {
+         width: 100%;
+         min-height: 15em;
+       }
+      
+       input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+    transition-delay: background-color 5000s, color 5000s;
+}
+.dell
+{
+  padding: 0.9375rem;
+}
+.bUgSOh {
+  flex-basis: 100%;
+}
+select {
+  padding: 1rem 18px 0px;
+  border: 0;
+  width: 100%;
+  font-size: 1rem;
+  flex-grow: 1;
+  width: 100%;
+  color: #2c2c2c;
+  height: 3.45rem;
+  background: white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e0e0e0;
+  border-image: none;
+  border-image: initial;
+  overflow: visible;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+.label-select
+{
+  font-size: 0.75em;
+    color: rgb(117, 117, 117);
+    transition: all 0.125s ease;
+    position: absolute;
+    top: 11px;
+    left: 8px;
+    padding: 0px 23px;
+}
+.select-down {
+  height: 7px;
+  width: 12px;
+  position: absolute;
+  cursor: pointer;
+  right: 30px;
+  top: 45%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: transparent;
+  border: 0;
+  background-image: url(../../assets/images/select-down1.png);
+}
+
+.label-display {
+  font-size: 0.75em;
+    color: #757575;
+    transition: all 0.125s ease;
+    position: absolute;
+    top: 11px;
+    left: 29px;
+    padding: 0px 25px;
+    background-color: inherit;
+}
+.lastinputfix input {
+  padding: 1rem 41px 0px;
+  border: 0;
+  width: 100%;
+  font-size: 1rem;
+  flex-grow: 1;
+  width: 100%;
+  color: #2c2c2c;
+  height: 3.45rem;
+  background: rgb(248, 248, 248);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e0e0e0;
+  border-image: none;
+  border-image: initial;
+  overflow: visible;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+.iBtn
+{
+  border: inherit;
+    background-color: rgb(117, 117, 117);
+    width: 25px;
+    height: 25px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-radius: 50%;
+     position: absolute;
+    cursor: pointer;
+    right: 25px;
+    top: 26%;
+
+}
+
+.list-group-flush .list-group-item {
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+.checkboxcheck {
+  position: relative;
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5rem;
+}
+.checkboxcheck input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+.custom-control-input:checked ~ .customControlLabel::before {
+  color: #fff;
+  border-color: #e0e0e0;
+  background-color: #fff;
+  width: 1.5625rem;
+  height: 1.5625rem;
+  border-radius: 0px;
+}
+.customControlLabel::before {
+  position: absolute;
+  top: 0rem;
+  left: -12px;
+  display: block;
+  width: 20px;
+  border-radius: 0px !important;
+  height: 20px;
+  pointer-events: none;
+  content: "";
+  background-color: #fff;
+  border: #adb5bd solid 1px;
+}
+.customControlLabel::after {
+  position: absolute;
+  top: 0.3rem;
+  left: -1.3rem;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  content: "";
+  background: no-repeat 50% / 50% 50%;
+}
+.checkboxcheck .customControlLabel
+{
+  padding-top:0px;
+  font-size: 15px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+}
+.BaseButton
+{
+  display: inline-block;
+    width: auto;
+    border-collapse: collapse;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: rgb(224, 224, 224);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 0.9375rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    border-color: rgb(224, 224, 224);
+    font-family: CeraPro-Medium;
+}
+.dNUJxY {
+  display: inline-block;
+  width: auto;
+  border-collapse: collapse;
+  text-align: center;
+  font-weight: 500;
+    font-size: 16px;
+  font-family: CeraPro-Medium;
+  line-height: 1.1875rem;
+  background-color: rgb(0, 109, 183);
+  color: rgb(255, 255, 255);
+  padding: 0.9375rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  border-color: rgb(0, 109, 183);
+}
+.dNUJxY:hover {
+  background: #fff;
+    border: 1px solid #d0d0d0;
+    color: #000;
+}
+.SubmitAddress
+{
+  flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 21px 8px;
+    margin-top: 1%;
+}
+
+.anotherAdress
+{
+  color: rgb(0, 109, 183);
+    font-size: 0.875rem;
+    background-color: inherit;
+    border: inherit;
+    padding: 0px 0px;
+    margin: 5% 0% 0%;
+}
+
+.bBiyIO {
+  position: absolute;
+  color: rgb(0, 133, 55);
+  top: 22px;
+  right: 26px;
+  height: 1.25rem;
+  width: 1.25rem;
+  display: block;
+}
+.bjcPDo {
+  position: absolute;
+  color: rgb(208, 2, 27);
+  top: 22px;
+  right: 20px;
+  height: 1.25rem;
+  width: 1.25rem;
+  display: block;
+}
+
+
+.StepContainer .StatusTitle {
+  color: #cacaca !important;
+  font-size: 19px;
+  font-weight: 500;
+  font-family: CeraPro-Medium;
+  margin-left: 0.9375rem;
+  text-transform: inherit;
+}
+.tagline { 
+    position: absolute;
+    top: -19px;
+    left: 12px;
+    margin-top: -6px;
+}
+
+.findAddress .inputControlmb-0 {
+  padding: 5px 11px;
+  width: 100%;
+ // margin-bottom: 0px !important;
+  display: inline-block;
+}
+.findAddress .SubmitAddress {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 21px 8px;
+  margin-top: -4%;
+}
+
+.findAddress .inputControl {
+  padding: 5px 11px;
+  width: 100% !important;
+  position: relative;
+    width: 100% !important;
+  //margin-bottom: 10px !important;
+}
+.editGrid
+{
+  width: 100%;
+    background-color: rgb(248, 248, 248);
+    //margin-top: 1.25rem;
+   // margin-bottom: 1.875rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(224, 224, 224);
+    border-image: initial;
+    padding: 1.25rem;
+    margin-left: 12px;
+    margin-right: 13px;
+    margin-top: -12px;
+}
+.editInfo
+{
+  display: flex;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+.greenIcon
+{
+  display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.editOption
+{
+    right: 22px;
+    position: absolute;
+    top: 27px;
+    border-style: initial;
+    color: rgb(0, 109, 183);
+    background: transparent;
+    font-family: CeraPro-Regular;
+}
+.AddressWrapper .editOption {
+  right: 10px;
+  position: absolute;
+  top: 27px;
+  font-family: CeraPro-Regular;
+  border-style: none;
+  border-style: initial;
+  color: #006db7;
+  background: transparent;
+}
+.editInformation
+{
+  color: rgb(202, 202, 202);
+    font-size: 1.25rem;
+    line-height: 1.9375rem;
+    font-weight: 500;
+    margin-left: 0.9375rem;
+    text-transform: inherit;
+    font-family: CeraPro-Medium;
+}
+.editList
+{
+  position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.editList:not(:last-child) {
+  padding-bottom: 1.25rem;
+}
+.smallTitle
+{
+  color: rgb(117, 117, 117);
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+    font-weight: 400;
+    text-transform: inherit;
+    font-family: CeraPro-Regular;
+}
+.bigDesc
+{
+  color: rgb(44, 44, 44);
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+    font-weight: 400;
+    text-transform: inherit;
+    font-family: CeraPro-Regular;
+}
+.infoTagline
+{
+  color: inherit;
+    font-size: 0.75rem;
+    line-height: 1.1875rem;
+    font-weight: 400;
+    text-transform: inherit;
+    padding: 0px 13px;
+}
+.infoDescBig
+{
+  color: inherit;
+    font-size: 0.75rem;
+    line-height: 1.1875rem;
+    font-weight: 400;
+    text-transform: inherit;
+    font-family: CeraPro-Regular;
+}
+
+.mob {
+    display: block;
+    border: 1px solid #e0e0e0;
+    margin: 11px 12px;
+    
+}
+.Collapsible_text.footerHeading {
+  font-family: CeraPro-regular;
+  color: inherit;
+  font-size: 17px;
+  line-height: 1.75rem;
+  font-weight: normal !important;
+  text-transform: inherit;
+}
+.accordianMainTitle
+{
+  color: inherit;
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-transform: inherit;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    font-family: CeraPro-Medium;
+}
+.vipCode
+{
+    color: inherit;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: inherit;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    font-family: CeraPro-Regular;
+}
+.maxDesign
+{
+  max-width: 250px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.accordianForm .inputControlmb-0 {
+  padding: 5px 3px;
+  width: 100%;
+  margin-bottom: 0px !important;
+}
+.accordianForm .inputControl {
+  padding: 5px 0px;
+  width: 100% !important;
+ //// margin-bottom: 15px !important;
+}
+
+ .accordianForm .styled-input label {
+  color: #999;
+    padding: 9px 15px 0px;
+    position: absolute;
+    top: 9px;
+    left: 5px;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+.accordianForm .label-select {
+  font-size: 0.75em;
+  color: #757575;
+  transition: all 0.125s ease;
+  position: absolute;
+  top: 16px;
+  left: 0px;
+  padding: 0px 19px;
+}
+ .cvv-icon {
+  background: url(../../assets/images/cvv.svg) no-repeat top left;
+  width: 50%;
+  max-width: 250px;
+  height: 35px;
+  pointer-events: none;
+}
+
+.PaymentPage{
+    .deliverTab{
+        padding-bottom: 0px;
+        font-family: CeraPro-regular;
+        .btnOuter{
+           // margin: 0px;
+        }
+        // button:hover, button:focus {
+        //     background: #000;
+        //     color: #fff;
+        // }
+        .agreeConditions {
+          font-size: 14px;
+          margin: 0;
+          padding: 10px;
+      }
+      .payByCard {
+        padding: 15px 0px;
+    }
+        hr {
+            border-color: #9a9b9c;
+        }
+        .continueShopping{
+            text-transform: capitalize;
+            background: transparent;
+            box-shadow: none;
+            outline: none;
+            border: 1px solid #d0d0d0;
+            width: 100%;
+            padding: 0.9375rem;
+            text-align: center;
+            font-weight: 300;
+            color: #000;
+            border-radius: 4px;
+            font-family: CeraPro-Medium;
+        }
+        .continueShopping:hover{
+         
+          background-color: #E0E0E0;
+        }
+      
+        .proceed{
+            text-transform: capitalize;
+            background: #006db7;
+            box-shadow: none;
+            outline: none;
+            border: 1px solid #006db7;
+            width: 100%;
+            padding: 0.9375rem;
+            text-align: center;
+            font-weight: 300;
+            color: #fff;
+            border-radius: 4px;
+            font-family: CeraPro-Medium;
+        }
+        .proceed:hover{
+          background: #fff;
+          border: 1px solid #006db7;
+          color: #000;
+      }
+        .borderTab{
+           border:none;
+                     
+                .react-tabs__tab-list {                   
+                  padding: 4px 0px;
+                  //border: 1px solid #e0e0e0;
+                  border-radius: 0;
+                  margin: 0px;
+                  /* margin-bottom: 0%; */
+                  text-align: center;
+                    //display: flex;
+
+                    .react-tabs__tab {
+                        display: inline-block;
+                        font-family: CeraPro-regular;
+                        border: 1px solid #e0e0e0;                            
+                        bottom: 0px;
+                        position: relative;
+                        list-style: none;
+                        padding: 15px 12px;
+                        cursor: pointer;
+                        margin: 10px auto 13px;
+                        font-size: 16px;
+                        opacity: .5;
+                        width: 100%;
+                        text-transform: capitalize;
+                        text-align: left;
+                        font-weight: 500;
+                        p{
+                            margin-bottom: 0px;
+                            font-size: 12.5px;
+                            font-weight: 100;
+                            margin-top: 7px;
+                            text-align: left;
+                        }
+   
+                        &:focus{
+                            outline: none;
+                            box-shadow: none;
+                        }
+                        &:focus:after {
+                           display:none;
+                        }
+                    }
+                }
+                .react-tabs__tab--selected {
+                    border:none;                   
+                    border: 2px solid #e0e0e0 !important; 
+                    bottom: unset;
+                    border-radius: 0;
+                    background: #fafafa;
+                    color: black;
+                    font-size: 16px;
+                    opacity: 1 !important;
+                }
+           
+        }
+
+    }
+  }
+
+
+
+@media (min-width: 778px){
+	.payByCardOuter {
+    border: 1px solid #e0e0e0;
+    margin: 10px 0px;
+    padding: 2%;
+    padding-bottom: 20px;
+}
+}
+
+@media (max-width: 767px){
+    .PaymentPage {
+        .container{
+            padding: 0px;
+        }
+        .deliverTab {
+            .continueShopping {
+                margin-bottom: 15px;
+            }
+            .btnOuter {
+                .btnOuterInner1{
+                    padding-right: 3px;
+                    padding-left: 0px;
+                }
+                .btnOuterInner2{
+                    padding-right: 0px;
+                    padding-left: 3px;
+                }
+            }
+        }
+        
+    }
+	.paymentStepper{
+        margin-top: 0px;
+        .NameTitleSection {
+            width: 100%;
+        }
+        .SignIn {
+            width: 100%;
+            margin: 0 auto;
+        }
+        .CustomReact {
+            width: 100%;
+            margin: 15px auto -10px;
+            text-align: center;
+            ul {
+                li.line {
+                    div {
+                        width: 55px;
+                    }
+                }
+            }
+        }
+      
+           
+      
+        .NameTitleSection {
+            ul {
+                li.NameTitle {
+                    width: 64px;
+                    font-weight: 100;
+                    font-size: 12px;
+                    color: black;
+                }
+                li.NameActive {
+                    font-weight: 500;
+                }
+            }
+        }
+        
+	}
+}
+
+.voucher-block{
+    padding: 10px;
+    border: 1px solid grey;
+    .t-Form-itemWrapper{
+        .text_field{
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid grey;
+        }
+    }
+    .voucher-button{
+        margin-top: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+        button{
+            background: transparent;
+            border: none;
+            span{
+                font-size: x-large;
+            }
+        }
+    }
+}
+
+
+
+
+
+}
+html[dir=rtl] .checkoutPaymentMethod .PaymentPage .deliverTab .borderTab .react-tabs__tab-list .react-tabs__tab p {
+  text-align: right;
+}
+html[dir=rtl] .totalOuter {
+  float: right;
+}
+html[dir=rtl] .checkoutPaymentMethod .lastcheck {
+  width: 100%;
+  margin-right: 15px;
+  margin-left: auto;
+  text-align: right;
+}
+html[dir=rtl] .checkoutPaymentMethod .customcheckLast {
+  width: 23px;
+  float: right;
+}
+html[dir=rtl] .checkoutPaymentMethod .PaymentPage .deliverTab .agreeConditions {
+  font-size: 14px;
+  margin: 0;
+  padding: 10px;
+  text-align: right;
+}
+html[dir=rtl] .checkOutForm .tagline {
+  position: absolute;
+  top: -19px;
+  right: 12px;
+  left: auto;
+  margin-top: -6px;
+}
+html[dir=rtl] .checkOutForm .dNUJxY {
+  float: right;
+}
+html[dir=rtl] .checkoutContactInfo .editInformation {
+  margin-right: 0.9375rem;
+}
+
+html[dir=rtl] .checkoutContactInfo .StepContainerShipping .StatusTitle {
+  margin-right: 0.9375rem;
+}
+html[dir=rtl] .checkoutContactInfo .StepContainerShipping .step-title {
+  text-align: right;
+}
+html[dir=rtl] .checkoutContactInfo .infoTagline {
+  padding: 0px 13px 13px;
+  float: right;
+  text-align: right;
+  width: 100%;
+}
+html[dir=rtl] .checkOutForm .StepContainerShipping .StatusTitle {
+  color: black;
+  font-size: 19px;
+  font-weight: 500;
+  font-family: CeraPro-Medium;
+  margin-right: 0.9375rem;
+  text-transform: inherit;
+}
+html[dir=rtl] .checkOutForm .LoadingWrapper .metodbox:first-of-type {
+  margin-left: 13px;
+}
+html[dir=rtl] .checkOutForm .StepContainerShipping .step-title {
+  text-align: right;
+}
+html[dir=rtl] .checkOutForm .styled-input label {
+left: auto;
+  right: 14px;
+}
+html[dir=rtl] .checkOutForm .bjcPDo {
+  right: auto;
+  top: 22px;
+  left: 20px;
+}
+html[dir=rtl] .checkOutForm .bBiyIO {
+ top: 22px;
+  left: 20px;
+  right: auto;
+}
+html[dir=rtl] .checkOutForm .label-select {
+  left: auto;
+  top: 11px;
+  right: 8px;
+}
+html[dir=rtl] .checkOutForm .select-down {
+  right: auto;
+  left: 30px;
+}
+html[dir=rtl] .checkOutForm .label-display {
+  left: auto;
+  right: 29px;
+}
+html[dir=rtl] .checkOutForm .iBtn {
+  right: auto;
+  left: 25px;
+}
+html[dir=rtl] .checkOutForm .lock-svg {
+  left: auto;
+  right: 24px;
+}
+html[dir=rtl] .checkOutForm .customControlLabel::before {
+  position: absolute;
+  top: 0.25rem;
+  right: -1.5rem;
+}
+html[dir=rtl] .checkOutForm .LoadingWrapper .methodTitle {
+  text-align: right;
+}
+
+
+html[dir=rtl] .checkOutForm .LoadingWrapper {
+  overflow: auto;
+}
+html[dir=rtl] .checkOutForm .LoadingWrapper .ccf {
+  float: right;
+  margin-bottom: 3%;
+}
+
+// Rtl start
+html[dir=rtl] .checkoutPaymentMethod .maxDesign {
+  max-width: 250px;
+  margin-left: 10px;
+  display: inline-block;
+  float: right;
+}
+html[dir=rtl]  .checkoutPaymentMethod .accordianForm .label-select {
+  right: 0px;
+  left: auto;
+}
+html[dir=rtl] .checkoutPaymentMethod .select-down {
+  left: 20px;
+  right: auto;
+}
+html[dir=rtl] .mob .Icon {
+  left: 15px;
+  top: 22px;
+  right: auto;
+}
+html[dir=rtl] .checkoutPaymentMethod .styled-input label {
+  left: auto;
+  right: 14px;
+}
+html[dir=rtl] .checkoutPaymentMethod .bBiyIO {
+  right: auto;
+  left: 26px;
+}
+html[dir=rtl] .checkoutContactInfo .bBiyIO {
+ top: 22px;
+  left: 20px;
+  right: auto;
+}
+html[dir=rtl] .checkoutContactInfo .styled-input label
+{
+  right: 14px;
+  left: auto;
+}
+html[dir=rtl] .intl-tel-input.allow-dropdown.separate-dial-code .selected-dial-code
+{
+  padding-left: 16px;
+}
+html[dir=rtl] .checkoutContactInfo .dNUJxY {
+  float: right;
+}
+html[dir=rtl] .checkoutContactInfo .redValidaion {
+  right: 13px;
+  left: auto;
+}
+html[dir=rtl]  .checkoutPaymentMethod .PaymentPage .deliverTab .borderTab .react-tabs__tab-list .react-tabs__tab {
+  text-align: right;
+}
+
+html[dir=rtl] .intl-tel-input.allow-dropdown.separate-dial-code.iti-sdc-4 input{
+  padding-right: 92px;
+  padding-left: 0px;
+}
+html[dir=rtl] .checkoutPaymentMethod .accordianForm .styled-input label {
+  left: auto;
+  right: 5px;
+}
+html[dir=rtl] .checkoutPaymentMethod .editInformation {
+  margin-left: auto;
+  margin-right: 0.9375rem;
+}
+html[dir=rtl] .checkoutPaymentMethod .editOption {
+  left: 22px;
+  right: auto;
+}
+html[dir=rtl] .AddressWrapper .editOption {
+  left: 6px;
+  right: auto;
+}
+
+html[dir=rtl] .checkoutPaymentMethod .StepContainerShipping .StatusTitle {
+  margin-left: auto;
+  margin-right: 0.9375rem;
+}
+html[dir=rtl] .checkoutPaymentMethod .BaseButton {
+  float: right;
+}
+html[dir=rtl] .checkoutPaymentMethod .customControlLabel::before {
+  right: -17px;
+  left: auto;
+}
+html[dir=rtl] .checkoutPaymentMethod .StepContainerShipping .step-title {
+  text-align: right;
+}
+html[dir=rtl] .billSectionEdit {
+  text-align: right;
+}
+html[dir=rtl] .checkoutPaymentMethod .maxDesign {
+  margin-right: 1px;
+}
+
+
+.accordianForm input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+  font-size: 0.75em;
+  color: rgb(117, 117, 117);
+  -webkit-transition: all 0.125s ease;
+  transition: all 0.125s ease;
+  top: 3px;
+left: 3px; 
+padding: 15px 16px 15px;
+ } 
+.billingAddress
+{
+  color: inherit;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    text-transform: inherit;
+    font-family: CeraPro-regular;
+}
+.billSectionEdit
+{
+  width: 100%;
+  color: rgb(44, 44, 44);
+  font-size: 0.875rem;
+  line-height: 1.1875rem;
+  font-weight: 400;
+  text-transform: inherit;
+  color: rgb(44, 44, 44);
+  font-size: 0.875rem;
+  line-height: 1.1875rem;
+  font-weight: 400;
+  margin-bottom: 2%;
+  text-transform: inherit;
+  margin-top: 2%;
+  font-family: CeraPro-Regular;
+}
+.editchangeadd {
+  /* right: 5px; */
+  padding: 0px;
+  /* right: 22px; */
+  /* position: absolute; */
+  top: 27px;
+  border-style: none;
+  font-family: CeraPro-Regular;
+  border-style: initial;
+  color: #006db7;
+  background: transparent;
+}
+.paypalGrid
+{
+  .paypalTitle
+  {
+    color: inherit;
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+    font-weight: 500;
+    text-transform: inherit;
+  }
+  .paypalDesc
+  {
+    color: inherit;
+    font-size: 0.75rem;
+    line-height: 1.1875rem;
+    font-weight: 400;
+    text-transform: inherit;
+  }
+  button.paypal {
+    display: block;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.1875rem;
+    background-color: #009cde;
+    color: #ffffff;
+    padding: 0.9375rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    border-color: #009cde;
+    font-family: CeraPro-Medium;
+    outline: none;
+}
+html[dir=rtl] .paypalGrid {
+  text-align: right;
+}
+
+}
+
+
+@media (max-width: 320px){
+  .checkoutPaymentMethod .accordianForm .label-select {
+    font-size: 9px;
+  }
+  html[dir=rtl] .checkoutPaymentMethod .accordianForm .styled-input label {
+    font-size: 9px;
+  }
+
+}
+
+@media (max-width: 767px){
+
+  .checkOutForm .styled-input {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.checkoutPaymentMethod .maxDesign {
+  margin-right: 0px;
+}
+.checkoutPaymentMethod .select-down {
+  right: 13px;
+}
+.checkoutPaymentMethod .accordianForm .styled-input label {
+ font-size: 14px;
+}
+.checkoutPaymentMethod .bBiyIO {
+  right: 15px;
+}
+
+html[dir=rtl] .checkoutPaymentMethod .maxDesign {
+  margin-left:0px;
+}
+html[dir=rtl] .checkoutPaymentMethod .maxDesign {
+  margin-right: 0px;
+}
+html[dir=rtl] .w-50 {
+  width: 50% !important;
+}
+html[dir=rtl] .checkoutPaymentMethod .editOption {
+  left: 5px;
+  right: auto;
+}
+html[dir=rtl] .checkoutPaymentMethod .maxDesign {
+  max-width: 250px;
+  margin-right: 0px;
+}
+html[dir=rtl] .checkoutPaymentMethod .bBiyIO {
+  right: auto;
+  left: 16px;
+}
+html[dir=rtl] .checkoutPaymentMethod .checkboxcheck .customControlLabel {
+  padding-top: 0px;
+  font-size: 13px;
+}
+.checkoutContactInfo .infoTagline {
+  padding: 0px 0px;
+}
+.checkoutContactInfo .StepContainerShipping .step-title {
+  padding: 0px 0px;
+}
+.checkoutContactInfo .StepContainerShipping .StepBadge {
+  padding: 0px 0px;
+}
+.checkoutContactInfo .StepContainerShipping .border-margin {
+  margin: 0px 15px;
+}
+.checkoutContactInfo .findAddress .inputControlmb-0 {
+  padding: 5px 0px;
+}
+.checkoutContactInfo .styled-input {
+  width: 100%;
+}
+.checkoutContactInfo .editGrid {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.checkoutContactInfo .editOption {
+  right: 8px;
+}
+.checkOutForm .dNUJxY {
+ 
+  font-size: 14px;
+}
+.checkOutForm .StepContainerShipping .border-margin {
+  margin: 0px 0px;
+}
+
+.mobPadding
+{
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+.checkOutForm .customControlLabel::before {
+  left: -11px;
+}
+.checkOutForm .BaseButton {
+  padding: 11px;
+  line-height: 17px;
+}
+.checkOutForm .anotherAdress {
+  padding: 0px 16px;
+  text-align: left;
+  margin: 0% 0% 0%;
+}
+.checkOutForm .LoadingWrapper {
+  padding: 1.25rem 16px;
+}
+.checkOutForm .LoadingWrapper .methodBoxActive {
+  min-width: 0px;
+}
+.checkOutForm .LoadingWrapper .metodbox label {
+  min-width: 0px;
+}
+.checkOutForm .LoadingWrapper .metodbox {
+  width: 12rem;
+  margin-left: 0.2rem;
+}
+.checkOutForm .LoadingWrapper .ccf {
+  display: inline-block;
+  width: 100%;
+}
+html[dir=rtl] .checkOutForm .customControlLabel::before {
+  position: absolute;
+  top: 0.25rem;
+  right: -14px !important;
+  left:auto;
+}
+html[dir=rtl] .checkOutForm .tagline {
+  position: absolute;
+  top: -19px;
+  right: 12px;
+  left: auto;
+  margin-top: -6px;
+  font-size: 12px;
+}
+
+html[dir=rtl] .checkOutForm .LoadingWrapper .metodbox:first-of-type {
+  margin-left: 3px !important;
+}
+
+}
+.findAddress #phoneNumber{
+  font-family: CeraPro-Regular;
+}
+.findAddress .intl-tel-input .country-list{
+  width: 100%;
+}
+.findAddress .intl-tel-input.allow-dropdown.separate-dial-code.iti-sdc-4 .selected-flag{
+  outline: none;
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .checkoutPaymentMethod .maxDesign {
+    margin-right: 0px;
+  }
+  html[dir=rtl] .checkoutPaymentMethod .maxDesign {
+    margin-right: 0px;
+    margin-left: auto;
+  }
+
+  html[dir=rtl] .checkOutForm .LoadingWrapper .metodbox label {
+    margin-bottom: 0px;
+    min-width: 0px;
+}
+html[dir=rtl] .checkOutForm .customControlLabel::before {
+  position: absolute;
+  top: 0.25rem;
+  right: -22px;
+}
+
+}

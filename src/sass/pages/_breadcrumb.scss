@@ -1,0 +1,67 @@
+.Breadcrumb{
+  background-color: white;
+  padding: 15px 0px 15px 0px;
+}
+.icon-size-breadscrum {
+	width: 7px;
+    margin-left: 0px;
+}
+.breadcrumb {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0rem 0rem !important;
+	margin-bottom: 0rem !important;
+	list-style: none;
+	background-color: #fff !important;
+	border-radius: 0.25rem;
+	text-transform: capitalize;
+	font-size: 0.875rem;
+	font-family: CeraPro-regular !important;
+}
+li.breadcrumb-item {
+	a {
+		font-size: 0.875rem;
+		line-height: 1.1875rem;
+		font-weight: 400;
+		padding-left: 0px !important;
+		font-family: CeraPro-regular !important;
+		color: rgb(0, 109, 183) !important;
+	}
+}
+.breadcrumb-item.active {
+	color: #6c757d;
+    line-height: 28px;
+    font-size: 0.875rem;
+}
+.breadcrumb-item {
+	+ {
+		.breadcrumb-item {
+			&::before {
+				content: " " !important;
+			}
+		}
+	}
+}
+
+html[dir="rtl"] .icon-size-breadscrum {
+    width: 8px;
+    margin-right: 9px;
+    transform: rotate(180deg);
+    margin-left: auto;
+}
+
+.breadcrumbArrow {
+    position: relative;
+}
+ 
+.breadcrumbArrow:before {
+    content: "\f105";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 16px;
+}
+html[dir="rtl"] .breadcrumbArrow:before {
+		content: "\f104";
+	}

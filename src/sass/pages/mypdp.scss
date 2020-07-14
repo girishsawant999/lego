@@ -1,0 +1,550 @@
+.image-gallery-content.fullscreen {
+    background: #ffffff;
+
+
+    .image-gallery.fullscreen-modal .image-gallery-content {
+        top: 0%;
+        transform: translateY(0%);
+    }
+
+    .image-gallery-slide-wrapper.left,
+    .image-gallery-slide-wrapper.right {
+        width: 68%;
+        margin-left: 12%;
+    }
+}
+
+.addToBagPupUp .dialog1 {
+  background: #FEF6D2;
+    width: 100% !important;
+    font-family: CeraPro-regular;
+    position: absolute !important;
+    right: 0px !important;
+    top: 110px !important;
+    padding: 0 !important;
+    padding: 13px !important;
+    border: 1px solid red;
+}
+.msg{
+    padding: 0%;
+    margin: 0%;
+}
+.overflowY-hidden {
+  overflow-y: hidden;
+}
+.image-gallery.fullscreen-modal {
+    background: #ffffff;
+}
+
+.image-gallery-fullscreen-button {
+    top:10px;
+    right: 10px;
+    bottom: auto;
+    z-index: 1;
+}
+
+.background-round {
+    background: rgb(248, 248, 248);
+    border-radius: 50%;
+    padding: 10px;
+    width: 35px;
+    margin: auto;
+}
+
+.image-gallery-fullscreen-button::before {
+    display: none;
+}
+
+.color-blue{
+    color: blue;
+}
+
+.full-screen-image{
+    width: 15px;
+}
+
+.fullscreenTitle{
+    margin-top: 12px;
+    font-size: 14px;
+    color : #076cb7;
+    letter-spacing: 0.5px;
+    font-family: CeraPro-Medium;
+}
+
+.image-container{
+    width: 100%;
+    margin: auto;
+}
+
+.imageTest {
+	height: 660px !important;
+}
+.imageTestMobile {
+	height: 288px !important;
+	width: 381px !important;
+}
+.pdpSliderWeb {
+    .background-round{
+      z-index: 1;
+    }
+    .image-gallery-left-nav, .image-gallery-right-nav {
+      z-index:1;
+    }
+	.image-gallery-content.fullscreen {
+		.image-gallery-slide {
+			background: #fff;
+        }
+        .image-gallery-thumbnails{
+            top: 45%;
+            transform: translateY(-30%);
+        }
+        .image-gallery-fullscreen-button {
+            top: 30px;
+            z-index: 1;
+        }
+	}
+	.image-gallery-thumbnail.active {
+		border: 2px solid #337ab7 !important;
+	}
+	.image-gallery-thumbnail {
+		border: 1px solid transparent;
+		width: 80px;
+		margin: 8px auto !important;
+		border: 1px solid #c3c3c3 !important;
+		padding: 7px !important;
+		background: white;
+		.image-gallery-thumbnail-inner {
+			position: relative;
+			width: 4.0625rem;
+			height: 2.8125rem;
+			display: block;
+			position: relative;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	.image-gallery-right-nav {
+		&::before {
+			font-size: 25px;
+			background: #8686863b;
+			padding: 5px 9px;
+			color: black;
+			text-shadow: none;
+			border-radius: 50%;
+		}
+	}
+	.image-gallery-left-nav {
+		&::before {
+			font-size: 25px;
+			background: #8686863b;
+			padding: 5px 9px;
+			color: black;
+			text-shadow: none;
+			border-radius: 50%;
+		}
+	}
+}
+.fullscreen-modal { 
+  
+    .image-gallery-thumbnails {
+      top: 38% !important;
+      transform: translateY(-30%) !important;
+    }
+    .image-gallery-slide {
+      top: 29px;
+    }  
+    .image-gallery-fullscreen-button {
+      top: 8px !important;
+      right: -11%;
+      position: absolute;
+      z-index: 1;
+  }  
+    .image-gallery.fullscreen-modal .image-gallery-content {
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+}
+.pdpSliderWeb{
+  .arrowUp{
+    left: 48px;
+    position: absolute;
+    cursor: pointer;
+    width: 15px;
+    top: -1%;
+    z-index: 1;
+    overflow: hidden;
+
+    img{
+     width: 16px;
+     transform: rotate(180deg);
+    }
+
+  }
+  .arrowDn{
+      text-align: center;
+      cursor: pointer;
+      position: absolute;
+      left: 5%;
+      bottom: 17%;
+
+      img{
+       width: 16px;                         
+      }
+    }
+    
+    // .image-gallery-thumbnails-container {
+    //   margin-top: 28%;
+    // }
+    .imageTest{
+       .image-container{
+
+        .input-position{
+     
+            
+            div{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;  /* Centering y-axis */
+                align-items :center;
+                img{
+                  
+                  
+                    vertical-align:middle;
+                    margin:auto;
+                    transform: scale(0.8);
+                    
+                }
+            }
+        }
+    }
+    }
+  
+} 
+
+
+
+
+
+
+
+
+
+
+.app-header {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  .play-button {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 60px;
+    width: 100px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+  }
+  
+  .play-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .play-button:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 16.5px;
+    left: 40px;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 12.5px 0 12.5px 20px;
+    border-color: transparent transparent transparent rgba(255, 255, 255, 1);
+  }
+  
+  .close-video::before {
+    content: '✖';
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 20px;
+    padding: 20px;
+    z-index: 1;
+    line-height: .7;
+    display: block;
+    color: #fff;
+  }
+  
+  .video-wrapper {
+    height: 800px;
+  }
+  
+  .video-wrapper iframe {
+    width: 803px;
+    height: 659px;
+  }
+  
+  
+  .app .image-gallery,
+  .app-sandbox {
+    margin: 0 auto;
+    width: 65%;
+    transition: all 1s ease;
+  }
+  
+  
+  @media (max-width: 1320px) {
+    .app-sandbox-content {
+      padding: 0 20px;
+    }
+  }
+  
+  .app-sandbox {
+    margin: 40px auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  
+  .app-buttons li {
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .pdpSliderWeb{
+      .image-gallery-thumbnails-container {
+        max-height: 485px !important;
+        overflow-y: scroll !important;
+        // transform: unset !important;
+        transform: translateY(0px) !important;
+        overflow: hidden !important;
+        margin-top: 28%;
+      }
+    }
+    
+    .fullscreen-modal  .imageTestMobile {
+      height: 400px !important;
+      width: 100% !important;
+    }
+    .fullscreen-modal button.image-gallery-left-nav {
+      display: none;
+    }
+    .fullscreen-modal button.image-gallery-right-nav {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    html[dir="rtl"] .image-gallery-fullscreen-button {
+      left: 20px !important;
+  }
+  .image-container {
+    width: 85%;
+  }
+  
+    .app-header {
+      font-size: 20px;
+    }
+    .image-gallery-left-nav
+    {
+      display:none;
+    }
+    .image-gallery-right-nav {
+      display: none;
+  }
+    .image-gallery-fullscreen-button {
+      top: 10px;
+      right: 19px;
+      bottom: auto;
+      z-index: 1;
+    }
+    .imageTestMobile {
+      height: 288px !important;
+      width: 100% !important;
+    }
+    .pdp_Mob {
+      display: block;
+      padding: 0px 15px;
+    }
+  
+    .app-buttons li {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    .app-buttons li + li {
+      padding: 0;
+    }
+  
+    .play-button {
+      height: 40px;
+      width: 65px;
+    }
+
+    .play-button:after {
+      top: 11px;
+      left: 27px;
+      border-width: 8.5px 0 8.5px 12px;
+    }
+
+    .close-video::before {
+      font-size: 16px;
+      padding: 15px;
+    }
+
+    .pdpSliderWeb .image-gallery-thumbnails-container {
+      max-height: unset !important;
+      overflow-y: scroll !important;
+      // transform: unset !important;
+      transform: translateX(0px) !important;
+      overflow-x: scroll !important;
+      overflow: hidden !important;
+      margin-top: 3px !important;
+      max-width: 290px;
+      margin: 0 auto;
+      overflow-y: auto!important;
+      width: 100%;
+  }
+  .pdpSliderWeb{
+      position: relative;
+  }
+  .arrowDn1 img{
+      transform: rotate(270deg);
+      position: absolute;
+      right: 35px;
+      bottom: 35px;
+      width: 16px;
+      z-index: 1;
+  }
+  .arrowUp1 img{
+      transform: rotate(90deg);
+      position: absolute;
+      left: 35px;
+      bottom: 35px;
+      width: 16px;
+      z-index: 1;
+  }
+  .pdpSliderWeb .image-gallery-thumbnail{
+      margin: 8px !important;
+  }
+
+  .fullscreen-modal {
+    .image-gallery-thumbnails {
+     bottom: 5% !important;
+     transform: translateY(60%) !important;
+   }
+   .image-gallery.fullscreen-modal .image-gallery-content {
+     top: 43%;
+     transform: translateY(-50%);
+   }
+   .image-gallery-fullscreen-button {
+      top: -43px !important;
+      right: 3%;	
+      z-index: 1 !important;	
+   }
+   
+  button.image-gallery-left-nav {
+    display: none;
+  }
+ }
+
+  }
+  
+  @media (max-width: 1024px) {
+    .app .image-gallery,
+    .app-sandbox {
+      width: 100%;
+    }
+
+    .fullscreen-modal button.image-gallery-left-nav {
+      display: none;
+    }
+    .fullscreen-modal button.image-gallery-right-nav {
+      display: none;
+    }
+
+  }
+  
+  .app-interval-input-group {
+    display: table;
+  }
+  
+  .app-interval-label {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 3px solid #ccc;
+    border-right: none;
+    border-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .app-interval-input {
+    -webkit-appearance: none;
+    display: table-cell;
+    margin: 0;
+    padding: 9px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: 3px solid #ccc;
+    background: #fff;
+    width: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  input.app-interval-input {
+    width: 65px;
+  }
+  
+  .app-checkboxes {
+    margin-top: 10px;
+  }
+  
+  .app-checkboxes li {
+    display: block;
+  }
+
+
+html[dir="rtl"] .pdpSliderWeb .arrowUp {
+    text-align: left;
+    margin-bottom: 15px;
+    cursor: pointer;
+    right: 5% !important;
+    left: auto;
+    position: absolute;
+}
+html[dir="rtl"] .image-gallery-fullscreen-button {
+  left: auto;
+  right: auto;
+}
+html[dir="rtl"] .image-gallery-fullscreen-button {
+  top: 10px;
+  left: 10px;
+  bottom: auto;
+  z-index: 1;
+}
+html[dir="rtl"] .pdpSliderWeb .arrowDn {
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  right: 5%;
+  bottom: 17%;
+  left: auto;
+}

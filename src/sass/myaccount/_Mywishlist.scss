@@ -1,0 +1,372 @@
+.whishlist
+    {
+        .pd-0{
+            padding: 0px !important;
+        }
+        .whisListAlertBag
+        {
+            font-family: CeraPro-Regular !important;
+            text-align: right;
+            padding-bottom: 8px;
+            position: relative;
+            float: right;
+            font-size: 12px;
+            overflow: hidden;
+            top: 58%;
+            background: #fef6d2;
+            padding: 4px 1.25rem;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #e0e0e0;
+            width: auto;
+            margin: 5px auto 0px;
+        }
+        .pdL{
+            padding-left: 0px;
+        }
+        .rightSideContent{
+            background-color: #f2f5f7;
+            padding: 20px 15px 0;
+            min-height: 600px;
+            .WarnDiv{
+                padding-bottom: 20px; 
+            } 
+            .WarnMessage{
+                font-size: 15px;
+                letter-spacing: 0.04em;               
+                padding: 10px 0px;
+                font-family: CeraPro-Regular;
+                text-align: left;
+                background: #fef6d2;
+                padding: 0.75rem 1.25rem;
+                margin: 15px 0px 1.5625rem;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #e0e0e0;
+                border-image: none;
+                border-image: initial;
+                font-family: CeraPro-Regular;    
+                display: inline;   
+                position: relative;
+                top: 20px;
+            }
+            .mBottom{
+                border-bottom: 1px solid #e2e3e4;
+            }
+            .accountTitle{
+                font-size: 1rem;
+                line-height: 1.1875rem;
+                font-weight: 500;
+                font-family: CeraPro-Bold;
+                margin-bottom: 0px;
+                text-transform: uppercase;
+                padding-top: 5px;
+            
+            }
+            .LogOutDiv{
+                padding-right: 20px;
+                padding-bottom: 4px;
+                button{
+                    display: block;               
+                    border-collapse: collapse;
+                    text-align: center;
+                    font-weight: 500;
+                    font-size: 0.875rem;
+                    line-height: 1.1875rem;
+                    background-color: #006db7;
+                    color: white;
+                    padding: 0.4375rem;
+                    border-width: 1px;
+                    border-style: solid;
+                    border-radius: 4px;
+                    border-color: #006db7;
+                    font-family: CeraPro-Medium;
+                    outline: none;
+                    margin-left: auto;
+    
+                    &:hover{
+                        background-color: white;
+                        color: black;
+                    }&:focus{
+                         background-color: #E7F3FF !important;
+                            border-color: #e1dfdf;
+                            color: black;
+                    }
+                }
+            }
+     
+        
+        }
+        .wishlistCard{
+            background-color: white;
+            padding: 15px 20px;
+            margin: 8px 0px 0px;
+             border-width: 1px 1px 1px;
+             border-style: solid;
+            border-color: #e0e0e0;
+            .brBtm{
+           border-bottom: 1px solid  #e0e0e0;
+           margin: 0px;
+           width:100%;
+            }
+            .mybagLabel{
+                text-align: right;
+                margin-bottom: 15px;
+                a{
+                    font-family: CeraPro-Regular;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    color: rgb(0, 109, 183);
+                    text-decoration: none;
+                }
+            }
+            .headingBack{
+                background-color: #f2f5f7;
+                margin: 0;
+                border-width: 1px;
+                border-style: solid;
+                border-color: rgb(224, 224, 224);
+                border-image: initial;
+                padding: 1rem 0px;
+                .ItemLabel{                   
+                    p{
+                        font-family: CeraPro-Medium;
+                        font-size: 0.875rem;
+                        font-weight: 500;
+                        margin-bottom: 0px;
+                    }
+                }
+                .ItemLabelTotal{
+                    text-align: right;
+                    p{
+                        font-family: CeraPro-Medium;
+                        font-size: 0.875rem;
+                        font-weight: 500;
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+            .Wimges{
+                //padding-top: 15px;
+                img{
+                    max-width: 100%;
+                    max-height: 8.49rem;
+                    cursor: pointer;
+
+                }
+            }
+            .W-head{
+                padding-top: 34px;
+                vertical-align: middle;
+                display: table-cell;
+                //height: 111px;
+                .W-title{
+                    color: black;
+                    font-family: CeraPro-Medium;
+                    font-size: 0.875rem;
+                    line-height: 1.1875rem;
+                    font-weight: 400;
+                    margin-bottom: 0px;
+                }
+                .W-id{
+                    font-family: CeraPro-Regular;
+                    color: rgb(117, 117, 117);
+                    font-size: 0.75rem;
+                    line-height: 1.1875rem;
+                    font-weight: 400;
+                }
+            }
+            .W-Available{
+                .wAvail{
+                    font-family: CeraPro-Regular;
+                    font-size: 0.875rem;
+                    line-height: 1.1875rem;
+                    font-weight: 400;
+                }
+                .green{
+                    color: rgb(0, 133, 55);
+                }
+                .red{
+                    color: #ec0505;
+                }
+            }
+            .W-Toatl{
+               .totalAmt{
+                font-family: CeraPro-Medium;
+                color: rgb(0, 0, 0);
+                font-size: 0.875rem;
+                line-height: 1.1875rem;
+                font-weight: 500;
+               }
+            }
+            .TotalSection{
+                height: 100%;
+                display: table;
+                float: right;
+                padding-bottom: 9px;
+                ul{
+                    vertical-align: middle;
+                    display: table-cell;
+                    li{
+                        img{
+                            height: 1.25rem;
+                            width: 1.25rem;
+                            margin-right: 3.75rem;
+                            cursor: pointer;
+                        }
+                        svg{
+                            height: 1.25rem;
+                            width: 1.25rem;
+                            margin-right: 3.75rem;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .totalAmt{
+                    font-family: CeraPro-Medium;
+                    color: rgb(0, 0, 0);
+                    font-size: 0.875rem;
+                    line-height: 1.1875rem;
+                    font-weight: 500;
+                }
+            }
+        
+           
+        }
+    }
+
+    html[dir="rtl"] .WarnDiv{
+        text-align: right;
+    } 
+    html[dir="rtl"] .whishlist .rightSideContent .WarnMessage{          
+        text-align: right;          
+          }
+    html[dir="rtl"] {
+        .whishlist {
+            .rightSideContent {
+                .accountTitle {
+                    text-align: right;
+                }
+                .LogOutDiv {
+                    button {
+                        margin-left: 0px;
+                        margin-right: auto;
+                    }
+                    padding-right: 0px;
+                    padding-bottom: 4px;
+                    padding-left: 20px;
+                }
+            }
+            .wishlistCard {
+                .headingBack {
+                    .ItemLabel {
+                        p {
+                            text-align: right;
+                        }
+                    }
+                    .ItemLabelTotal {
+                        text-align: left;
+                    }
+                }
+                .W-head {
+                    padding-top: 30px;
+                    text-align: right;
+                }
+                .W-Available {
+                    .wAvail {
+                        text-align: right;
+                    }
+                }
+                .W-Toatl {
+                    .totalAmt {
+                        text-align: right;
+                    }
+                }
+                .TotalSection {
+                    float: left;
+                    ul {
+                        li {
+                            svg {
+                                margin-right: 0px;
+                                cursor: pointer;
+                                margin-left: 3.75rem;
+                            }
+                            img {
+                                margin-right: 0px;
+                                cursor: pointer;
+                                margin-left: 3.75rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .pdL {
+                padding-left: 15px;
+                padding-right: 0px;
+            }
+        }
+    }
+    
+   
+    @media (max-width: 767px){
+        .whishlist {
+            .pdL {
+                padding-left: 15px !important;
+            }
+            .rightSideContent {
+                .accountTitle {
+                    padding-left: 15px;
+                }
+                min-height: auto;
+            }
+            .wishlistCard {
+                margin: 7px 0px 0px;
+
+                .W-head {
+                    padding-top: 15px;
+                    vertical-align: middle;
+                    display: table-cell;
+                    height: 90px;
+                }
+            }
+        }
+        html[dir="rtl"] {
+            .whishlist {
+                .pdL {
+                    padding-right: 15px !important;
+                    min-height: 70vh;
+                }
+                .rightSideContent {
+                    .accountTitle {
+                        padding-left: 0px;
+                        padding-right: 15px;
+                    }
+                }
+            }
+        }
+        .WarnDiv{
+            padding-bottom: 20px; 
+        } 
+        .whishlist .rightSideContent .WarnMessage{          
+            margin: 15px 0px 0;          
+            display: block;
+            position: static;
+            top: unset;
+        
+        }
+        
+    }
+  .wishlistExc {
+    color: #207fc0;
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-right: 3.75rem;
+    font-size: 20px;
+  }
+  html[dir="rtl"] .wishlistExc {
+    margin-right: 0;
+    margin-left: 3.75rem;
+  }
+  html[dir="rtl"] .whisListAlertBag {
+    float: left;
+}

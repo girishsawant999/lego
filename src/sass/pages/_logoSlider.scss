@@ -1,0 +1,123 @@
+.logoOuter{
+    height: 60px;
+    background-color: #f8f8f8;
+    line-height: 60px;
+    
+.Logo-Slider{
+    width:100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    .slick-prev {
+        &:before {
+            color: $Color_black !important;
+            // content: '\276f' !important;
+            content: '';
+            background-image: url('../../assets/images/icons/leftArrow1.png');
+            width: 70px;
+            height: 66px;
+            top: 0;
+            //  left: 0px;
+            position: absolute;
+            background-repeat: no-repeat;
+        }
+    }
+    .slick-next {
+        &:before {
+            color: $Color_black !important;
+            // content: '\276f' !important;
+            content: '';
+            background-image: url('../../assets/images/icons/rightArrow1.png');
+            width: 70px;
+            height: 66px;
+            top: 0;
+            //  right: 0px;
+            position: absolute;
+            background-repeat: no-repeat;
+        }
+    }
+    }
+    ul{
+        margin-bottom: 0;
+        li{
+            vertical-align: middle;
+            a{
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+                span{
+                    color: rgb(0, 0, 0);
+                    font-size: 0.75rem;
+                    line-height: 1.1875rem;
+                    font-weight: 400;
+                    font-family: CeraPro-Regular;
+                }
+                span.learnMore{
+                    color: rgb(0, 109, 183);
+                    padding: 0px 10px;
+                    span{
+                        color: #006db7;
+                    }
+                }
+            }
+            img{
+                width: 65px;
+            }
+        }
+    }
+}
+
+html[dir="rtl"] .logoOuter ul li a span {
+    direction: rtl;
+   display: flex;
+    
+}
+html[dir="rtl"] .logoOuter ul li img{
+   margin-left: 10px; 
+}
+@media (max-width:768px){
+    .logoOuter{
+        height: unset;
+        line-height: unset;
+    }
+    .logoOuter .Logo-Slider .slick-next:before {
+        display: none;
+    }
+    .Logo-Slider{
+        width: 100% !important;
+        height: unset;
+        padding: 5px 0px;
+        line-height: unset;
+    }
+    .logoOuter .slick-prev {
+        left: -35px;
+    }
+    .logoOuter ul li img{
+        width: 70px;
+    }
+   
+    .logoOuter ul .w20{
+        width: 20%;
+    }
+    .logoOuter ul .w80{
+        width: 70%;
+        padding: 0 12px;
+        line-height: 1;
+    }
+    .logoOuter ul li a span{
+        font-size: 0.64rem;
+        line-height: 1;
+    }
+    html[dir="rtl"] .logoOuter ul {
+        direction: rtl;
+        padding-right: 0;
+    }
+    html[dir="rtl"] .logoOuter ul li a span.learnMore {
+        color: #006db7;
+        margin-right: 0px;
+    }
+    html[dir="rtl"] .logoOuter ul .w20 {
+       
+        margin-right: 0;
+        margin-left: 10px;
+    }
+}

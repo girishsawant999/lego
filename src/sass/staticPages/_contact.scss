@@ -1,0 +1,388 @@
+.ContactBlue {
+    background: #016db6;
+    color: white;
+    padding: 20px;  
+    font-family: CeraPro-Regular;
+    padding: 30px 0% 30px;
+    .Title{
+        font-family: CeraPro-Medium;
+        font-size: 33px;
+        text-align: center;
+    }
+}
+.ContactUsPage  {   
+    padding: 30px 0px;
+    
+    .error{
+        color: #e12929;      
+        font-size: 0.75rem;
+        line-height: 1.1875rem;   
+        font-family: CeraPro-Regular;
+        display: block;
+    }
+
+    .contactForm{
+        max-width: 450px;
+        width:100%;
+        background-color: #fbfbfb;
+        box-sizing: border-box;      
+        box-shadow: #dfdfdf 0px 6px 0px;  
+        
+        border-width: 1px;
+        border-style: solid;
+        border-color: #dfdfdf;
+        border-image: none;
+        border-image: initial;
+        padding: 25px 25px 25px 18px;
+        .writeToUs{
+            font-size: 1rem;
+            line-height: 1.1875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-family: CeraPro-Medium;
+            margin-bottom: 6px;
+            color: black;
+            text-align: left;
+            letter-spacing: 3px;
+        }
+
+        .form{
+              label{
+                font-size: 14px;
+                font-weight: 400;
+                color: #656565;
+                line-height: 1.5;
+                width: 100%;
+                display: block;
+                float: none;
+                margin-bottom: 5px;
+                text-align: left;
+                font-family: CeraPro-Regular;
+              }
+              .form-control{
+                word-wrap: normal;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                -moz-osx-font-smoothing: grayscale;
+                width: 100% !important;
+                border-style: solid;
+                border-width: 1px;
+                background-color: #ffffff;
+                border-color: #ffffff;            
+                padding: 10px 30px 15px 10px;
+                height: 40px;
+                font-size: 16px;
+                // text-transform: capitalize;
+                line-height: 1 !important;
+                outline: 1px solid #e0e0e0;
+                font-size: 14px;
+                font-weight: 400;
+                color: #7e7e7e;               
+                font-family: CeraPro-Regular;
+                &:focus{
+                    box-shadow: none;
+                    outline-offset: 0px;
+                }
+              }
+              textarea{
+                  height: auto !important;
+                  &:focus{
+                    box-shadow: none;
+                    outline-offset: 0px;
+                }
+              }
+              select{
+                word-wrap: normal;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                -moz-osx-font-smoothing: grayscale;
+                width: 100% !important;
+                border-style: solid;
+                border-width: 1px;
+                background-color: #ffffff;
+                border-color: #ffffff;            
+                padding: 10px 30px 15px 10px;
+                height: 40px;
+                font-size: 16px;
+                text-transform: capitalize;
+                line-height: 1 !important;
+                outline: 1px solid #e0e0e0;
+                font-size: 14px;
+                font-weight: 400;
+                color: #7e7e7e;               
+                font-family: CeraPro-Regular;
+                background-image: url('../../assets/images/icons/arrowDown.png');  
+                background-repeat: no-repeat;
+                background-position: 97% 50%;
+                background-size: 12px;
+               
+                &:focus{
+                    box-shadow: none;
+                    outline-offset: 0px;
+                }
+              }
+              .FormSubmit{
+                display: block;
+                width:100%;                   
+                border-collapse: collapse;
+                text-align: center;
+                font-weight: 500;
+                font-size: 0.875rem;
+                line-height: 1.1875rem;
+                background-color: #016db6;
+                color: white;
+                padding: 0.7375rem;
+                border-width: 1px;
+                border-style: solid;
+                border-radius: 4px;
+                border-color: #016db6;
+                font-family: CeraPro-Medium;
+                outline: none;
+                &:hover{
+                    background-color: white;
+                    color: black;
+                }&:focus{
+                    background-color: #e1dfdf;
+                    border-color: #e1dfdf;
+                    color: black;
+                }
+              }
+        }
+        #phoneNumber{
+            width: 100%;
+            font-family: CeraPro-Regular;
+            input{
+                width: 100%;
+                border-style: solid;
+                border-width: 1px;
+                background-color: #ffffff;
+                border-color: #ffffff;
+                /* padding: 15px 30px 15px 16px; */
+                height: 40px;
+                font-size: 16px;
+              
+                text-transform: capitalize;
+                line-height: 1 !important;
+                outline: 1px solid #e0e0e0;
+                font-size: 14px;
+                font-weight: 400;
+                color: #7e7e7e;
+                font-family: CeraPro-Regular;
+            }
+            .intl-tel-input{
+                width: 100%;
+            }
+            .country-list{
+                width: 100%; 
+                font-family: CeraPro-Regular;
+            }
+        }
+
+    }
+    .contactRight{
+        max-width: 450px;
+        width: 100%;
+        background-color: #fbfbfb;
+        box-sizing: border-box;
+        box-shadow: #dfdfdf 0px 6px 0px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #dfdfdf;
+        border-image: none;
+        border-image: initial;
+        padding: 25px 25px 25px 18px;
+        .directHeading{
+            font-size: 1rem;
+            line-height: 1.1875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-family: CeraPro-Medium;
+            margin-bottom: 18px;
+            color: black;
+            text-align: left;
+            letter-spacing: 3px;
+        }
+        .directContact{
+             ul{
+                 li{
+                     a{
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: #656565;
+                        line-height: 1.5;
+                        width: 100%;
+                        display: block;
+                        float: none;
+                        margin-bottom: 5px;
+                        text-align: left;
+                        font-family: CeraPro-Regular;
+                        text-decoration: none;
+                     }
+                 }
+             }
+        }
+        .socialMedia{
+            ul{
+                li{
+                    img{
+                        width: 35px;
+                        border: 1px solid #e4e1e1;
+                        border-radius: 100px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.iti-mobile {
+	.intl-tel-input {
+		.country-list {
+			.country {
+				font-family: CeraPro-Regular;
+			}
+		}
+	}
+}
+html[dir="rtl"] {
+	.ContactUsPage {
+        .error{
+           text-align: right;
+        }
+		.contactForm {
+			.writeToUs {
+				text-align: right;
+			}
+			.form {
+				label {
+					text-align: right;
+				}
+				select {
+					background-position: 3% 50%;
+				}
+			}
+			#phoneNumber {
+				input {
+					padding-left: 52px !important;
+					padding-right: 100px;
+                }
+                .selected-dial-code{
+                    padding-left: 10px;
+                    padding-right: 25px;
+                }
+			}
+		}
+		.contactRight {
+			.directHeading {
+				text-align: right;
+			}
+			text-align: right;
+		}
+	}
+	#phoneNumber {
+		.intl-tel-input {
+			.selected-flag {
+				.iti-arrow {
+					right: auto;
+					left: 6px;
+				}
+			}
+			.country-list {
+				.country {
+					padding: 5px 10px;
+					text-align: right;
+				}
+			}
+		}
+	}
+	.iti-mobile {
+		.intl-tel-input {
+			.country-list {
+				.country {
+					text-align: right !important;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 56.25em) {
+    .u-type-lg {
+        font-size: 2.5625rem!important;
+    }
+    .aboutusContenthead {
+        font-size: 1.625rem;
+    }
+}
+
+@media (min-width: 75em) {
+  
+    .ContactUsPage {
+        flex-basis: 66.66666667%;
+        max-width: 66.66666667%;
+        margin: 0 auto;
+    }
+}
+html[dir="rtl"] .ContactUsPage .aboutusContentmain {  
+    text-align: right;
+}
+html[dir="rtl"] .ContactUsPage .aboutusContentmaindiv{
+    text-align: right; 
+}
+html[dir="rtl"] .ContactUsPage .aboutusContentmaindiv .quesAns .quesDiv {
+
+    font-weight: 600;
+}
+.whatAppDivC{
+	a.wApp{
+		font-size: 13.5px;
+		font-weight: 400;		
+		border-radius: 4px;
+		line-height: 1.5;		
+		display: inline-block;
+		float: none;
+		margin-bottom: 5px;
+		text-align: left;
+		font-family: CeraPro-Regular;
+		text-decoration: none;
+		color: black;
+		text-transform: capitalize;
+	}
+	img{
+		margin-right: 5px;
+		width: 35px;
+		border: 1px solid #e4e1e1;
+		border-radius: 100px;
+	}
+}
+.whatAppDivC img {
+    margin-right: 5px;
+    width: 35px;
+    border: 1px solid #e4e1e1;
+    border-radius: 100px;
+}
+@media (max-width:767px){
+    .whatAppDivC img {
+        width: 30px;
+    }
+    .ContactUsPage{
+        text-align: left;
+        flex-basis: 90%;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    html[dir="rtl"] .ContactUsPage  {
+        text-align: right;
+        flex-basis: 90%;
+        max-width: 90%;
+    }
+    .ContactUsPage .contactForm{
+        margin-bottom: 25px;
+    }
+    .ContactUsPage .contactRight .socialMedia ul li img{
+        width: 30px;
+    }
+}

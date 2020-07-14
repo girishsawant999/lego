@@ -1,0 +1,636 @@
+.storeLocatorPage{
+    background: #016db6;
+    color: white;
+    padding: 20px;
+    font-size: 33px;
+    text-align: center;
+    font-family: CeraPro-Regular;
+    padding: 30px 0% 30px;
+}
+.search-container button {
+    border: 0;
+    background: none;
+    padding: 2px 10px;
+    margin-top: -36px;
+    position: relative;
+    left: 0px;
+    margin-bottom: 0;
+    border-radius: 3px;
+    float: right;
+}
+.mainClass{
+    height: 500px;
+    margin-bottom: 15px;
+
+    .mapGrid
+    {
+        margin-bottom: 7%;
+    }
+}
+
+.secondClass{
+    max-height: 500px;
+    overflow:auto;
+}
+.noStores {
+    text-align: center;
+    background: #fef6d2;
+    padding: 0.75rem 1.25rem;
+    margin: 0px 0px 1.5625rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-image: none;
+    border-image: initial;
+    font-family: CeraPro-Regular;
+    width: 90%;
+    margin: 0 auto 20px;
+ }
+.icon-size{
+        width: 20px;
+}
+.fa-search {
+     color: #989697;
+}
+
+.serch-page-title {
+    margin-bottom:2px;
+    font-weight: 500;
+    font-size: 24px;
+}
+.find-title {
+    font-size: 14px;
+    font-family: CeraPro-Medium;
+    text-align: left;
+    margin-top: 10%;
+}
+.nopadding {
+	padding: 0 !important;
+	margin: 0 !important;
+ }
+.storeLocator-searchIcon
+{
+     background: none;
+    margin-top: -31px;
+    position: relative;
+    right: 6px;
+    opacity: 0.8;
+    color: #989697 !important;
+    float: right;
+}
+
+//  input, button, select, optgroup, textarea {
+//     border-radius: 2px;
+//     border: 1px solid #aaaeb3;
+//     font-size: 5px;
+//  }
+.serchbar-orange-btn
+{
+    background: #FD8024;
+    border: 0px;
+    padding: 0% 2%;
+    height:44px;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    font-family: CeraPro-Regular;
+}
+.search-container ::-webkit-input-placeholder{
+    color: #3b3939;
+    font-size: 12px;
+    font-family: CeraPro-Regular;
+}
+
+.serchbar-white-btn
+{
+    background: #fff;
+    border: 1px solid #aaaeb3;
+    padding: 0% 2%;
+    height:44px;
+    font-family: CeraPro-Regular;
+    font-weight: 400;
+    font-size: 13px;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+.serchbar-white-btn:focus{
+    border: 1px solid blue !important;
+}
+.w-92 {
+	width: 100% !important;
+    padding:6px 8px 10px;
+    height:44px;
+}
+
+//leftbackarrow
+#what-we-do 
+{ 
+    .card{
+        padding: 0rem 1rem 1rem !important;
+        border: none;
+        margin-bottom:1rem;
+        -webkit-transition: .5s all ease;
+        -moz-transition: .5s all ease;
+        transition: .5s all ease;
+        width: 100%;
+        border-radius: 0rem !important;
+    }
+    .card-header {
+        margin-bottom: 0rem;
+    }
+    .location-title {
+        font-size: 16px;
+        line-height: normal;
+        font-family: CeraPro-medium;
+    }
+    .card-text
+    {
+        font-size: 14px;
+        font-family: CeraPro-medium;
+        padding-top: 4%;
+    }
+    .card .card-block{
+        padding-left: 38px;
+        position: relative;
+        padding-right: 15px;
+        padding-right: 15px;
+        margin-bottom: 21px;
+    }
+    .card .card-block a{
+        color: #000 !important;
+        font-weight:700;
+        text-decoration:none;
+    }
+    .card .card-block a i{
+        display:none;
+        
+    }
+    .card:hover .card-block a i{
+        display:inline-block;
+        font-weight:700;
+        
+    }
+    .card .card-block:before{
+        font-family: FontAwesome;
+        position: absolute;
+        font-size: 19px;
+        color: #000;
+        left: 0;
+        top:0px;
+    }
+    .card .block-1:before{
+       content: "";
+       color: #c5c4c1;
+       background-image: url(../../assets/images/icons/leftArrow1.png);
+       height: 29px;
+       width: 13px;
+       background-repeat: no-repeat;
+       top: 5px;    
+    }
+}
+.w-92:focus-within {
+    background: #fff;
+    outline:inherit;
+  }
+  .iwt{
+    padding: 0.9375rem 1.25rem;
+    border-top: 1px solid #e0e0e0;
+    background-color: #F0EFEB;
+    font-family: CeraPro-medium;
+    width: 100%;
+    color: #000;
+    font-size: 16px;
+  }
+
+hr {
+    margin-top: 0rem !important;
+    margin-bottom:10px !important;
+}
+.google-map {
+    min-height: 500px;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+/*accordian*/
+button.btn.btn-link1:after {
+    font-family: 'FontAwesome';
+    content: "\f077";
+    right: 30px;
+    top: 11px;
+    position: absolute;
+    font-size: 19px;
+    color: #7A7778;
+}
+button.btn.btn-link2:after {
+	font-family: 'FontAwesome';
+    content: "\f278";
+    right: 30px;
+    top: 10px;
+    position: absolute;
+    font-size: 17px;
+}
+.sidebar .btn-link {
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+}
+.card{
+    border-radius: 0rem !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+}
+.card-header
+{
+    border-bottom: 0px !important;
+    padding: 0.25rem 1.25rem !important;
+}
+#accordion {
+    border-top: 1px rgba(0, 0, 0, 0.125);
+    border-bottom: 1px rgba(0, 0, 0, 0.125);
+}
+.hours-list li {
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 24px;
+    font-family: CeraPro-medium;
+}
+span.pull-right {
+    color: #969696;
+}
+
+
+.store_map{
+    .m_list{			
+		li{
+			margin: 0;
+			a{		
+			
+			display: block;
+			color: rgb(0, 0, 0);			
+			border-bottom: 1px solid rgb(224, 224, 224);
+			padding: 0.9375rem 1.25rem;
+			background: rgb(248, 248, 248);
+			font-family: CeraPro-Regular;
+			font-size: 0.875rem;
+			font-weight: 500;
+			
+		}	
+		.borderBottom{
+			border: none;
+		}	
+		
+		}
+		.borderTop{
+			border-top: 1px solid rgb(224, 224, 224);
+		}
+	}
+	.Collapsible_text_container {
+		position: relative;
+		padding: 0.9375rem 1.25rem;
+        border-top: 1px solid rgb(224, 224, 224);
+        background-color: #F0EFEB;
+        font-family: CeraPro-medium;
+        font-size: 16px;
+        color: #000;
+	}
+
+	.open{
+		.Collapsible_arrow_container{
+		    .Icon{
+				width:15px;
+				transform: rotate(180deg);
+			}
+			.Collapsible_text{
+				font-size: 0.875rem;
+				text-transform: uppercase;
+				color: rgb(0, 0, 0);
+				display: flex;
+				-webkit-box-pack: justify;
+				justify-content: space-between;
+				-webkit-box-align: center;
+				align-items: center;
+				cursor: pointer;
+				font-weight: 500;
+				border-bottom: 1px solid rgb(224, 224, 224);
+                padding: 1rem 1rem;
+				background: rgb(248, 248, 248);				
+			}
+            
+		
+		}
+	}
+	.Icon{
+		width: 15px;
+		position: absolute;
+		right: 22px;
+		top: 22px;
+		transition: transform 0.1s linear 0s;
+    }
+    .Collapsible__contentInner {
+        padding: 8px 7px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+		
+}
+button:focus {
+    outline: inherit !important;
+    outline: inherit !important;
+}
+.location
+{
+    width: 100%;
+    height: auto;
+}
+
+//Search Page design
+.search-list-box .wrap {
+    display: flex;
+    margin-bottom: 2rem;
+    padding: 1rem 2rem 0rem;
+    font-family: CeraPro-Regular;
+}
+.mycontent-left {
+    border-right: 1px solid #aaaeb3;
+    margin-bottom: 15px;
+  }
+.search-list-sel
+{
+    font-size: 14px;
+    font-family: CeraPro-Medium;
+}
+.searchListScroll
+{
+    height: 500px;
+    width: 100%;
+    overflow-x: hidden;
+    //overflow: auto;
+}
+.mbr-iconfont {
+    font-size: 27px !important;
+    color: #313131;
+    font-family: CeraPro-Medium;
+    padding-right: 2rem;
+}
+.mbr-section-title3 {
+	text-align: left;
+	font-family: CeraPro-Regular;
+}
+.display-5 {
+	font-family: CeraPro-Regular;
+	font-size: 1.4rem;
+}
+.mbr-bold {
+	font-weight: 700;
+}
+.mob-pt {
+    padding-top: 0% !important;
+}
+.display-6 {
+	font-family: CeraPro-Medium;
+    font-size: 1re;
+    font-size: 13px;
+    cursor: pointer;
+   
+}
+
+html[dir="rtl"] .serch-page-title{
+    text-align: right;
+}
+@media (min-width: 1024px){
+    .hours-list li {
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+}
+ @media screen and (max-width: 991px) and (min-width:768px) {
+	#what-we-do .location-title {
+        font-size: 13px;
+        line-height: normal;
+        font-family: CeraPro-medium;
+    }
+    .google-map {
+        min-height: 424px;
+            height: 100%;
+            position: relative;
+            width: 100%;
+        }
+    #what-we-do .card-text {
+        font-size: 10px;
+        font-family: CeraPro-medium;
+        padding-top: 4%;
+        width: 100%;
+    }
+    .store_map .Collapsible_text_container {
+        font-size: 13px;
+    }
+    .iwt {
+        font-size: 13px;
+    }
+    .hours-list li {
+        text-transform: uppercase;
+        font-size: 9px;
+    }
+     html[dir="rtl"] .store_map .Collapsible_text_container {
+        font-size: 13px;
+        color: #000;
+        display: flex;
+    }
+}
+
+@media (max-width: 767px){
+	.w-92 {
+        width: 100% !important;
+        padding: 0px 8px 6px;
+        height:44px;
+    }
+    .hours-list li
+    {
+        line-height: 29px;
+    }
+    .search-container button {
+        margin-top: -40px;
+    }
+    .iwt {
+        border-top: 1px solid #e0e0e0;
+        font-size: 16px;
+    }
+    .google-map {
+        padding-bottom: 8%;
+    }
+    .store_map .Collapsible__contentInner {
+        padding: 8px 21px;
+    }
+    .text-wrap {
+        padding-bottom: 3%;
+    }
+    .search-list-box .wrap {
+        border-bottom: 1px solid #d8d8d8;
+        padding: 1rem 1rem 0rem;
+    }
+    .mycontent-left {
+        border-right: inherit;
+    }
+    .text-wrap p:first-child {
+        border-bottom:1px solid #d8d8d8;
+        padding-bottom: 17px !important;
+    }
+    //   .search-list-box .wrap {
+    //     padding: 1rem 0rem 0rem 0rem;
+    // }
+    .text-wrap {
+        width: 100%;
+    }
+    .mob-pt {
+        padding-top: 4% !important;
+    }
+    .search-list-box .icon-size {
+        width: 10px;
+    }
+    .btn-toolbar {
+        flex-wrap: inherit !important;
+        margin-top: 2%;
+        
+    }
+    html[dir="rtl"] .mycontent-left {
+        border-left: 0px !important;
+        border-right: 0px !important;
+    }
+    html[dir="rtl"] .search-list-box .icon-size {
+        width: 10px;
+        /* offset-rotate: inherit; */
+        -ms-transform: skewY(20deg);
+        /* transform: skewY(180deg); */
+        transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        -moz-transform: rotate(270deg);
+        -webkit-transform: rotate(180deg);
+    }
+    .mainClass {
+        margin-right: 0px;
+       
+    }
+    html[dir="rtl"] .mainClass {
+        margin-right: 0px;
+        margin-left: 0px;
+       
+    }
+    #listView .text-wrap .display-6{
+        margin-bottom: 10px !important;
+    }
+  
+}
+
+html[dir="rtl"] .search-container button {
+    border: 0;
+    background: none;
+    padding: 2px 10px;
+    margin-top: -36px;
+    position: relative;
+    left: 0px;
+    margin-bottom: 0;
+    border-radius: 3px;
+    float: left;
+}
+html[dir="rtl"] #what-we-do .card .card-block:before {
+    font-family: FontAwesome;
+    position: absolute;
+    font-size: 0px !important;
+    color: #000;
+    right: 0;
+    left: auto;
+    transform: rotate(180deg);
+   
+}
+
+
+html[dir="rtl"] .storeLocator-searchIcon {
+    background: none;
+    margin-top: -31px;
+    position: relative;
+    left: 6px;
+    right: auto;
+    opacity: 0.8;
+    color: #989697 !important;
+    float: left;
+}
+html[dir="rtl"] .pull-right {
+    float: left;
+}
+html[dir="rtl"] .list-unstyled {
+    padding-right: 0;
+}
+html[dir="rtl"] .mbr-iconfont {
+    padding-left: 2rem;
+}
+html[dir="rtl"] .iwt {
+   text-align: right;
+}
+html[dir="rtl"] .Collapsible_text_container {
+    position: relative;
+    padding: 0.9375rem 1.25rem;
+    border-top: 1px solid #e0e0e0;
+    background-color: #F0EFEB;
+    font-family: CeraPro-medium;
+    font-size: 16px;
+    color: #000;
+    display: flex;
+}
+html[dir="rtl"] .store_map {
+	.Icon {
+		width: 15px;
+		position: absolute;
+		left: 22px !important;
+        top: 22px;
+        right: inherit;
+		transition: transform 0.1s linear 0s;
+    }
+    
+}
+html[dir="rtl"] .search-list-sel {
+    font-size: 14px;
+    font-family: CeraPro-Medium;
+    float: right;
+}
+html[dir="rtl"] .mycontent-left {
+    border-left: 1px solid #aaaeb3;
+    border-right: 0px solid #aaaeb3;
+}
+html[dir="rtl"] .display-6 {
+    font-family: CeraPro-Medium;
+    font-size: 1re;
+    font-size: 13px;
+    text-align: right;
+}
+html[dir="rtl"] #what-we-do {
+	.card {
+		.card-block {
+			&:before {
+				font-family: FontAwesome;
+				position: absolute;
+				font-size: 19px;
+				color: #000;
+                right: 0;
+                left: auto;
+				top: 0px;
+			}
+		}
+    }
+    .card {
+		.block-1 {
+			&:before {
+				content: "\f105";
+				color: #c5c4c1;
+			}
+		}
+    }
+    .card .card-block {
+        padding-right: 38px;
+        position: relative;
+        padding-left: 15px;
+        text-align: right;
+    }
+}
