@@ -435,16 +435,24 @@ class CheckoutPaymentMethod extends Component {
   }
 
   startApplePaySession = () => {
-    console.log(window.$applePaySession, "window.ApplePaySession")
-    var applePaySession = new window.$applePaySession(APPLE_PAY_VERSION_NUMBER, requestParamterForApplePaySession)
-    console.log(applePaySession, 'in side the handle pay button ')
+    try{
+      var applePaySession = new window.$applePaySession(APPLE_PAY_VERSION_NUMBER, requestParamterForApplePaySession)
+    } catch {
+      alert(`applePaySession Error`)
+    }
+    try{
+      applePaySession.begin();
+    } catch{
+      alert(`applePaySession.begin Error`)
+    }
+      
 
-    applePaySession.begin();
+      setTimeout(() => {
+        this._handleApplePayEvents(applePaySession)
 
-    setTimeout(() => {
-      this._handleApplePayEvents(applePaySession)
+      }, 2000);
+    
 
-    }, 2000);
     console.log('after 2000 sec in side the handle pay button ')
 
   }
@@ -453,16 +461,16 @@ class CheckoutPaymentMethod extends Component {
 
 
   _handleApplePayEvents = (appleSession) => {
-    console.log(appleSession, 'in side the handle pay button ')
-
-    appleSession.onvalidatemerchant = function (event) {
-      console.log(event, 'event, in side the handle pay button ')
-
+    try {
+      appleSession.onvalidatemerchant = function (event) {
       this._validateApplePaySession(event.validationURL, function (merchantSession) {
         appleSession.completeMerchantValidation(merchantSession)
       })
     }
-    //console.log(' withought in side the handle pay button ')
+    } catch {
+      alert(`_handleApplePayEvents Error`)
+    }
+    
 
   }
 
