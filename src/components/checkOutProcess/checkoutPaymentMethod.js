@@ -435,8 +435,8 @@ class CheckoutPaymentMethod extends Component {
   }
 
   startApplePaySession = () => {
-    console.log(window.ApplePaySession, "window.ApplePaySession")
-    var applePaySession = new window.ApplePaySession(APPLE_PAY_VERSION_NUMBER, requestParamterForApplePaySession)
+    console.log(ApplePaySession, "window.ApplePaySession")
+    var applePaySession = new ApplePaySession(APPLE_PAY_VERSION_NUMBER, requestParamterForApplePaySession)
     console.log(applePaySession, 'in side the handle pay button ')
 
     applePaySession.begin();
