@@ -117,8 +117,8 @@ class CheckoutPaymentMethod extends Component {
   componentWillMount() {
     scroll = true;
 
-    if (window.ApplePaySession) {
-      if (window.ApplePaySession.canMakePayments()) {
+    if (window.$applePaySession) {
+      if (window.$applePaySession.canMakePayments()) {
         isApplePayAvailable = true;
       }
     }
@@ -435,8 +435,8 @@ class CheckoutPaymentMethod extends Component {
   }
 
   startApplePaySession = () => {
-    console.log(ApplePaySession, "window.ApplePaySession")
-    var applePaySession = new ApplePaySession(APPLE_PAY_VERSION_NUMBER, requestParamterForApplePaySession)
+    console.log(window.$applePaySession, "window.ApplePaySession")
+    var applePaySession = new window.$applePaySession(APPLE_PAY_VERSION_NUMBER, requestParamterForApplePaySession)
     console.log(applePaySession, 'in side the handle pay button ')
 
     applePaySession.begin();
