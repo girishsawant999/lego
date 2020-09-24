@@ -27,7 +27,7 @@ class addBagAlert extends Component {
         let alertBoxReact = null;
         if (this.state.showAlertBoxReact) {
             alertBoxReact = <div className="alertify addToBagPupUp" id="alertify">
-                <div className="dialog1">
+                <div id="dialogAlertbox">
                     <div>
                         <p className="msg">{this.props.message}</p>
                         {/* <nav>

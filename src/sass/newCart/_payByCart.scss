@@ -1,0 +1,298 @@
+.CardPayment {
+  .Collapsible {
+    border: 1px solid #e0e0e0;
+  }
+  .Collapsible_text_container {
+    padding: 20px 15px !important;
+  }
+  .Collapsible_text {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .HeadingPayOption {
+    color: inherit;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: CeraPro-medium;
+  }
+  .cardlistimg {
+    padding: 0;
+    margin-bottom: 0;
+    margin-right: 30px;
+    .MadaCard {
+      width: auto;
+      border: none;
+      padding: 5px;
+      height: auto;
+      border-radius: 3px;
+      margin-right: 10px;
+      margin-left: 0px;
+    }
+    .master {
+      margin-right: 10px;
+    }
+  }
+
+  .titleHeading {
+    margin-bottom: 0px;
+    font-family: CeraPro-regular;
+    color: inherit;
+    font-size: 16px;
+    line-height: 1.75rem;
+    font-weight: normal !important;
+    text-transform: inherit;
+  }
+  .Icon {
+    width: 15px;
+    position: absolute;
+    right: 15px;
+    top: 32px;
+    transition: transform 0.1s linear 0s;
+  }
+  .open .Collapsible_arrow_container .Icon {
+    width: 15px;
+    transform: rotate(180deg);
+  }
+  .cardIcon {
+    width: 160px;
+    height: 106px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    position: relative;
+    img {
+      width: 60px;
+      margin: 16px auto 16px auto;
+      display: block;
+    }
+
+    .arrowSpan {
+      width: 15px;
+      height: 15px;
+      border: 1px solid;
+      border-color: #006cb6 transparent transparent #006cb6;
+      transform: rotate(-135deg);
+      display: block;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) rotate(-135deg);
+      background-color: #f3f0f0;
+      visibility: hidden;
+    }
+  }
+
+  .CardForm {
+    margin: 5px 0px 10px;
+    padding: 0px 20px;
+    .mar-top {
+      margin-top: 0px;
+    }
+    label {
+      font-size: 0.8rem;
+      margin-bottom: 0px;
+      font-family: CeraPro-Medium;
+    }
+
+    .form-group {
+      input {
+        border-radius: 0rem;
+        height: 40px;
+        padding: 0.375rem 0.75rem;
+      }
+    }
+    input {
+      font-size: 0.9rem;
+      font-family: CeraPro-Regular;
+    }
+    .number {
+      padding-right: 50px;
+    }
+    .cardNumber {
+      position: relative;
+      .MadaIcon {
+        position: absolute;
+        bottom: 10px;
+        right: 8px;
+      }
+      .visaIcon {
+        position: absolute;
+        bottom: 5px;
+        right: 4px;
+      }
+      .MasterIcon {
+        position: absolute;
+        bottom: 5px;
+        right: 4px;
+      }
+    }
+  }
+  .buttonSection {
+    border-top: 1px solid #cac5c5;
+    padding-top: 8px;
+    margin-bottom: 10px;
+    .termlabel {
+      font-size: 0.9rem;
+      font-family: CeraPro-Regular;
+      margin-bottom: 0px;
+      a {
+        color: black;
+        font-weight: 500;
+        font-family: CeraPro-Medium;
+      }
+    }
+    button {
+      background-color: #006db7;
+      color: #fff;
+      border: solid 1px #006db7;
+      border-radius: 0.2rem;
+      font-weight: 500;
+      text-align: center;
+      margin-top: 15px;
+      font-size: 1rem;
+      padding: 8px 25px;
+      width: auto;
+      font-family: CeraPro-Medium;
+      font-weight: 500;
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+}
+html[dir='rtl'] .CardPayment .cardlistimg {
+  padding: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-left: 30px;
+}
+html[dir='rtl'] .CardPayment .Icon {
+  right: auto;
+  left: 15px;
+}
+html[dir='rtl'] .CardPayment .CardForm {
+  text-align: right;
+}
+html[dir='rtl'] .CardPayment .CardForm .cardNumber .visaIcon {
+  position: absolute;
+  bottom: 5px;
+  right: auto;
+  left: 4px;
+}
+
+html[dir='rtl'] .CardPayment .CardForm .cardNumber .MasterIcon {
+  position: absolute;
+  bottom: 5px;
+  right: auto;
+  left: 4px;
+}
+html[dir='rtl'] .CardPayment .CardForm .cardNumber .MadaIcon {
+  position: absolute;
+  bottom: 10px;
+  right: auto;
+  left: 8px;
+}
+
+html[dir='rtl'] .CardPayment .CardForm .number {
+  padding-right: 0.75rem;
+  padding-left: 50px;
+}
+html[dir='rtl'] .CardPayment .CardForm .form-check {
+  position: relative;
+  display: block;
+  padding-right: 1.25rem;
+  padding-left: 0px;
+}
+html[dir='rtl'] .CardPayment .CardForm .form-check-input {
+  position: absolute;
+  margin-top: 0.3rem;
+  margin-left: 0px;
+  margin-right: -1.25rem;
+}
+@media (max-width: 767px) {
+  .CardPayment .titleHeading {
+    margin-bottom: 6px;
+  }
+  .CardPayment .Collapsible_text {
+    display: block !important;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .CardPayment .Collapsible_text_container {
+    padding: 8px 10px !important;
+  }
+  html[dir='rtl'] .CardPayment .Collapsible_text {
+    display: block !important;
+    justify-content: space-between;
+    width: 100%;
+    text-align: right;
+  }
+  html[dir='rtl'] .CardPayment .cardlistimg .MadaCard {
+    margin-right: 0px;
+    margin-left: -4px;
+  }
+  .CardPayment .CardForm {
+    padding: 0px 10px;
+  }
+  .CardPayment .CardForm input {
+    font-size: 0.875rem;
+  }
+}
+.error_card {
+  color: #c8000d;
+  line-height: 1.1875rem;
+  font-size: 0.75rem;
+  display: block;
+  font-weight: 700;
+  margin-top: 5px;
+  font-family: CeraPro-Regular;
+}
+.-mt-10 {
+  margin-top: -10px;
+}
+.paymentProcessing {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  span {
+    font-family: CeraPro-Medium;
+    font-size: 16px;
+    margin-bottom: 4%;
+  }
+  .main__div {
+    display: flex;
+    margin: auto;
+  }
+  .img__div {
+    padding: 0px 4px;
+  }
+  .sizeImg {
+    width: 100px;
+    height: 117px;
+  }
+  @media (max-width: 767px) {
+    top: 35%;
+    .sizeImg {
+      width: 3rem;
+      height: auto;
+    }
+  }
+}
+html[dir='rtl'] .error_card {
+}
+.paymentFailedMessage {
+  margin-bottom: 10px;
+  background-color: rgba(255, 0, 0, 0.4);
+  padding: 10px;
+  border: 1px solid rgba(255, 0, 0, 0.8);
+  font-family: CeraPro-regular;
+  font-size: 16px;
+}
+html[dir='rtl'] .paymentFailedMessage {
+  text-align: initial;
+}

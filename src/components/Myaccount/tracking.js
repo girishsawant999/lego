@@ -1,13 +1,17 @@
-import React, { Component } from 'react';
+import React, {Suspense, Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { FormattedMessage, injectIntl } from 'react-intl';
-import Breadcrumb from '../../common/breadcrumb';
-import LogoSlider from '../../components/HomeComponent/logoSlider';
+import Spinner2 from "../Spinner/Spinner";
+import { injectIntl } from 'react-intl';
+// import Breadcrumb from '../../common/breadcrumb';
+// import LogoSlider from '../../components/HomeComponent/logoSlider';
 import { Link } from 'react-router-dom';
-import StepperH  from '../Myaccount/StepperH';
-import StepperV  from '../Myaccount/StepperV';
+// import StepperH  from '../Myaccount/StepperH';
+// import StepperV  from '../Myaccount/StepperV';
 import SupportImag from '../../assets/images/icons/supportImage.png';
+const Breadcrumb = React.lazy(() => import( '../../common/breadcrumb'))
+const StepperH = React.lazy(() => import( '../Myaccount/StepperH'))
+const StepperV = React.lazy(() => import('../Myaccount/StepperV'))
 
 
 
@@ -21,6 +25,7 @@ class Tracking extends Component {
     render() {
         const store_locale=this.props.globals.store_locale
         return (
+            <Suspense fallback={<div></div>}>
             <div>
                 <div className="trackingPage">
                    {/* <LogoSlider /> */}
@@ -54,7 +59,7 @@ class Tracking extends Component {
                        </div>
                    </div>
                 </div>
-           
+           </Suspense>
         )
     }
 }

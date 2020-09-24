@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Storefilter from '../storeLocator/storeFilter.js';
-import StoreListView from '../storeLocator/storeListView.js';
+import React, { Suspense, Component } from 'react';
+// import Storefilter from '../storeLocator/storeFilter.js';
+// import StoreListView from '../storeLocator/storeListView.js';
 import { FormattedMessage, injectIntl,defineMessages,intlShape } from '../../../node_modules/react-intl';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
@@ -13,15 +13,20 @@ import nearMe from '../../assets/images/icons/nearMe.png';
 import listView from '../../assets/images/icons/listView.png';
 import mapViewr from '../../assets/images/icons/mapView.png';
 import rightArrow1 from '../../assets/images/icons/rightArrow1.png';
-import PlusIcon from '../../assets/images/icons/arrowDown.png';
-import minusIcon from '../../assets/images/icons/arrowDown.png';
-import leftArrow from '../../assets/images/icons/leftArrow.png';
-import location from '../../assets/images/map.png';
-import MapContainer from "./map";
-import StoreList from './storeListView';
-import Breadcrumb from '../../common/breadcrumb';
+// import PlusIcon from '../../assets/images/icons/arrowDown.png';
+// import minusIcon from '../../assets/images/icons/arrowDown.png';
+// import leftArrow from '../../assets/images/icons/leftArrow.png';
+// import location from '../../assets/images/map.png';
+// import MapContainer from "./map";
+// import StoreList from './storeListView';
+// import Breadcrumb from '../../common/breadcrumb';
 import Spinner2 from "../../components/Spinner/Spinner"
-
+import { GoogleApiWrapper } from 'google-maps-react';
+import { createMetaTags } from '../utility/meta'
+const Breadcrumb = React.lazy(() => import('../../common/breadcrumb'));
+const StoreList = React.lazy(() => import('../storeLocator/storeListView'));
+const MapContainer = React.lazy(() => import('../storeLocator/map'));
+const Storefilter = React.lazy(() => import('../storeLocator/storeFilter'));
 
 const messages = defineMessages({
   searchBox: {
@@ -96,9 +101,9 @@ class StoreMain extends Component {
 
 
   calcDistance = (p1, p2) => {
-    var loc1 = new google.maps.LatLng(p1.lat, p1.lng);
-    var loc2 = new google.maps.LatLng(p2.lat, p2.lng);
-    var d = (google.maps.geometry.spherical.computeDistanceBetween(loc1, loc2) / 1000).toFixed(2);
+    var loc1 = new this.props.google.maps.LatLng(p1.lat, p1.lng);
+    var loc2 = new this.props.google.maps.LatLng(p2.lat, p2.lng);
+    var d = (this.props.google.maps.geometry.spherical.computeDistanceBetween(loc1, loc2) / 1000).toFixed(2);
     return d;
   }
 
@@ -258,10 +263,10 @@ class StoreMain extends Component {
       }
     }
     const searchInput = document.getElementById('autocomplete');
-    this.autocomplete = new google.maps.places.Autocomplete(searchInput);
+    this.autocomplete = new this.props.google.maps.places.Autocomplete(searchInput);
     this.autocomplete.addListener('place_changed', this.handlePlaceChanged);
     // GoogleMaps API custom eventlistener method
-    google.maps.event.addDomListener(searchInput, 'keydown', (e) => {
+    this.props.google.maps.event.addDomListener(searchInput, 'keydown', (e) => {
       if (e.keyCode === 13 || e.keyCode === 9) {
           e.preventDefault(); 
       }
@@ -384,198 +389,270 @@ class StoreMain extends Component {
     breadcrumbData.push(pdpage)
 
     return (
-      <div>
-        <div className="storeLocatorPage">
-          <Storefilter title= {<FormattedMessage id="storeMain.storeLocator" defaultMessage="Store locator"/>}  />
-        </div>
-        <Breadcrumb breadcrumbData={breadcrumbData} />                                     
-        <section className="search-banner py-3" id="search-banner">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                <div className="serch-page-title"><FormattedMessage id="storeMain.findStores" defaultMessage="Find Stores"/></div>
-                <hr />
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-md-12">
-                <div className="row pt-2">
-                  <div className="col-md-2 pb-2">
-                    <button onClick={() => this.nearMe()} type="button" className="serchbar-orange-btn w-100"> <img src={nearMe} className="icon-size" alt="NearMe" />&nbsp;&nbsp;&nbsp; <FormattedMessage id="storeMain.nearme" defaultMessage="Near me"/></button>
-                  </div>
-                  <div className="col-md-1 nopadding d-none d-sm-none d-md-none d-lg-none d-xl-block">
-                    <p className="find-title"><FormattedMessage id="storeMain.findStoresNear" defaultMessage="Find stores near"/></p>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="search-container">
-                      <form action="/action_page.php">
-                        <div className="w-100">
-                          {/* <input type="text" placeholder="eg. Dubai" className="w-92" name="search"/>
+    
+			<Suspense fallback={<div className="mobMinHeight">
+		          <Spinner2 />
+		      </div>}>
+			<div>
+				{createMetaTags(
+					this.props.globals.store_locale === "en"
+						? "Store Locator | Official LEGO® Online Store Saudi Arabia"
+						: "فروعنا | متجر ليغو أونلاين الرسمي بالسعودية ",
+					this.props.globals.store_locale === "en"
+						? "Explore the world of LEGO® through games, videos, products and more! Shop awesome LEGO® building toys and brick sets and find the perfect gift for your kid"
+						: "اكتشف عالم ليغو LEGO من خلال الألعاب، والفيديوهات، والمنتجات وأكثر! تسوق مجموعات ألعاب البناء و المكعبات المدهشة من ليغو LEGO واعثر على الهدية المثالية لطفلك",
+					this.props.globals.store_locale === "en"
+						? "LEGO, Online Store, Saudi Arabia, Bricks, Building Blocks, Construction Toys, Gifts"
+						: "ليغو LEGO، تسوق اونلاين، السعودية، مكعبات، مكعبات بناء، العاب تركيب، هدايا"
+				)}
+				<div className="storeLocatorPage">
+					<Storefilter title={<FormattedMessage id="storeMain.storeLocator" defaultMessage="Store locator" />} />
+				</div>
+				<Breadcrumb breadcrumbData={breadcrumbData} />
+				<section className="search-banner py-3" id="search-banner">
+					<div className="container">
+						<div className="row">
+							<div className="col-md-12">
+								<div className="serch-page-title">
+									<FormattedMessage id="storeMain.findStores" defaultMessage="Find Stores" />
+								</div>
+								<hr />
+							</div>
+						</div>
+						<div className="row">
+							<div className="col-md-12">
+								<div className="row pt-2">
+									<div className="col-md-2 pb-2">
+										<button onClick={() => this.nearMe()} type="button" className="serchbar-orange-btn w-100">
+											{" "}
+											<img src={nearMe} className="icon-size" alt="NearMe" />
+											&nbsp;&nbsp;&nbsp; <FormattedMessage id="storeMain.nearme" defaultMessage="Near me" />
+										</button>
+									</div>
+									<div className="col-md-1 nopadding d-none d-sm-none d-md-none d-lg-none d-xl-block">
+										<p className="find-title">
+											<FormattedMessage id="storeMain.findStoresNear" defaultMessage="Find stores near" />
+										</p>
+									</div>
+									<div className="col-md-6">
+										<div className="search-container">
+											<form action="/action_page.php">
+												<div className="w-100">
+													{/* <input type="text" placeholder="eg. Dubai" className="w-92" name="search"/>
                                             <button type="submit"><i className="fa fa-search"></i></button> */}
-                          <input type="text" ref={this.autocompleteInput}  id="autocomplete" className="w-92" placeholder={formatMessage(messages.searchBox)} autoComplete="off" />
-                          <div id="searchResult" style={{ position: 'absolute' }}></div>
-                          <svg className="storeLocator-searchIcon" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" width="23.888" height="16px" viewBox="0 0 23.888 24.117">
-                            <g fill="none" stroke="#989697" strokeWidth={4} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10}>
-                              <circle cx="10.12" cy="10.12" r="8.12" />
-                              <path d="M15.849 16.077l6.039 6.04" />
-                            </g>
-                          </svg>
+													<input
+														type="text"
+														ref={this.autocompleteInput}
+														id="autocomplete"
+														className="w-92"
+														placeholder={formatMessage(messages.searchBox)}
+														autoComplete="off"
+													/>
+													<div id="searchResult" style={{ position: "absolute" }}></div>
+													<svg
+														className="storeLocator-searchIcon"
+														xmlns="http://www.w3.org/2000/svg"
+														version="1.2"
+														baseProfile="tiny"
+														width="23.888"
+														height="16px"
+														viewBox="0 0 23.888 24.117">
+														<g
+															fill="none"
+															stroke="#989697"
+															strokeWidth={4}
+															strokeLinecap="round"
+															strokeLinejoin="round"
+															strokeMiterlimit={10}>
+															<circle cx="10.12" cy="10.12" r="8.12" />
+															<path d="M15.849 16.077l6.039 6.04" />
+														</g>
+													</svg>
+												</div>
+											</form>
+										</div>
+									</div>
+									<div className="col-xl-3 col-md-4 pr-0 pl-0">
+										<div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+											<div className="btn-group col-md-6" role="group" aria-label="Second group">
+												<button onClick={() => this.listVie()} type="button" className="serchbar-white-btn btn-block">
+													<img src={listView} className="icon-size" alt="listView" />
+													<FormattedMessage id="storeMain.listView" defaultMessage=" List View" />
+												</button>
+											</div>
+											<div className="btn-group col-md-6" role="group" aria-label="Third group">
+												<button onClick={() => this.mapView()} type="button" className="serchbar-white-btn btn-block">
+													<img src={mapViewr} className="icon-size" alt="mapView" />
+													<FormattedMessage id="storeMain.mapView" defaultMessage=" Map View" />
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div className="content pt-3" id="nearView">
+					<div className="container">
+						<div className="row">
+							<div className={`${this.state.storeList.length == 0 ? "col-md-3" : "col-md-3 secondClass"}`}>
+								<div className="control-box sidebar">
+									<section id="what-we-do">
+										<div className="row">
+											{this.props.storeLoader && this.state.storeList.length === 0 && (
+												<div className="col-12 text-center">
+													<Spinner2 />
+												</div>
+											)}
+											{this.state.storeList.length > 0 && (
+												<StoreList
+													locations={this.state.storeList}
+													getSelectedStore={this.getSelectedStore}
+													directionText="DIRECTIONS"
+												/>
+											)}
+											{!this.props.storeLoader && this.state.storeList.length === 0 && (
+												<span className="noStores">
+													<FormattedMessage id="storeMain.noStores" defaultMessage="No stores available" />
+												</span>
+											)}
+										</div>
+									</section>
+								</div>
+							</div>
+							<div className="col-md-9 mainClass pb-5">
+								<div className="mapGrid">
+									<div className="google-map">
+										{/*<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.652931849224!2d55.7665570143073!3d24.253914775272815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e8ab404d39995e7%3A0xa8fbc926bfa012d5!2sAl%20Buraimi%20Oman!5e0!3m2!1sen!2sin!4v1585890988155!5m2!1sen!2sin" width="100%" height="600" frameborder="0"  allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> */}
 
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                  <div className="col-xl-3 col-md-4 pr-0 pl-0">
-                    <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                      <div className="btn-group col-md-6" role="group" aria-label="Second group">
-                        <button onClick={() => this.listVie()} type="button" className="serchbar-white-btn btn-block"><img src={listView} className="icon-size" alt="listView" /><FormattedMessage id="storeMain.listView" defaultMessage=" List View"/></button>
-                      </div>
-                      <div className="btn-group col-md-6" role="group" aria-label="Third group">
-                        <button onClick={() => this.mapView()} type="button" className="serchbar-white-btn btn-block"><img src={mapViewr} className="icon-size" alt="mapView" /><FormattedMessage id="storeMain.mapView" defaultMessage=" Map View"/></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div className="content pt-3" id="nearView">
-          <div className="container">
-            <div className="row">
-              <div className={`${this.state.storeList.length == 0 ? "col-md-3" : "col-md-3 secondClass"}`}>
-                <div className="control-box sidebar">
-                  <section id="what-we-do">
-                    <div className="row">
-                      {
-                       this.props.storeLoader && this.state.storeList.length === 0 &&
-                        <div className="col-12 text-center">
-                          <Spinner2/>
-                        </div>
-      
-                      }
-                      {this.state.storeList.length > 0 &&
-                        <StoreList locations={this.state.storeList}
-                          getSelectedStore={this.getSelectedStore} directionText="DIRECTIONS" />
+										{this.state.lat && this.state.long && (
+											<MapContainer
+												onMouseoverMarker={this.onMouseoverMarker}
+												onMarkerClick={this.onMarkerClick}
+												markars={this.state.storeList}
+												lat={this.state.lat}
+												long={this.state.long}
+												zoom={this.state.zoom}
+												activeMarker={this.state.activeMarker}
+												selectedPlace={this.state.selectedPlace}
+												selectedMarker={selectedMarker}
+												showingInfoWindow={this.state.showingInfoWindow}
+												language={this.props.language}
+												iconSize={new this.props.google.maps.Size(50, 50)}
+											/>
+										)}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className="content" id="listView" style={{ display: "none" }}>
+					<div className="container">
+						<div className="row">
+							<div className="col-md-12">
+								<p className="search-list-sel">
+									<FormattedMessage id="storeMain.storeDetails" defaultMessage="Select a store to see details" />
+								</p>
+							</div>
+							<div className="searchListScroll">
+								<div className="row">
+									<div
+										className={`col-lg-6 col-sm-6 col-md-6 col-12 ${rightStores.length < 1 ? "" : "mycontent-left"}`}>
+										<div className="search-list-box">
+											<div className="">
+												{Object.keys(leftStores).map((key) => (
+													<div key={key} className="wrap">
+														<div className="ico-wrap">
+															<span className="mbr-iconfont fa">{leftStores[key].key}</span>
+														</div>
+														<div className="text-wrap">
+															{Object.keys(leftStores[key].data).map((index) => (
+																<p
+																	key={index}
+																	className="display-6 pt-0 pb-0 mb-1"
+																	onClick={(el) => {
+																		this.showSelectedStore(leftStores[key].data[index])
+																	}}>
+																	{leftStores[key].data[index].name}
+																	<span className="pull-right d-sm-none d-md-none d-lg-none d-xs-block">
+																		<img src={rightArrow1} className="icon-size" alt="mapView" />
+																	</span>
+																</p>
+															))}
+														</div>
+													</div>
+												))}
+											</div>
+										</div>
+									</div>
+									<div className="col-lg-6 col-sm-6 col-md-6 col-12">
+										<div className="search-list-box">
+											{Object.keys(rightStores).map((key) => (
+												<div className="wrap">
+													<div className="ico-wrap">
+														<span className="mbr-iconfont fa">{rightStores[key].key}</span>
+													</div>
+													<div className="text-wrap">
+														{Object.keys(rightStores[key].data).map((index) => (
+															<p
+																className="display-6 pt-0 pb-0 mb-1"
+																onClick={(el) => {
+																	this.showSelectedStore(rightStores[key].data[index])
+																}}>
+																{rightStores[key].data[index].name}
+																<span className="pull-right d-sm-none d-md-none d-lg-none d-xs-block">
+																	<img src={rightArrow1} className="icon-size" alt="mapView" />
+																</span>
+															</p>
+														))}
+													</div>
+												</div>
+											))}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-                      }
-                       {!this.props.storeLoader && this.state.storeList.length === 0 &&
-                       <span className="noStores"><FormattedMessage id="storeMain.noStores" defaultMessage="No stores available"/></span>
-                      }
-                    </div>
-                  </section>
-                </div>
-              </div>
-              <div className="col-md-9 mainClass pb-5">
-                <div className="mapGrid">
-                <div className="google-map">
-
-                  {/*<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.652931849224!2d55.7665570143073!3d24.253914775272815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e8ab404d39995e7%3A0xa8fbc926bfa012d5!2sAl%20Buraimi%20Oman!5e0!3m2!1sen!2sin!4v1585890988155!5m2!1sen!2sin" width="100%" height="600" frameborder="0"  allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> */}
-
-                  {this.state.lat && this.state.long && (
-                    <MapContainer
-                      onMouseoverMarker={this.onMouseoverMarker}
-                      onMarkerClick={this.onMarkerClick}
-                      markars={this.state.storeList}
-                      lat={this.state.lat}
-                      long={this.state.long}
-                      zoom={this.state.zoom}
-                      activeMarker={this.state.activeMarker}
-                      selectedPlace={this.state.selectedPlace}
-                      selectedMarker={selectedMarker}
-                      showingInfoWindow={this.state.showingInfoWindow}
-                      language={this.props.language}
-                      iconSize={new google.maps.Size(50, 50)}
-                    />)}
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="content" id="listView" style={{display:"none"}}>
-          <div className="container">
-            <div className="row">
-            
-              <div className="col-md-12">
-                <p className="search-list-sel"><FormattedMessage id="storeMain.storeDetails" defaultMessage="Select a store to see details"/></p>
-              </div>
-              <div className="searchListScroll">
-              <div className="row">
-									<div className={`col-lg-6 col-sm-6 col-md-6 col-12 ${ rightStores.length<1 ? '' : 'mycontent-left'}`}>
-                  <div className="search-list-box">
-                    <div className="">
-                      {Object.keys(leftStores).map((key) => (
-                        <div key={key} className="wrap">
-                          <div className="ico-wrap">
-                            <span className="mbr-iconfont fa">{leftStores[key].key}</span>
-                          </div>
-                          <div className="text-wrap">
-                            {Object.keys(leftStores[key].data).map((index) => (
-                              <p key={index} className="display-6 pt-0 pb-0 mb-1" onClick={(el) => { this.showSelectedStore(leftStores[key].data[index]) }}>{leftStores[key].data[index].name}<span className="pull-right d-sm-none d-md-none d-lg-none d-xs-block"><img src={rightArrow1} className="icon-size" alt="mapView" /></span></p>
-                            ))}
-                          </div>
-
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-6 col-sm-6 col-md-6 col-12">
-                  <div className="search-list-box">
-                  {Object.keys(rightStores).map((key) => (
-                        <div className="wrap">
-                          <div className="ico-wrap">
-                            <span className="mbr-iconfont fa">{rightStores[key].key}</span>
-                          </div>
-                          <div className="text-wrap">
-                            {Object.keys(rightStores[key].data).map((index) => (
-                              <p className="display-6 pt-0 pb-0 mb-1" onClick={(el) => { this.showSelectedStore(rightStores[key].data[index]) }}>{rightStores[key].data[index].name}<span className="pull-right d-sm-none d-md-none d-lg-none d-xs-block"><img src={rightArrow1} className="icon-size" alt="mapView" /></span></p>
-                            ))}
-                          </div>
-
-                        </div>
-                      ))}
-                  </div>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="content" id="mapView" style={{display:"none"}}>
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                <p className="search-list-sel"><FormattedMessage id="storeMain.storeDetails" defaultMessage="Select a store to see details"/></p>
-              </div>
-              <div className="col-md-12 mainClass">
-                <div className="google-map">
-
-                  {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.652931849224!2d55.7665570143073!3d24.253914775272815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e8ab404d39995e7%3A0xa8fbc926bfa012d5!2sAl%20Buraimi%20Oman!5e0!3m2!1sen!2sin!4v1585890988155!5m2!1sen!2sin" width="100%" height="600" frameborder="0"  allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> */}
-                  {this.state.lat && this.state.long && (
-                    <MapContainer
-                      onMouseoverMarker={this.onMouseoverMarker}
-                      onMarkerClick={this.onMarkerClick}
-                      markars={this.state.storeList}
-                      lat={this.state.lat}
-                      long={this.state.long}
-                      zoom={this.state.zoom}
-                      activeMarker={this.state.activeMarker}
-                      selectedPlace={this.state.selectedPlace}
-                      selectedMarker={selectedMarker}
-                      showingInfoWindow={this.state.showingInfoWindow}
-                      language={this.props.language}
-                      iconSize={new google.maps.Size(50, 50)}
-                    />)}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
+				<div className="content" id="mapView" style={{ display: "none" }}>
+					<div className="container">
+						<div className="row">
+							<div className="col-md-12">
+								<p className="search-list-sel">
+									<FormattedMessage id="storeMain.storeDetails" defaultMessage="Select a store to see details" />
+								</p>
+							</div>
+							<div className="col-md-12 mainClass">
+								<div className="google-map">
+									{/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.652931849224!2d55.7665570143073!3d24.253914775272815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e8ab404d39995e7%3A0xa8fbc926bfa012d5!2sAl%20Buraimi%20Oman!5e0!3m2!1sen!2sin!4v1585890988155!5m2!1sen!2sin" width="100%" height="600" frameborder="0"  allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> */}
+									{this.state.lat && this.state.long && (
+										<MapContainer
+											onMouseoverMarker={this.onMouseoverMarker}
+											onMarkerClick={this.onMarkerClick}
+											markars={this.state.storeList}
+											lat={this.state.lat}
+											long={this.state.long}
+											zoom={this.state.zoom}
+											activeMarker={this.state.activeMarker}
+											selectedPlace={this.state.selectedPlace}
+											selectedMarker={selectedMarker}
+											showingInfoWindow={this.state.showingInfoWindow}
+											language={this.props.language}
+											iconSize={new this.props.google.maps.Size(50, 50)}
+										/>
+									)}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</Suspense>
+		)
   }
 }
 
@@ -597,4 +674,4 @@ const mapDispatchToProps = dispatch => {
   }
 
 }
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(injectIntl(StoreMain)));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(injectIntl(GoogleApiWrapper({ apiKey: 'AIzaSyAi0iRRQYErNXeAa6tZNgsevHWr6wbT-Nc',libraries: ['places','geometry'] })(StoreMain))));

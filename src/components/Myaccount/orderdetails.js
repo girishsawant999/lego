@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React, { Suspense, Component } from 'react';
 import Breadcrumb from '../../common/breadcrumb';
-import LogoSlider from '../../components/HomeComponent/logoSlider';
+// import LogoSlider from '../../components/HomeComponent/logoSlider';
 import topImg from '../../assets/images/icons/needHelpOne.png';
-import Needhelp  from '../Myaccount/NeedHelp';
+// import Needhelp  from '../Myaccount/NeedHelp';
 import logocheck from '../../assets/images/icons/LEGO.gif';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import Spinner2 from "../Spinner/Spinner";
 import { FormattedMessage, injectIntl } from '../../../node_modules/react-intl';
+const Needhelp = React.lazy(() => import('../Myaccount/NeedHelp'));
+
 class OrderDetails extends Component {
 constructor(props) {
 super(props);
@@ -16,6 +19,7 @@ render() {
    const store_locale=this.props.globals.store_locale
 return (
 <div>
+<Suspense fallback={<div></div>}>
    <div className="OrderDetails">
       {/* <LogoSlider /> */}
       <div className="container">
@@ -376,6 +380,7 @@ return (
          </div>
       </div>
    </div>
+   </Suspense>
 </div>
 )
 }

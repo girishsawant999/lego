@@ -20,7 +20,9 @@ export const getPlpData = (payload) => {
 
     return (dispatch,getState) => {
         const data = {
-            ...payload,
+            url_key: payload.url_key,
+            storeid: payload.store_id,
+            customerid: payload.customerid,
         }
         let products = getState().plp.product;
         products = products && Object.values(products);

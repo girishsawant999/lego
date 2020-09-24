@@ -1,43 +1,49 @@
-import React, { Component } from 'react';
-import { FormattedMessage, injectIntl } from '../../../node_modules/react-intl';
-import $ from 'jquery';
-import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
+import $ from 'jquery';
+import React, { Component, Suspense } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import storIcon from '../../assets/images/icons/store-face.png';
+// import SideBar from '../SideBar';
+import Modal from 'react-responsive-modal';
+import { Link, withRouter } from 'react-router-dom';
+import { FormattedMessage } from '../../../node_modules/react-intl';
+// import ShopBy from '../header/shopByTabs';
+// import Search from './Search';
+// import EditAccount from '../../components/Myaccount/editAccount';
+import avtar1 from "../../../src/assets/AvtarImages/avtar1.png";
+import avtar2 from "../../../src/assets/AvtarImages/avtar2.png";
+import avtar3 from "../../../src/assets/AvtarImages/avtar3.png";
+import avtar4 from "../../../src/assets/AvtarImages/avtar4.png";
+import avtar5 from "../../../src/assets/AvtarImages/avtar5.png";
+import avtar6 from "../../../src/assets/AvtarImages/avtar6.png";
+import avtar7 from "../../../src/assets/AvtarImages/avtar7.png";
+import avtar8 from "../../../src/assets/AvtarImages/avtar8.png";
 import aboutIcon from '../../assets/images/icons/aboutus.png';
 import accountIcon from '../../assets/images/icons/account.png';
-import wishIcon from '../../assets/images/icons/wishlist.png';
+// import truck from '../../assets/images/icons/truck.png';
+// import vipBadge from '../../assets/images/icons/vipBadge.png';
+import downArrow from '../../assets/images/icons/arrowDown.png';
 import bagIcon from '../../assets/images/icons/bag.png';
 import logo from '../../assets/images/icons/Headerlogo.png';
-import checkoutLock from '../../assets/images/lock.PNG';
 import leftArrow from '../../assets/images/icons/leftArrow1.png';
-import truck from '../../assets/images/icons/truck.png';
-import vipBadge from '../../assets/images/icons/vipBadge.png';
-import downArrow from '../../assets/images/icons/arrowDown.png';
-import searchIcon from '../../assets/images/icons/searchIcon.png';
-import learnMoreRight from '../../assets/images/icons/rightArrow.png';
+import storIcon from '../../assets/images/icons/store-face.png';
+// import searchIcon from '../../assets/images/icons/searchIcon.png';
+// import learnMoreRight from '../../assets/images/icons/rightArrow.png';
 import toggleIcon from '../../assets/images/icons/toggleIcon.png';
-import SideBar from '../SideBar';
-import Modal from 'react-responsive-modal';
+import wishIcon from '../../assets/images/icons/wishlist.png';
+import checkoutLock from '../../assets/images/lock.PNG';
 import * as actions from '../../redux/actions/index';
-import ShopBy from '../header/shopByTabs';
-import Search from './Search';
-import EditAccount from '../../components/Myaccount/editAccount';
-import avtar1 from "../../../src/assets/AvtarImages/avtar1.png"
-import avtar2 from "../../../src/assets/AvtarImages/avtar2.png"
-import avtar3 from "../../../src/assets/AvtarImages/avtar3.png"
-import avtar4 from "../../../src/assets/AvtarImages/avtar4.png"
-import avtar5 from "../../../src/assets/AvtarImages/avtar5.png"
-import avtar6 from "../../../src/assets/AvtarImages/avtar6.png"
-import avtar7 from "../../../src/assets/AvtarImages/avtar7.png"
-import avtar8 from "../../../src/assets/AvtarImages/avtar8.png"
+
+const EditAccount = React.lazy(() => import('../../components/Myaccount/editAccount'));
+const Search = React.lazy(() => import('./Search'));
+const ShopBy = React.lazy(() => import('../header/shopByTabs'));
+const SideBar = React.lazy(() => import('../SideBar'));
 
 let avtarImage;
 let setAvtarImageFromAPI;
 let avatarName;
 let isCheckout = false;
+let currentTime;
+let startTime;
 avtarImage = [
 	{
 		image: avtar1,
@@ -123,6 +129,20 @@ class header extends Component {
    }
 
    componentWillReceiveProps(nextProps) {
+      if(!this.props.isUserLoggedIn){
+         startTime = this.props.globals.currentTime;
+         if(startTime === '') {
+                 this.props.onGetCurrentTime();
+         }
+         currentTime = Date.now();
+         let checkTime = startTime + 43200000;
+         if (checkTime <= currentTime) {
+             this.props.onGetCurrentTime();
+             if (!this.props.isUserLoggedIn) {
+                 this.props.onGetGuestCartId();
+             }
+         }
+     }
       if (nextProps.location && nextProps.location.pathname && nextProps.globals
          && nextProps.globals.store_locale) {
             let lang = nextProps.location.pathname.split('/')[1];
@@ -251,12 +271,9 @@ class header extends Component {
 		// 	}
 		// })
       let cartcount=0;
-      let wishListItemsCount = 0;
+      let wishListItemsCount = this.props.wishlistUpdated.wishlistCount;
       if(this.props.myCart && this.props.myCart.my_cart_count){
          cartcount=this.props.myCart.my_cart_count;
-      }
-      if(this.props.wishListItems && this.props.wishListItems.products) {
-         wishListItemsCount = this.props.wishListItems.products.length;
       }
       let isLoginPage = false;
       let { menus, myCart } = this.props;
@@ -275,7 +292,8 @@ class header extends Component {
       } else if (this.props.location.pathname.includes('/checkoutprocess')
          || this.props.location.pathname.includes('/shipping')
          || this.props.location.pathname.includes('/checkoutContactInfo')
-         || this.props.location.pathname.includes('/checkoutPaymentMethod')) {
+         || this.props.location.pathname.includes('/checkoutPaymentMethod')
+         || this.props.location.pathname.includes('/paymentProcessing')) {
             isCheckout = true;
             document.body.style.paddingTop = "0px";
       }
@@ -295,7 +313,9 @@ class header extends Component {
                : <header className="header">
                   <div id="sideBarOverlay">
                      <div id="SideBar" className="SideBar">
+                     <Suspense fallback={<div></div>}>
                         <SideBar store_locale={store_locale} menus={menus} />
+                        </Suspense>
                      </div>
                   </div>
                   {!isCheckout && <div className="web_Header" id="header">
@@ -354,7 +374,9 @@ class header extends Component {
                                              {/* <div className="sInModel ">Account</div> */}
                                              <div className="modal-body">
                                                 <div className="container-fluid nopadding">
+                                                <Suspense fallback={<div ></div>}>
                                                    <EditAccount setAvtarImageNameAPI={avatarName} setAvtarImageFromAPI={setAvtarImageFromAPI} useredit={this.props.account.user} closeInfoModal={this.closeInfoModal} />
+                                                </Suspense>
                                                 </div>
                                              </div>
                                           </Modal>
@@ -473,7 +495,7 @@ class header extends Component {
                            <div className="col-md-1">
                               <Link to={`/`}>
                                  <div className="mainLogo">
-                                    <img src={logo} alt="logo" />
+                                       <img src={logo} alt="logo" />
                                  </div>
                               </Link>
                            </div>
@@ -495,7 +517,7 @@ class header extends Component {
                                                                {option.children && option.children[0] && option.children[0][0] &&
                                                                   option.children[0][0].map((data,index) => {
                                                                      return (
-                                                                        <li key ={index} className="list-inline-item dropdown-item">
+                                                                        <li key ={index} className={`list-inline-item dropdown-item ${store_locale ==='ar' && option.url_key === "themes"? 'themesText':'' }`}>
                                                                            <Link to={`/${store_locale}/productlisting/${data.url_path}`}>{data.name}</Link>
                                                                         </li>
                                                                      )
@@ -507,7 +529,7 @@ class header extends Component {
                                                                {option.children && option.children[0] && option.children[0][1] &&
                                                                   option.children[0][1].map((data,index) => {
                                                                      return (
-                                                                        <li key ={index} className="list-inline-item dropdown-item">
+                                                                        <li key ={index} className={`list-inline-item dropdown-item ${store_locale ==='ar' && option.url_key === "themes"? 'themesText':'' }`}>
                                                                            <Link to={`/${store_locale}/productlisting/${data.url_path}`} >
                                                                               {data.name}
                                                                            </Link>
@@ -521,7 +543,7 @@ class header extends Component {
                                                                {option.children && option.children[0] && option.children[0][2] &&
                                                                   option.children[0][2].map((data,index) => {
                                                                      return (
-                                                                        <li key={index} className="list-inline-item dropdown-item">
+                                                                        <li key={index} className={`list-inline-item dropdown-item ${store_locale ==='ar' && option.url_key === "themes"? 'themesText':'' }`}>
                                                                            <Link to={`/${store_locale}/productlisting/${data.url_path}`}   >
                                                                               {data.name}
                                                                            </Link>
@@ -535,7 +557,7 @@ class header extends Component {
                                                                {option.children && option.children[0] && option.children[0][3] &&
                                                                   option.children[0][3].map((data,index) => {
                                                                      return (
-                                                                        <li key={index} className="list-inline-item dropdown-item">
+                                                                        <li key={index} className={`list-inline-item dropdown-item ${store_locale ==='ar' && option.url_key === "themes"? 'themesText':'' }`}>
                                                                            <Link to={`/${store_locale}/productlisting/${data.url_path}`}   >
                                                                               {data.name}
                                                                            </Link>
@@ -566,7 +588,9 @@ class header extends Component {
                                                       {option.name} <img src={downArrow} alt="downArrow" />
                                                    </Link>
                                                    <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                   <Suspense fallback={<div></div>}>
                                                       <ShopBy options={option.children} store_locale={store_locale} />
+                                                   </Suspense>
                                                    </div>
                                                 </li>}
 
@@ -642,7 +666,9 @@ class header extends Component {
                               </div>
                            </div>
                            <div className="col-md-3 searchMain">
-                              <Search />
+                              <Suspense fallback={<div ></div>}>
+                                 <Search />
+                              </Suspense>
                            </div>
                         </div>
                      </div>
@@ -651,16 +677,20 @@ class header extends Component {
                   {/* CheckOut Page Navigation */}
                   {isCheckout && <div class="smallNavigation">
                         <div class="navGrid">
-                           <div class="backToBag">
-                           <Link to={`/${store_locale}/cart`} class="ljDNej d-flex">
+                        {!this.props.location.pathname.includes('/paymentProcessing') && <div class="backToBag">
+                               <Link to={`/${store_locale}/cart`} class="ljDNej d-flex">
                                  <div class="leftArrow">
                                  <img src={leftArrow} alt="logo" />
                                  </div>
                                  <div class="myBagText">
-                                    <span class="myBagText">{ this.props.globals.store_locale === "en" ? "Back": "رجوع" } <span class="d-none d-sm-block">&nbsp;{ this.props.globals.store_locale === "en" ? "to My Bag": "إلى عربة التسوق الخاصة بي" } </span></span>
+                                       <span class="myBagText">
+                                    <FormattedMessage id="checkOut.BacktoCart" defaultMessage="BacktoCart" />
+                                    </span>
+                                
+                                    {/* <span class="myBagText">{ this.props.globals.store_locale === "en" ? "Back": "رجوع" } <span class="d-none d-sm-block">&nbsp;{ this.props.globals.store_locale === "en" ? "to My Bag": "إلى عربة التسوق الخاصة بي" } </span></span> */}
                                  </div>
                                  </Link>
-                           </div>
+                           </div>}
                            <div class="Headerstyles__LogoContainer-gtyp30-3 EHyLC">
                            <Link to={`/${store_locale}/`}>  <img src={logo} alt="logo" /></Link>
                            </div>
@@ -751,12 +781,14 @@ class header extends Component {
                            <div className="col-2">
                               <Link to={`/`}>
                                  <div className="mainLogoMobile">
-                                    <img src={logo} alt="logo" />
+                                       <img src={logo} alt="logo" />
                                  </div>
                               </Link>
                            </div>
                            <div className="col-10">
+                           <Suspense fallback={<div ></div>}>
                               <Search />
+                              </Suspense>
                            </div>
                         </div>
 
@@ -777,6 +809,7 @@ const mapStateToProps = state => {
       myCart:state.myCart,
       wishListItems: state.wishList,
       account: state.account,
+      wishlistUpdated: state.wishlistUpdated,
    };
 }
 const mapDispatchToProps = dispatch => {
@@ -785,12 +818,11 @@ const mapDispatchToProps = dispatch => {
       onGetGuestCartId: () => dispatch(actions.getGuestCartId()),
       onLogoutUser:()=>dispatch(actions.logoutUser()),
       onGetMyCartList:(payload)=>dispatch(actions.getMyCart(payload)),
-      onGetCartCount:(payload)=>dispatch(actions.getCartCount(payload)),
       onSearchProduct: (payload) =>dispatch(actions.getSearchData(payload)),
-      onGetWishListItem: (payload) => dispatch(actions.getWishlist(payload)),
+      onGetWishListItem: (payload) => dispatch(actions.getWishlistUpdated(payload)),
       onGetAccountPageData: (payload) => dispatch(actions.getAccountPageData(payload)),
-		onGetAddressBook: (payload) => dispatch(actions.getAddressBook(payload)),
-      
+      onGetAddressBook: (payload) => dispatch(actions.getAddressBook(payload)),
+      onGetCurrentTime: () => dispatch(actions.getTimeStamp())
    }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(header));

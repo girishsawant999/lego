@@ -2,6 +2,7 @@ import { loadingSpinner } from './globals';
 import * as actionType from '../actionTypes';
 import { API } from '../../api/api';
 import {setOrderSummary} from './getMyCart';
+import { fullBrowserVersion, browserName, osName } from 'react-device-detect';
 /////////////////////////////////GET ORDER HISTORY////////////////////////////////////
 
 const callActionGetOrderHistory = (payload) => {
@@ -103,7 +104,13 @@ export const orderJson = (payload) => {
             success: (res) => {
                     dispatch(setOrderSummary({ 
                         order_id : payload.order_id, 
-                        store_id : payload.store_id
+                        store_id : payload.store_id,
+                        device_details: {
+                            name : browserName,
+                            os : osName,
+                            type: "browser",
+                            version: fullBrowserVersion
+                        }
                     }))
 
                     dispatch(loadingSpinner({ loading: false }))

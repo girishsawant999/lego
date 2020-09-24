@@ -1,19 +1,16 @@
 import React, { Component } from "react"
-import { FormattedMessage, injectIntl } from "../../../node_modules/react-intl"
-import { Row, Col, Label } from "reactstrap"
-import { Link } from "react-router-dom"
-import leftArrow1 from "../../assets/images/LEGO+Account.svg"
-import adult from "../../assets/images/adult-register-geek.png"
+import { FormattedMessage } from "../../../node_modules/react-intl"
+// import { Row, Col, Label } from "reactstrap"
+// import { Link } from "react-router-dom"
+// import leftArrow1 from "../../assets/images/LEGO+Account.svg"
+// import adult from "../../assets/images/adult-register-geek.png"
 import { withRouter } from "react-router-dom"
 import { connect } from "react-redux"
-import PhoneNumber from "../../components/StaticPages/ContactUs/IntlTelePhone"
+// import PhoneNumber from "../../components/StaticPages/ContactUs/IntlTelePhone"
 import * as actions from ".././../redux/actions/index"
-import { Redirect } from "react-router-dom"
+// import { Redirect } from "react-router-dom"
 
 import Spinner2 from "../../components/Spinner/Spinner2"
-import { toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
-import { css } from "glamor"
 
 class ChangePassword extends Component {
 	constructor(props) {

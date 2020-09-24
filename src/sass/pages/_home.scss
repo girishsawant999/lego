@@ -1430,3 +1430,9 @@ html[dir = 'rtl'] .HomeBanner .slick-next{
     right: -25px;
     transform: rotate(180deg);
 }
+.wishlist-center {
+    display: flex;
+    color: rgb(0, 109, 183);
+    justify-content: center;
+    align-items: center;
+}

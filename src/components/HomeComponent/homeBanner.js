@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import "bootstrap/dist/css/bootstrap.css"
+// import "slick-carousel/slick/slick.css"
+// import "slick-carousel/slick/slick-theme.css"
+// import "bootstrap/dist/css/bootstrap.css"
 import { isMobile } from "react-device-detect"
 import Radium from 'radium'
 import { Link } from "react-router-dom"
@@ -11,7 +11,12 @@ import { connect } from 'react-redux';
 class HomeBanner extends Component {
 	constructor(props) {
 		super(props)
-		this.data = this.props.data
+		this.data = this.props.data && Object.values(this.props.data)
+		if (this.data) {
+			this.data.sort((a,b)=> {
+				return parseInt(a.sortorder) - parseInt(b.sortorder)
+			})
+		}
 	}
 
 	checkValidObject =(item) =>{
@@ -33,14 +38,14 @@ class HomeBanner extends Component {
 		return valid
 	}
 
-	createSlideElement = (key) => {
+	createSlideElement = (item,key) => {
 		const customStyle = {
-			backgroundColor: this.data[key].btncolor,
-			color: this.data[key].btntextcolor,
+			backgroundColor: item.btncolor,
+			color: item.btntextcolor,
 
 			":hover": {
-				backgroundColor: this.data[key].btncolorhover,
-				color: this.data[key].btntextcolorhover,
+				backgroundColor: item.btncolorhover,
+				color: item.btntextcolorhover,
 			},
 		}
 		const bannerContent = {
@@ -70,8 +75,8 @@ class HomeBanner extends Component {
 				<div className="ImageBanner" >
 					{!isMobile && (
 						<div className="web">
-							{this.data[key].dropdown === "1" ? (
-								<img src={this.data[key].imgdesktop} alt="banner1" />
+							{item.dropdown === "1" ? (
+								<img src={item.imgdesktop} alt="banner1" />
 							) : (
 								<video
 									loop
@@ -81,7 +86,7 @@ class HomeBanner extends Component {
 									width="100%"
 									style={{ height: "500px" }}
 									height="500px"
-									src={this.data[key].videodesktop}
+									src={item.videodesktop}
 									type="video/mp4"
 								/>
 							)}
@@ -89,30 +94,28 @@ class HomeBanner extends Component {
 					)}
 					{isMobile && (
 						<div className="mob">
-							{this.data[key].dropdown === "1" ? (
-								<img src={this.data[key].imgmobile} alt="banner1" />
+							{item.dropdown === "1" ? (
+								<img src={item.imgmobile} alt="banner1" />
 							) : (
-								<video loop muted autoPlay width="100%" src={this.data[key].videomobile} type="video/mp4" />
+								<video loop muted autoPlay width="100%" src={item.videomobile} type="video/mp4" />
 							)}
 						</div>
 					)}
 
-					<div className="bannerContent"  style={ isMobile?{backgroundColor:this.data[key].bgmobile}:{ ...bannerContent[this.data[key].bannercontentalignment]}} >
-						<p className="headingTitle" style={{ color: this.data[key].desccolor }}>
-							{this.data[key].title}
+					<div className="bannerContent"  style={ isMobile?{backgroundColor:item.bgmobile}:{ ...bannerContent[item.bannercontentalignment]}} >
+						<p className="headingTitle" style={{ color: item.desccolor }}>
+							{item.title}
 						</p>
-						<p className="headingText" style={{ color: this.data[key].desccolor }}>
-							{this.data[key].content}
-						</p>
+						<p className="headingText" style={{ color: item.desccolor }} dangerouslySetInnerHTML={{__html: item.content}}></p>
 						<div className="buttonDiv">
-						<Link to={`/${store_locale}/productlisting/${this.data[key].redirection}`} >
+						<Link to={`/${store_locale}/${item.redirection}`} >
 								<button 
 									key={key}
 									type="button"
 									id={`btn-${key}`}
 									className="whiteButton"
 									style={customStyle}>
-									{this.data[key].btntext}
+									{item.btntext}
 									<svg
 										id={`arrow-${key}`}
 										width="16"
@@ -177,13 +180,16 @@ class HomeBanner extends Component {
 				},
 			],
 		}
+
+
+		
 		return (
 			<div>
 				<div className="HomeBanner" id="HomeBanner">
 					<Slider {...settings2} className="sliderMain">
 						{this.data &&
-							Object.keys(this.data).map((key) => {
-								return this.data[key].title && this.createSlideElement(key)  //this.checkValidObject(this.data[key])
+							this.data.map((item,index) => {
+								return item.title && this.createSlideElement(item,index)  //this.checkValidObject(item)
 							})}
 					</Slider>
 				</div>

@@ -1,0 +1,57 @@
+.save_cards{
+.pad10{
+    padding: 10px 0px;
+    align-items: center;
+    justify-content: center;
+}
+ .mada-card {
+    width: 70px;
+    margin:7px 0px;    
+   
+}
+.card-number {
+    font-size: 16px;
+        font-family: CeraPro-Regular;
+            font-size: 0.875rem;
+   
+}
+
+.expiry-num {
+          font-family: CeraPro-Regular;
+              font-size: 0.875rem;
+}
+.trash-icon {
+    font-size: 20px;
+    color: red;   
+    cursor: pointer;
+}
+hr{
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 0rem !important;
+    margin-bottom: 0px !important;
+
+}
+svg{
+    width:70px !important;
+}
+}
+ html[dir="rtl"] .save_cards .pad10{
+    text-align:right;
+}
+@media (max-width:600px){ 
+.save_cards svg{
+    width:50px !important;
+}
+ .save_cards .mada-card {
+    width: 50px !important;     
+   
+}
+.save_cards .MyOrder .accountTitle {
+    padding-left: 0px;
+    font-size: 0.875rem;
+}
+}
+.dir-ltr {
+    direction: ltr;
+
+}

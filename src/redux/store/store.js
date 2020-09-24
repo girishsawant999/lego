@@ -12,7 +12,6 @@ import contactUsReducer from '../reducers/contactUsReducer'
 import loginAccountReducer from '../reducers/loginAccountReducer';
 import MenuReducer from '../reducers/MenuReducer';
 import orderHistoryReducer from '../reducers/orderHistoryReducer';
-import wishListReducer from '../reducers/wishListReducer';
 import myAccountInfoReducer from "../reducers/myAccountInfoReducer";
 import GuestUserReducer from '../reducers/guestUserReducer';
 import MyCartReducer from "../reducers/myCartReducer";
@@ -22,7 +21,8 @@ import remembermeReducer from "../reducers/rememberMeReducer";
 import countryReducer from "../reducers/countryReducer";
 import shippingReducer from "../reducers/shippingReducer";
 import referFriendReducer from "../reducers/referFriendReducer";
-import notifyReducer from "../reducers/notifyMeReducer"
+import notifyReducer from "../reducers/notifyMeReducer";
+import wishlistUpdated from "../reducers/wishlistReducerUpdated";
 const AppRootReducer = combineReducers({
     plp:plpReducer,
     global: globalReducer,
@@ -31,7 +31,7 @@ const AppRootReducer = combineReducers({
     login: loginAccountReducer,
     menu: MenuReducer,
     orders: orderHistoryReducer,
-    wishList: wishListReducer,
+    wishlistUpdated: wishlistUpdated,
     account: myAccountInfoReducer,
     myCart:MyCartReducer,
     product: productReducer,

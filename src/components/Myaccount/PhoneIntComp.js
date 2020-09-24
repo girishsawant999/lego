@@ -1,9 +1,11 @@
-import React, { Component } from "react"
+import React, {Suspense, Component } from "react"
 import IntlTelInput from "react-intl-tel-input"
-import "react-intl-tel-input/dist/main.css"
+import "react-intl-tel-input/dist/main.css";
+import Spinner2 from "../Spinner/Spinner"
 import CountryCodeList from "../utility/country_code"
 import { connect } from "react-redux"
 import * as actions from "../../redux/actions/index"
+// const CountryCodeList = React.lazy(() => import("../utility/country_code"));
 
 class phoneNumber extends Component {
 	constructor(props) {
@@ -57,6 +59,7 @@ class phoneNumber extends Component {
 		}
 
 		return (
+			<Suspense fallback={<div></div>}>
 			<div id="phoneNumber" className="t-Form-itemWrapper">
 				<IntlTelInput
 					separateDialCode="true"
@@ -90,6 +93,7 @@ class phoneNumber extends Component {
 					}
 				/>
 			</div>
+			</Suspense>
 		)
 	}
 }

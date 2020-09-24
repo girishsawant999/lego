@@ -1,0 +1,1 @@
+export const APPLE_PAY_VERSION_NUMBER = 3;

@@ -198,7 +198,7 @@ class SideBar extends Component {
                                 <>
                                 <Link to={`/${store_locale}/productlisting/${child.url_path}`}>
                                     <div className="insideSub" onClick={() => this.SideBarClose()}>
-                                        <span>{child.name}</span>
+                                        <span className={store_locale ==='ar' && child.url_path.includes('themes/')? 'themesText':''}>{child.name}</span>
                                     </div>
                                 </Link>
                                 </>
@@ -218,7 +218,7 @@ class SideBar extends Component {
                     <div className="MenuDiv" id="ShopBy">
                         <Link to={`/${store_locale}/productlisting/${this.state.selectedMenu.url_path}`}>
                         <div className="titleMain" onClick={() => this.SideBarClose()}>
-                            <Link >{this.state.selectedMenu.name}</Link>
+                            <Link to={`/${store_locale}/productlisting/${this.state.selectedMenu.url_path}`}>{this.state.selectedMenu.name}</Link>
                             {/* <img onClick={() => this.backArrowToShopBy()} src={A_left} alt="m_Right" id="backArrowBtn" className="backArrowBtn"/> */}
                         </div>
                         </Link>
@@ -259,15 +259,20 @@ class SideBar extends Component {
                                 `/${store_locale}/productdetails/${child.url_key}` 
                             }>
                                     <div className="insideSub" onClick={() => this.SideBarClose()}>
-                                        <span>{child.name} </span>
+                                        <span >{child.name} </span>
                                     </div>
                                 </Link>
                                 </>
                             )})}
-                            {(this.state.selectedMenu.name == "Popular Product" || this.state.selectedMenu.name == "New Product") && <div className="insideSub">
-                                <Link to={`/${store_locale}/productlisting/${this.state.selectedMenu.url_path}`}>
-                                {'See all '+this.state.selectedMenu.name} </Link>
-                            </div>}
+                            {this.state.selectedMenu.see_all &&
+                            <Link to={`/${store_locale}/productlisting/${this.state.selectedMenu.see_all}`} onClick={() => this.SideBarClose()}>
+                            <div className="LearnTheme">
+                                   <Link to={`/${store_locale}/productlisting/${this.state.selectedMenu.see_all}`}>
+                                    {'Learn about all '+this.state.selectedMenu.name} 
+                                <span className="MoreThemeUrl"><svg width="6" height="9" className="Chevron__ChevronIcon-sc-1q2x5f4-0 bgViWV" viewBox="0 0 18 28" aria-hidden="true" data-di-rand="1590040132033"><path d="M1.825 28L18 14 1.825 0 0 1.715 14.196 14 0 26.285z" fill="currentColor"></path></svg></span>
+                                </Link>
+                                </div>
+                            </Link>}
                         </div>
                      </div>
                     </>}

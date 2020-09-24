@@ -1,21 +1,24 @@
-import React, { Component } from 'react';
+import React, { Suspense, Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import starYellow from '../../assets/images/icons/starYellow.png';
 import starGrey from '../../assets/images/icons/starGrey.png';
 import starhalf from '../../assets/images/icons/starhalf.png';
-import expRating from '../../assets/images/icons/expRating.png';
-import expRatingB from '../../assets/images/icons/expRatingB.png';
-import expRatingH from '../../assets/images/icons/expRatingH.png';
+// import expRating from '../../assets/images/icons/expRating.png';
+// import expRatingB from '../../assets/images/icons/expRatingB.png';
+// import expRatingH from '../../assets/images/icons/expRatingH.png';
 import Reviewdown from '../../assets/images/icons/arrowDown.png';
 import { Link } from 'react-router-dom';
 import Modal from 'react-responsive-modal';
-import ProductReview from './ProductReview';
-import ReviewRating from './ReviewRating';
-import Progress from 'react-progressbar';
+import Spinner2 from "../Spinner/Spinner";
+// import ProductReview from './ProductReview';
+// import ReviewRating from './ReviiewRating';
+// import Progress from 'react-progressbar';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { withRouter } from 'react-router-dom';
-import AddBagAlert from '../../common/AlertBox/addToBagAlert';
+// import AddBagAlert from '../../common/AlertBox/addToBagAlert';
+const ReviewRating = React.lazy(() => import('../pdp/ReviewRating'));
+const AddBagAlert = React.lazy(() => import('../../common/AlertBox/addToBagAlert'));
 
 class AccodionReview extends Component {
    constructor(props) {
@@ -137,6 +140,7 @@ class AccodionReview extends Component {
          this.setReviews(reviews.list);
       }
       return (
+         <Suspense fallback={<div></div>}>
          <div>
             {alertBox}
             <div className="AccodionReview">
@@ -237,6 +241,7 @@ class AccodionReview extends Component {
                </div>
             </div>
          </div>
+         </Suspense>
       )
    }
 }

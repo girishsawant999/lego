@@ -1,5 +1,6 @@
-import * as actionType from "../actionTypes"
-import { API } from "../../api/api"
+import * as actionType from "../actionTypes";
+import { API } from "../../api/api";
+import { loadingSpinner } from './globals';
 
 const actionForGetAccountPageData = (payload) => {
 	return {
@@ -208,5 +209,69 @@ export const getAddressBook = (payload) => {
 			},
 		}
 		API.getAddressBook(data, cb)
+	}
+}
+
+export const deleteCard = (payload) => {
+	return (dispatch, getState) => {
+		const data = { ...payload }
+		dispatch(loadingSpinner({ loading: true }));
+		let payment_details = {
+			...getState().myCart.payment_details,
+		}
+		let cb = {
+			success: (res) => {
+				if (res.status === 200) {
+					if (payment_details && payment_details.payfort_fort_cc && payment_details.payfort_fort_cc.cards) {
+						payment_details.payfort_fort_cc.cards = payment_details.payfort_fort_cc.cards.filter(item => {
+							return payload.id !== item.id
+						});
+					}
+					dispatch(loadingSpinner({ loading: false }))
+
+					dispatch({
+						type: actionType.GET_PAYMENT_CHECKOUT,
+						payload: {
+							deleteCardMsg: res.message,
+							payment_details
+						}
+					});
+					setTimeout(() => {
+						dispatch({
+							type: actionType.GET_PAYMENT_CHECKOUT,
+							payload: {
+								deleteCardMsg: '',
+								payment_details
+							}
+						});
+					}, 2000);
+				} else {
+					dispatch(loadingSpinner({ loading: false }))
+
+					dispatch({
+						type: actionType.GET_PAYMENT_CHECKOUT,
+						payload: {
+							deleteCardMsg: res.message,
+							payment_details
+						}
+					});
+
+					setTimeout(() => {
+						dispatch({
+							type: actionType.GET_PAYMENT_CHECKOUT,
+							payload: {
+								deleteCardMsg: '',
+								payment_details
+							}
+						});
+					}, 2000);
+				}
+			},
+			error: (err) => {
+				dispatch(loadingSpinner({ loading: false }))
+			},
+		}
+
+		API.deleteSavedCard(data, cb);
 	}
 }

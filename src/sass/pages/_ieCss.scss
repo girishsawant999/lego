@@ -40,4 +40,9 @@
     .cartPage .QtyCounter .minus {
         width: 40px;
     }
+    .insideDiv{
+        .subCategoryDiv{
+         height: calc(100vh - 220px);
+    }
+}
   }

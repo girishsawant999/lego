@@ -245,7 +245,7 @@ html[dir="rtl"] {
 .insideDiv{
     .subCategoryDiv{
      height: calc(100vh - 100px);
-      overflow-y: auto;
+      overflow-y: auto !important;
       .LearnTheme{
         -webkit-box-align: center;
     align-items: center;

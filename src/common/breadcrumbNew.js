@@ -28,12 +28,14 @@ class Breadcrumb extends Component {
 										if(this.props.breadcrumbData.length-1 === index) 
 											return (
 												<li className="breadcrumb-item breadcrumb-item-n">
-                                                <span>{item.name}</span>
+                                                <span className={store_locale ==='ar' && this.props.isThemes ? 'themesText':''}>{item.name}</span>
                                             </li>
 											)
                                         return (
                                             <li className="breadcrumb-item breadcrumb-item-n">
-                                                <Link to={`/${store_locale}/productlisting/${item.url_key}`}>{item.name}</Link>{" "}
+                                                <Link to={`/${store_locale}/productlisting/${item.url_key}`}
+												 className={store_locale ==='ar' && item.url_key.includes('themes/') ? 'themesText':''}>
+													 {item.name}</Link>{" "}
 												&nbsp;&nbsp;<i class="fa breadcrumbArrow"></i>
                                             </li>
 										)

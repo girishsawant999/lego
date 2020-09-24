@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Breadcrumb from '../../common/breadcrumb';
 import Needhelp  from '../Myaccount/NeedHelp';
-import LogoSlider from '../../components/HomeComponent/logoSlider';
+// import LogoSlider from '../../components/HomeComponent/logoSlider';
 import topImg from '../../assets/images/icons/needHelpOne.png';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';

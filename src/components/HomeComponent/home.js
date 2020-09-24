@@ -1,26 +1,43 @@
-import React, { Component } from "react"
+import React, { Suspense, Component } from "react"
 import { withRouter } from "react-router-dom"
 import { connect } from "react-redux"
 import * as actions from "../../redux/actions/index"
 import { injectIntl } from "../../../node_modules/react-intl"
-import LogoSlider from "../../components/HomeComponent/logoSlider"
-import HomeBanner from "../../components/HomeComponent/homeBanner"
-import QuickLogos from "../../components/HomeComponent/quickLogos"
-import TrendingNow from "../../components/HomeComponent/trendingNow"
-import FeatureSet from "../../components/HomeComponent/featureSet"
-import SpotLight from "../../components/HomeComponent/spotLight"
-import RecommandedForYou from "../../components/HomeComponent/recommandedForYou"
 import { isMobile } from "react-device-detect"
-import Spinner2 from "../Spinner/Spinner2"
-import AlertBox from '../../common/AlertBox/QTYAlert';
-import AddBagAlert from '../../common/AlertBox/addToBagAlert';
+import Spinner2 from "../Spinner/Spinner2";
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import "bootstrap/dist/css/bootstrap.css"
+// import AlertBox from '../../common/AlertBox/QTYAlert';
+// import AddBagAlert from '../../common/AlertBox/addToBagAlert';
 import cookie from "react-cookies"
-import SpotLight2 from "../../components/HomeComponent/spotlight2"
-import { createMetaTags } from "../utility/meta"
+// import SpotLight2 from "../../components/HomeComponent/spotlight2"
+import { createMetaTags } from "../utility/meta";
 
+// import LogoSlider from "../../components/HomeComponent/logoSlider"
+// import HomeBanner from "../../components/HomeComponent/homeBanner"
+const HomeBanner = React.lazy(() => import('../../components/HomeComponent/homeBanner'))
+const QuickLogos = React.lazy(() => import('../../components/HomeComponent/quickLogos'))
+const TrendingNow = React.lazy(() => import('../../components/HomeComponent/trendingNow'))
+const FeatureSet = React.lazy(() => import('../../components/HomeComponent/featureSet'))
+const SpotLight = React.lazy(() => import('../../components/HomeComponent/spotLight'))
+const RecommandedForYou = React.lazy(() => import('../../components/HomeComponent/recommandedForYou'))
+// const Spinner2 = React.lazy(() => import('../Spinner/Spinner2'))
+const AlertBox = React.lazy(() => import('../../common/AlertBox/QTYAlert'))
+const AddBagAlert = React.lazy(() => import('../../common/AlertBox/addToBagAlert'))
+const SpotLight2 = React.lazy(() => import('../../components/HomeComponent/spotlight2'))
+
+// import QuickLogos from "../../components/HomeComponent/quickLogos"
+// import TrendingNow from "../../components/HomeComponent/trendingNow"
+// import FeatureSet from "../../components/HomeComponent/featureSet"
+// import SpotLight from "../../components/HomeComponent/spotLight"
+// import RecommandedForYou from "../../components/HomeComponent/recommandedForYou"
+
+const LogoSlider = React.lazy(() => import('../../components/HomeComponent/logoSlider'));
 
 let wishlistClick = false;
 let removeWishlistClick = false;
+let isScroll = false;
 class Home extends Component {
 	constructor(props) {
 		super(props)
@@ -28,9 +45,13 @@ class Home extends Component {
 			alertModalFlag: false,
 			message: '',
 			addMessagePopup: false,
-         	addMessage: '',
+			 addMessage: '',
+			 isScroll: false
 		}
+
+		isScroll = false;
 	}
+
 	componentWillMount() {
 		const payload = { 
 			store: this.props.globals.currentStore,
@@ -39,12 +60,23 @@ class Home extends Component {
 		this.props.onGetHomePageData(payload)
 		const payloadForRecommended = {
 			...payload,
-			categories : cookie.load('visitedProducts') ? cookie.load('visitedProducts').toString(',') : '',
+			categories : this.props.globals.recommendedCategories.toString(',') ,
 		}
 		this.props.onGetRecommendedData(payloadForRecommended)
 	}
-	componentDidMount() {
-		window.scrollTo(0,0)
+	componentDidMount = () => {
+		window.scrollTo(0,0);
+
+		// if (this.state.isScroll === false && isScroll === false) {
+			// window.addEventListener("scroll", () => {
+				if(this.state.isScroll === false && isScroll === false) {
+					isScroll = true;
+					this.setState({
+						isScroll: true
+					});
+				}
+			// });
+		// }
 	}
 
 	isEmptyObject = (object) => {
@@ -71,8 +103,8 @@ class Home extends Component {
 		removeWishlistClick = true
 		let data = {
 			wishilistitemid: product.wishListId,
+			product_id:product.product_id
 		}
-
 		this.props.onRemoveWishList(data)
 	}
 	closeAddBag = () => {
@@ -83,24 +115,22 @@ class Home extends Component {
    
 		componentWillReceiveProps = (nextProps) => {
 			if (nextProps.user_details.isUserLoggedIn) {
-				if (nextProps.wishList && !nextProps.wishList.wishLoader &&  nextProps.wishList.productWishDetail && nextProps.wishList.productWishDetail.is_in_wishlist
-				   && wishlistClick) {
-					wishlistClick = false;
-				  this.setState({
-					 addMessagePopup: true,
-					 addMessage: nextProps.globals.currentStore == 2 ? ' Item has been Added To Wish List ' : 'تم إضافة المنتج إلى قائمة الأمنيات'
-				  });
-			   } else if ((nextProps.wishList && nextProps.wishList.productWishDetail && removeWishlistClick &&
-				(nextProps.wishList.productWishDetail.is_in_wishlist ==='' || !nextProps.wishList.productWishDetail.is_in_wishlist))) {
-					removeWishlistClick = false;
+				if (nextProps.wishlistUpdated.wishlistMessage && nextProps.wishlistUpdated.wishlistItemRemoved ) {
 					this.setState({
-						is_wishlist: false,
-						wishlistId: '',
-						Spinner: false,
-						addMessagePopup: true,
-						addMessage: nextProps.globals.currentStore == 2 ? ' Item has been removed from Wish List ' : 'تم إزالة المنتج من  قائمة الأمنيات'
-					});
-			   }
+					   addMessagePopup: true,
+					   addMessage: nextProps.wishlistUpdated.wishlistMessage,
+					})
+					nextProps.wishlistUpdated.wishlistMessage = ""
+					nextProps.wishlistUpdated.wishlistItemRemoved =false
+				 }
+				 if (nextProps.wishlistUpdated.wishlistMessage && nextProps.wishlistUpdated.wishlistItemAdded ) {
+					this.setState({
+					   addMessagePopup: true,
+					   addMessage: nextProps.wishlistUpdated.wishlistMessage,
+					})
+					nextProps.wishlistUpdated.wishlistMessage = ""
+					nextProps.wishlistUpdated.wishlistItemAdded =false
+				 }
 			}
 			if (nextProps.notify.message) {    
 				this.setState({
@@ -161,28 +191,49 @@ class Home extends Component {
 								? "LEGO, Online Store, Saudi Arabia, Bricks, Building Blocks, Construction Toys, Gifts"
 								: "ليغو LEGO، تسوق اونلاين، السعودية، مكعبات، مكعبات بناء، العاب تركيب، هدايا"
 						)}
+						<Suspense fallback={<div></div>}>
 						<LogoSlider />
+						</Suspense>
+						<Suspense fallback={<div></div>}>
 						<HomeBanner data={this.props.home_page_data.SECTION1} isEmptyObject={this.isEmptyObject} />
+						</Suspense>
+						<Suspense fallback={<div></div>}>
 						<QuickLogos data={this.props.home_page_data.SECTION2} />
+						</Suspense>
+						{this.state.isScroll && isScroll && <>
+						<Suspense fallback={<div></div>}>
+
 						<TrendingNow data={this.props.home_page_data.SECTION3} />
+						</Suspense>
 						{this.props.home_page_data.SECTION4 && (
+						<Suspense fallback={<div></div>}>
+
 							<FeatureSet
 								data={this.props.home_page_data.SECTION4}
 								isEmptyObject={this.isEmptyObject}
 								addToWishList={this.addToWishList}
 								removeFromWishlist={this.removeFromWishlist}
 							/>
+						</Suspense>
 						)}
 						{/* <SpotLight data={this.props.home_page_data.SECTION5} /> */}
-						{this.props.home_page_data.SECTION5 && <SpotLight2 data={this.props.home_page_data.SECTION5} />}
+						{this.props.home_page_data.SECTION5 && 
+						<Suspense fallback={<div></div>}>
+							<SpotLight2 data={this.props.home_page_data.SECTION5} />
+						</Suspense>
+						}
 						{/* <ShopAgeRange /> */}
 						{this.props.recommended_data && (
+						<Suspense fallback={<div></div>}>
+
 							<RecommandedForYou
 								data={this.props.recommended_data.SECTION6}
 								addToWishList={this.addToWishList}
 								removeFromWishlist={this.removeFromWishlist}
 							/>
+						</Suspense>
 						)}
+						</>}
 					</div>
 				)}
 			</div>
@@ -196,7 +247,7 @@ const mapStateToProps = (state) => {
 		recommended_data: state.global.recommended_data,
 		globals: state.global,
 		user_details :state.login,
-		wishList: state.wishList,
+		wishlistUpdated: state.wishlistUpdated,
 		notify:state.notify,
 	}
 }
@@ -205,8 +256,8 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		onGetHomePageData: (payload) => dispatch(actions.getHomePageData(payload)),
 		onGetRecommendedData: (payload) => dispatch(actions.getRecommendedData(payload)),
-		onAddToWishList: payload => dispatch(actions.addToWishlist(payload)),
-      	onRemoveWishList: (payload) => dispatch(actions.removeWishList(payload)),
+		onAddToWishList: payload => dispatch(actions.addToWishlistUpdated(payload)),
+      	onRemoveWishList: (payload) => dispatch(actions.removeWishListUpdated(payload)),
 	}
 }
 

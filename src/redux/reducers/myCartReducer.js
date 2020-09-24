@@ -43,7 +43,16 @@ const initialState = {
     orderDetailLoader: false,
     shippingSuccess: false,
     voucherMessage: '',
-    my_cart_count:0
+    my_cart_count:0,
+
+    isPayfortFailed : false,
+    saved_card_payfort_data : null,
+    placeOrderFailed: false,
+    placeOrderMessage: null,
+    setPaymentFailed: false,
+    setPaymentFailedMsg: null,
+    payfortFailedMessage: null,
+    payfortRestoreQuoteFailed: false,
 }
 
 const reducer = (state = initialState, action) => {
@@ -97,7 +106,10 @@ const reducer = (state = initialState, action) => {
             return updateObject(state, action.payload);
 
         case actionType.UPDATE_MYCART_QUOTE_ID:
-            return updateObject(state, action.payload)    
+            return updateObject(state, action.payload)
+        
+        case actionType.PAYFORT_FAILED:
+                return updateObject(state, action.payload)
 
         default:
             return state;

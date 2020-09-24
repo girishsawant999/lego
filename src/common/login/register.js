@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Suspense, Component } from "react"
 import { injectIntl } from "../../../node_modules/react-intl"
 import { Row, Col, Label } from "reactstrap"
 import { Link } from "react-router-dom"
@@ -6,7 +6,7 @@ import leftArrow1 from "../../assets/images/LEGO+Account.svg"
 import adult from "../../assets/images/adult-register-geek.png"
 import { withRouter } from "react-router-dom"
 import { connect } from "react-redux"
-import PhoneNumber from "../login/phoneComponent"
+// import PhoneNumber from "../login/phoneComponent"
 import * as actions from ".././../redux/actions/index"
 import { Redirect } from "react-router-dom"
 import MyaccountInfo from "../../components/Myaccount/myAccountInfo"
@@ -14,8 +14,9 @@ import Spinner2 from "../../components/Spinner/Spinner2"
 import { toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { css } from "glamor"
-import { FormattedMessage, defineMessages } from '../../../node_modules/react-intl'
+import { FormattedMessage, defineMessages } from '../../../node_modules/react-intl';
 
+const PhoneNumber = React.lazy(() => import('../login/phoneComponent'))
 var message = ""
 var moment = require("moment")
 const messages = defineMessages({
@@ -410,11 +411,13 @@ class AccountCreate extends Component {
 
 										<div className="form-group">
 											<label for="phone"> <FormattedMessage id="createAccountMobile.Register" defaultMessage="Mobile Number" /></label>
+											<Suspense fallback={<div></div>}> 
 											<PhoneNumber
 												changed={this.contactNumber}
 												isdefaultPhone={this.state.isdefaultPhone}
 												defaultPhone={{ ...defaultPhoneNumber }}
 											/>
+											</Suspense>
 											{/* <PhoneNumber changed={this.contactNumber} /> */}
 											{this.state.phoneErr && <span className="error">{this.state.phoneErr}</span>}
 										</div>
@@ -535,7 +538,7 @@ class AccountCreate extends Component {
 										{this.store_locale === 'en' ?
 											<p className="subtext">
 											When you agree to the{" "}
-											<Link to={`/${store_locale}/terms-conditions`} className="privacy-link">
+											<Link  target="_blank"  to={`/${store_locale}/terms-conditions`} className="privacy-link">
 											<FormattedMessage id="createAccountATC.Register" defaultMessage="Terms and Conditions" />
 											</Link>{" "}
 											you also consent to our use of your personal information to process and operate your LEGO Account.
@@ -543,7 +546,7 @@ class AccountCreate extends Component {
 										</p>
 										:
 										<p className="subtext">
-										عندما توافق على <Link to={`/${store_locale}/terms-conditions`} className="privacy-link">
+										عندما توافق على <Link  target="_blank"  to={`/${store_locale}/terms-conditions`} className="privacy-link">
 											<FormattedMessage id="createAccountATC.Register" defaultMessage="Terms and Conditions" />
 											</Link>{" "} ، فإنك توافق أيضًا على إستخدامنا لمعلوماتك الشخصية لمعالجة وتشغيل حساب  LEGO الخاص  بك لمعرفة كيفية التحكم في بياناتك الشخصية. يرجى الإطلاع على سياسة الخصوصية الخاصة بنا.
 									   	</p>

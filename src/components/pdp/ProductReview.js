@@ -9,6 +9,9 @@ import range from '../../assets/images/range.png';
 import grayratingbox from '../../assets/images/grayratingbox.png';
 import yellowsmall from '../../assets/images/yellowsmall.png';
 import Slider from 'react-rangeslider'
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import "bootstrap/dist/css/bootstrap.css"
 import 'react-rangeslider/lib/index.css'
 import graysmall from '../../assets/images/graysmall.png';
 import browseRight from '../../assets/images/rightArrow1.png';

@@ -8,7 +8,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Spinner from "../Spinner/Spinner"
 import * as actions from '../../redux/actions/index';
 import MyAccSideBar from '../Myaccount/MyAccSideBar';
-
+import { createMetaTags } from '../utility/meta'
+ 
 const DATE_OPTIONS = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
 const Cryptr = require('cryptr');
 let cryptr = null;
@@ -58,6 +59,17 @@ class MyOrder extends Component {
 
         return (
             <div>
+                {createMetaTags(
+					this.props.globals.store_locale === "en"
+						? "My Order | Official LEGO® Online Myord Saudi Arabia"
+						: "طلبي | متجر ليغو أونلاين الرسمي بالسعودية ",
+					this.props.globals.store_locale === "en"
+						? "Explore the world of LEGO® through games, videos, products and more! Shop awesome LEGO® building toys and brick sets and find the perfect gift for your kid"
+						: "اكتشف عالم ليغو LEGO من خلال الألعاب، والفيديوهات، والمنتجات وأكثر! تسوق مجموعات ألعاب البناء و المكعبات المدهشة من ليغو LEGO واعثر على الهدية المثالية لطفلك",
+					this.props.globals.store_locale === "en"
+						? "LEGO, Online Store, Saudi Arabia, Bricks, Building Blocks, Construction Toys, Gifts"
+						: "ليغو LEGO، تسوق اونلاين، السعودية، مكعبات، مكعبات بناء، العاب تركيب، هدايا"
+				)}
                 <div className="row">
                     <div className="col-md-3 sideBarContent">
                         <MyAccSideBar />

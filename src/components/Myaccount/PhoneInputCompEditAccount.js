@@ -1,9 +1,12 @@
-import React, { Component } from "react"
-import IntlTelInput from "react-intl-tel-input"
-import "react-intl-tel-input/dist/main.css"
+import React, { Suspense, Component } from "react"
+// import IntlTelInput from "react-intl-tel-input"
+import "react-intl-tel-input/dist/main.css";
+import Spinner2 from "../Spinner/Spinner";
 import CountryCodeList from "../utility/country_code"
-import { connect } from "react-redux"
-import * as actions from "../../redux/actions/index"
+import { connect } from "react-redux";
+import * as actions from "../../redux/actions/index";
+const IntlTelInput = React.lazy(() => import("react-intl-tel-input"));
+// const CountryCodeList = React.lazy(() => import("../utility/country_code"));
 
 class phoneNumber extends Component {
 	constructor(props) {
@@ -57,13 +60,14 @@ class phoneNumber extends Component {
 		}
 
 		return (
+			<Suspense fallback={<div></div>}>
+
 			<div id="phoneNumber" className="t-Form-itemWrapper">
 				<IntlTelInput
 					separateDialCode="true"
 					containerClassName="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3"
 					inputClassName="text_field apex-item-text"
 					preferredCountries={country}
-					defaultCountry='sa'
 					style={{ width: "100%!important" }}
 					onPhoneNumberChange={(status, value, countryData, number, id) => 
 					{
@@ -85,11 +89,11 @@ class phoneNumber extends Component {
 						})
 					}}
 					value={this.state.phone}
-					defaultCountry={CountryCodeList[this.props.defaultPhone.carrier_code].country_id
-
-					}
+					defaultCountry={CountryCodeList[this.props.defaultPhone.carrier_code].country_id}
 				/>
+				
 			</div>
+			</Suspense>
 		)
 	}
 }

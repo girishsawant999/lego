@@ -24,6 +24,7 @@ const initialState = {
     home2ALoader: false,
     home2Loader: false,
     currentTime: '',
+    recommendedCategories : [],
     storeInfo: {
     },
     landingPageData: '',
@@ -50,7 +51,8 @@ const reducer = (state = initialState, action) => {
             return updateObject(state, action.payload)
         case actionType.GET_STORE_LIST:
             return updateObject(state, action.payload)
-
+        case actionType.GET_TIME_STAMP:
+            return updateObject(state,action.payload)
         default:
             return state;
     }

@@ -76,11 +76,9 @@ class LogoSlider extends Component {
 						<p className="headingTitle" style={{ color:  this.props.data.headingcolor }}>
 							{ this.props.data.heading}
 						</p>
-						<p className="headingText" style={{ color:  this.props.data.desccolor }}>
-							{ this.props.data.description}
-						</p>
+						<p className="headingText" style={{ color:  this.props.data.desccolor }} dangerouslySetInnerHTML={{__html: this.props.data.description}}></p>
 						<div className="buttonDiv">
-						<Link to={`/${store_locale}/productlisting/${ this.props.data.redirection}`} >
+						<Link to={`/${store_locale}/${ this.props.data.redirection}`} >
 								<button 
 									type="button"
 									id={`btn`}

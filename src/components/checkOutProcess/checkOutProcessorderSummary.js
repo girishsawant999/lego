@@ -168,7 +168,6 @@ const mapStateToProps = (state) => {
         globals: state.global,
         user_details: state.login,
         myCart: state.myCart,
-        wishList: state.wishList,
         guest_user: state.guest_user,
         shipping: state.shipping,
         shippingSuccess: state.myCart.shippingSuccess,
@@ -176,11 +175,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        onGetRecommendedData: (payload) => dispatch(actions.getRecommendedData(payload)),
-        onAddToWishList: payload => dispatch(actions.addToWishlist(payload)),
-        onRemoveWishList: (payload) => dispatch(actions.removeWishList(payload)),
-    }
+    return { }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(OrderSummary));

@@ -53,7 +53,7 @@ class shopByTabs extends Component {
                                                     <div className="newTab">
                                                         
                                                     <img style={tab.info.different_size === 1 ? imgStyle :{}}
-                                                    src={child.image ? child.image : child.imageUrl}
+                                                    src={child.bannerimage ? child.bannerimage : child.imageUrl}
                                                     className="image" alt="category"/> 
                                                     <p>{child.name}</p>
                                                     </div>

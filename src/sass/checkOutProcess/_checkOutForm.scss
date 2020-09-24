@@ -437,6 +437,10 @@ select {
   background-color: #fff;
   border: #adb5bd solid 1px;
 }
+.disabled .custom-control-label::before {
+  content: unset !important;
+}
+
 .customControlLabel::after {
   position: absolute;
   top: 0.3rem;
@@ -815,9 +819,24 @@ html[dir=rtl] .checkOutForm .redValidaion {
 }
 .CollapsDiv  .selectAddress
 {
+  min-height: 100px;
+ // padding-bottom: 14px;
   padding-left: 10px !important;
   padding-right: 0px !important; 
 }
+.CollapsDiv  .disabled
+{
+  background-color: #f7f7f7;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding-bottom: 14px;
+    // cursor: default;
+}
+// .CollapsDiv .defaultCursor
+// {
+//   height: 80px;
+//   cursor: default;
+// }
 .CollapsDiv label{
   position: relative !important;
 } 
@@ -840,7 +859,22 @@ html[dir="rtl"] .CollapsDiv .Collapsible_text_container {
 input.bUgSOh.checkBoxDiv.customField.inputMaxHeight {
   width: 100%;
 }
+html[dir="rtl"]  .CollapsDiv .PannelDiv {
+    padding: 10px;
+    text-align: right;
+}
 @media (max-width: 767px){
+.CollapsDiv label {
+    position: relative !important;
+    padding: 0px 8px !important;
+}
+.CollapsDiv .selectAddress {
+   
+    padding-left: 10px !important;
+    }
+    .CollapsDiv .PannelDiv {
+    padding: 10px 0;
+}
 
   .checkOutForm .styled-input {
     float: left;
@@ -908,6 +942,11 @@ html[dir=rtl] .checkOutForm .tagline {
 
 html[dir=rtl] .checkOutForm .LoadingWrapper .metodbox:first-of-type {
   margin-left: 3px !important;
+}
+.CollapsDiv .disabled {    
+    padding-left: 0px !important;
+        word-break: break-word;
+    padding-right: 10px !important
 }
 
 }

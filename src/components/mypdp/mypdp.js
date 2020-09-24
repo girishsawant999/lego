@@ -60,16 +60,10 @@ class mypdp extends Component {
 	}
 
 	slideThumbnailBarMethod = () => {}
-	componentDidMount() {
-		document.addEventListener("keydown", (e)=> {
-			if(e.keyCode === 27) {
-				const element = document.getElementsByTagName("BODY")[0];
-   				element.classList.remove("overflowY-hidden");
-			  }
-		}, false);
-	}
+
 	componentWillUnmount() {
-		document.removeEventListener("keydown", ()=>{}, false);
+		const element = document.getElementsByTagName("BODY")[0];
+   		element.classList.remove("overflowY-hidden");
 	}
 	
 
@@ -98,7 +92,6 @@ class mypdp extends Component {
 			this._imageGallery.play()
 		}
 	}
-
 	_onImageClick(event) {}
 
 	_onSlide(index) {
@@ -227,14 +220,20 @@ class mypdp extends Component {
 			// ],
 			renderFullscreenButton: (onClick, isFullscreen) => {
 				const element = document.getElementsByTagName("BODY")[0];
-   				element.classList.toggle("overflowY-hidden");
 				return (
 					<div className="image-gallery-fullscreen-button" onClick={onClick}>
 						<div className="background-round">
 							{!isFullscreen ? (
-								<img src={fullScreen} className="full-screen-image" />
+								<>
+								{element.classList.remove("overflowY-hidden")}
+								<img src={fullScreen} className="full-screen-image" alt="fullScreen" />
+								</>
+								
 							) : (
-								<img src={close} className="full-screen-image" />
+								<>
+								{element.classList.add("overflowY-hidden")}
+								<img src={close} className="full-screen-image" alt="Close"/>
+								</>
 							)}
 						</div>
 						{!isFullscreen && this.props.thumbnilView == "left" && (

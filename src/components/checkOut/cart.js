@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, Suspense } from "react"
 import Storefilter from "../storeLocator/storeFilter.js"
 import StoreListView from "../checkOut/cartListView.js"
 import { FormattedMessage, injectIntl } from "../../../node_modules/react-intl"
@@ -8,20 +8,19 @@ import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
 import cartSticyRight from "../../assets/images/chattingSticky.png"
 import "bootstrap/dist/css/bootstrap.css"
-import CartList from "../checkOut/cartListView"
 import LogoSlider from "../../components/HomeComponent/logoSlider"
 import * as actions from "../../redux/actions/index"
 //import Breadcrumb from '../../common/breadcrumb';
-import RecommandedForYou from "../../components/HomeComponent/recommandedForYou"
 import checkOutorderSummary from "../../components/checkOut/checkOutorderSummary"
-import Beforelogin from "../../components/checkOut/beforelogin"
 import Spinner2 from "../Spinner/Spinner2";
 import AlertBox from '../../common/AlertBox/QTYAlert';
 import AddBagAlert from '../../common/AlertBox/addToBagAlert';
-import cookie from "react-cookies"
 import { cartPageEvent } from '../utility/googleTagManager';
 import Modal from "react-responsive-modal"
-
+import { createMetaTags } from "../utility/meta"
+const RecommandedForYou = React.lazy(() => import('../../components/HomeComponent/recommandedForYou'))
+const CartList = React.lazy(() => import('../checkOut/cartListView'))
+const Beforelogin = React.lazy(() => import('../../components/checkOut/beforelogin'))
 
 
 let wishlistClick = false;
@@ -42,11 +41,13 @@ class Cart extends Component {
 	}
 
 	componentWillMount() {
+		// remove
+		localStorage.removeItem('merchant_reference');
 		const { user_details, guest_user, globals } = this.props;
 		let store = globals.currentStore;
 		const payload = { 
 			store: this.props.globals.currentStore,
-			categories : cookie.load('visitedProducts') ? cookie.load('visitedProducts').toString(',') : '',
+			categories : globals.recommendedCategories.toString(',') ,
 			cid: this.props.user_details.isUserLoggedIn ? this.props.user_details.customer_details.customer_id : ''
 		}
 		this.props.onGetRecommendedData(payload);
@@ -62,7 +63,14 @@ class Cart extends Component {
                 quote_id: guest_user.new_quote_id,
                 store_id: store
             });
-        }
+		}
+		
+		this.props.clearShippingReducer();
+		this.props.clearProps({
+			isPayfortFailed: false,
+			is_payment_details_rec: false,
+			shippingSuccess: false,
+		});
 	}
 
 	componentDidMount = () => {
@@ -81,25 +89,49 @@ class Cart extends Component {
 	}
 
 	componentWillReceiveProps = (nextProps) => {
+		if (nextProps.myCart.placeOrderFailed) {
+			nextProps.myCart.placeOrderMessage &&
+			 this.setState({
+				addMessagePopup: true,
+				addMessage: nextProps.myCart.placeOrderMessage,
+			 })
+			nextProps.myCart.placeOrderFailed = false;
+			nextProps.myCart.placeOrderMessage = null;
+		  }
+
+		if (nextProps.myCart.setPaymentFailed) {
+			nextProps.myCart.setPaymentFailedMsg &&
+			 this.setState({
+				addMessagePopup: true,
+				addMessage: nextProps.myCart.setPaymentFailedMsg,
+			 })
+			nextProps.myCart.setPaymentFailed = false;
+			nextProps.myCart.setPaymentFailedMsg = null;
+		  }
+		if(nextProps.myCart.payfortFailedMessage) {
+			this.setState({
+				addMessagePopup: true,
+				addMessage: nextProps.myCart.payfortFailedMessage,
+			 });
+			nextProps.myCart.payfortFailedMessage = null;
+		}
 		if (nextProps.user_details.isUserLoggedIn) {
-			if (nextProps.wishList && !nextProps.wishList.wishLoader &&  nextProps.wishList.productWishDetail && nextProps.wishList.productWishDetail.is_in_wishlist
-			   && wishlistClick) {
-				wishlistClick = false;
-			  this.setState({
-				 addMessagePopup: true,
-				 addMessage: nextProps.globals.currentStore == 2 ? ' Item has been Added To Wish List ' : 'تم إضافة المنتج إلى قائمة الأمنيات'
-			  });
-		   } else if ((nextProps.wishList && nextProps.wishList.productWishDetail && removeWishlistClick &&
-			(nextProps.wishList.productWishDetail.is_in_wishlist ==='' || !nextProps.wishList.productWishDetail.is_in_wishlist))) {
-				removeWishlistClick = false;
+			if (nextProps.wishlistUpdated.wishlistMessage && nextProps.wishlistUpdated.wishlistItemRemoved ) {
 				this.setState({
-					is_wishlist: false,
-					wishlistId: '',
-					Spinner: false,
-					addMessagePopup: true,
-					addMessage: nextProps.globals.currentStore == 2 ? ' Item has been removed from Wish List ' : ' تم إزالة المنتج من  قائمة الأمنيات '
-				});
-		   }
+				   addMessagePopup: true,
+				   addMessage: nextProps.wishlistUpdated.wishlistMessage,
+				})
+				nextProps.wishlistUpdated.wishlistMessage = ""
+				nextProps.wishlistUpdated.wishlistItemRemoved =false
+			 }
+			 if (nextProps.wishlistUpdated.wishlistMessage && nextProps.wishlistUpdated.wishlistItemAdded ) {
+				this.setState({
+				   addMessagePopup: true,
+				   addMessage: nextProps.wishlistUpdated.wishlistMessage,
+				})
+				nextProps.wishlistUpdated.wishlistMessage = ""
+				nextProps.wishlistUpdated.wishlistItemAdded =false
+			 }
 
 			if(nextProps.myCart && nextProps.myCart.removeloader === false) {
 				if(nextProps.myCart.itemremoved && this.state.removeApi) {
@@ -204,7 +236,8 @@ class Cart extends Component {
 	removeFromWishlist = (product) => {
 		removeWishlistClick = true;
 		let data = {
-			"wishilistitemid": product.wishListId
+			"wishilistitemid": product.wishListId,
+			product_id: product.id,
 		 }
 		 
 	 this.props.onRemoveWishList(data);
@@ -218,7 +251,11 @@ class Cart extends Component {
 	  
 	checkout = () => {
 		if (!this.checkOutOfStock()) {
-			this.props.history.push(`/${this.props.globals.store_locale}/checkoutprocess`);
+			if(this.props.user_details && this.props.user_details.isUserLoggedIn ){
+				this.props.history.push(`/${this.props.globals.store_locale}/shipping`);
+			} else {
+				this.props.history.push(`/${this.props.globals.store_locale}/checkoutprocess`);
+			}
 		}
 	}
 
@@ -228,6 +265,17 @@ class Cart extends Component {
             return (
                 <div className="mobMinHeight">
                     <Spinner2 />
+					{createMetaTags(
+					this.props.globals.store_locale === "en"
+						? "My Cart"
+						: "سلتي | متجر ليغو أونلاين الرسمي بالسعودية ",
+					this.props.globals.store_locale === "en"
+						? "Explore the world of LEGO® through games, videos, products and more! Shop awesome LEGO® building toys and brick sets and find the perfect gift for your kid"
+						: "اكتشف عالم ليغو LEGO من خلال الألعاب، والفيديوهات، والمنتجات وأكثر! تسوق مجموعات ألعاب البناء و المكعبات المدهشة من ليغو LEGO واعثر على الهدية المثالية لطفلك",
+					this.props.globals.store_locale === "en"
+						? "LEGO, Online Store, Saudi Arabia, Bricks, Building Blocks, Construction Toys, Gifts"
+						: "ليغو LEGO، تسوق اونلاين، السعودية، مكعبات، مكعبات بناء، العاب تركيب، هدايا"
+				)}
                 </div>
             )
 		}
@@ -253,6 +301,7 @@ class Cart extends Component {
 		}
 
 		return (
+			<Suspense fallback={<div ></div>}>
 			<div>
 				{alertBoxWIshlist}
 				<div className="cartPage">
@@ -310,6 +359,7 @@ class Cart extends Component {
 					)}
 
 			</div>
+			</Suspense>
 		)
 	}
 }
@@ -320,7 +370,7 @@ const mapStateToProps = (state) => {
 		globals: state.global,
 		user_details: state.login,
 		myCart:state.myCart,
-		wishList: state.wishList,
+		wishlistUpdated: state.wishlistUpdated,
 		guest_user: state.guest_user,
 		notify:state.notify,
 	}
@@ -329,9 +379,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		onGetRecommendedData: (payload) => dispatch(actions.getRecommendedData(payload)),
-		onAddToWishList: payload => dispatch(actions.addToWishlist(payload)),
-		onRemoveWishList: (payload) => dispatch(actions.removeWishList(payload)),
+		onAddToWishList: payload => dispatch(actions.addToWishlistUpdated(payload)),
+		onRemoveWishList: (payload) => dispatch(actions.removeWishListUpdated(payload)),
 		onGetMyCartList:(payload)=>dispatch(actions.getMyCart(payload)),
+		clearShippingReducer: () => dispatch(actions.clearShippingReducer()),
+		clearProps: (data) => dispatch(actions.callActionForPayfortFailed(data)),
 
 	}
 }

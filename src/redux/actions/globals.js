@@ -178,3 +178,13 @@ export const getRecommendedData = (payload = {}) => {
 		API.getRecommendedDataData(data, callback)
 	}
 }
+
+export const getTimeStamp = (payload) => {
+
+    let currentTime=Date.now();
+    payload = {currentTime}
+    return {
+        type: actionType.GET_TIME_STAMP,
+        payload: payload
+    };
+}

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Breadcrumb from '../../common/breadcrumb';
-import LogoSlider from '../HomeComponent/logoSlider';
+// import LogoSlider from '../HomeComponent/logoSlider';
 import topImg from '../../assets/images/icons/needHelpOne.png';
-import Needhelp  from './NeedHelp';
+// import Needhelp  from './NeedHelp';
 import Pimg from '../../assets/images/shopBy1.jpeg';
 import { withRouter } from 'react-router-dom';
 import { FormattedMessage, injectIntl } from '../../../node_modules/react-intl';
@@ -73,7 +73,7 @@ return (
                               <FormattedMessage id="OrderHistory.ShippingAddress" defaultMessage="Shipping Address" />
                            </p>
                            <p className="DeliveryTo">
-                              <span className="add">  <FormattedMessage id="OrderHistory.DeliveryTo" defaultMessage="Delivery To : " /></span>  <span className="addText"> {orders_details.shipping_address.firstname} {orders_details.shipping_address.lastname} {orders_details.shipping_address.street} {orders_details.shipping_address.city} {orders_details.shipping_address.postcode} {orders_details.shipping_address.region}</span> 
+                              <span className="add">  <FormattedMessage id="OrderHistory.DeliveryTo" defaultMessage="Delivery To : " /></span>  <span className="addText"> {orders_details.shipping_address.firstname} {orders_details.shipping_address.lastname} {orders_details.shipping_address.street} {orders_details.shipping_address.city} {orders_details.shipping_address.postcode} </span> 
                            </p>
                         </div>
                      </div>

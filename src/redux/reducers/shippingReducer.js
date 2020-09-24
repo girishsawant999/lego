@@ -12,6 +12,9 @@ const reducer = (state = initialState, action) => {
     case actionType.SET_BILLING_DETAILS:
       return updateObject(state, action.payload);
 
+    case actionType.CLEAR_SHIPPING_REDUCER:
+      return {}
+
     default:
       return state;
   }

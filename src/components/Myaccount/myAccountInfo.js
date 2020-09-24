@@ -1,21 +1,22 @@
-import React, { Component } from "react"
+import React, { Suspense, Component } from "react"
 import { withRouter } from "react-router-dom"
 import { connect } from "react-redux"
 import { FormattedMessage, injectIntl } from "../../../node_modules/react-intl"
 import * as actions from "../../redux/actions/index"
 import $ from "jquery"
-import AvtarL from "../../../src/assets/images/icons/avtarL.svg"
-import AvtarR from "../../../src/assets/images/icons/avtarR.svg"
-import AvatarMy from "../../../src/assets/images/icons/avatarMy.png"
-import nickEdit from "../../../src/assets/images/icons/nickEdit.svg"
-import MyAccSideBar from "../Myaccount/MyAccSideBar"
+// import AvtarL from "../../../src/assets/images/icons/avtarL.svg"
+// import AvtarR from "../../../src/assets/images/icons/avtarR.svg"
+// import AvatarMy from "../../../src/assets/images/icons/avatarMy.png"
+// import nickEdit from "../../../src/assets/images/icons/nickEdit.svg"
+// import MyAccSideBar from "../Myaccount/MyAccSideBar"
 import Modal from "react-responsive-modal"
-import DeleteAddess from "../Myaccount/deleteAddess"
-import EditAccount from "../Myaccount/editAccount"
-import ChangePassword from "../Myaccount/changePassword"
+// import DeleteAddess from "../Myaccount/deleteAddess"
+// import EditAccount from "../Myaccount/editAccount"
+// import ChangePassword from "../Myaccount/changePassword"
 import Spinner2 from "../Spinner/Spinner"
-import AddressInfo from "../Myaccount/addressInfo"
+// import AddressInfo from "../Myaccount/addressInfo"
 import { ToastContainer, toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 import avtar1 from "../../../src/assets/AvtarImages/avtar1.png"
 import avtar2 from "../../../src/assets/AvtarImages/avtar2.png"
 import avtar3 from "../../../src/assets/AvtarImages/avtar3.png"
@@ -24,7 +25,14 @@ import avtar5 from "../../../src/assets/AvtarImages/avtar5.png"
 import avtar6 from "../../../src/assets/AvtarImages/avtar6.png"
 import avtar7 from "../../../src/assets/AvtarImages/avtar7.png"
 import avtar8 from "../../../src/assets/AvtarImages/avtar8.png"
-import AddBagAlert from "../../common/AlertBox/addToBagAlert"
+// import AddBagAlert from "../../common/AlertBox/addToBagAlert"
+import { createMetaTags } from '../utility/meta'
+const MyAccSideBar = React.lazy(() => import('../Myaccount/MyAccSideBar'));
+const DeleteAddess = React.lazy(() => import('../Myaccount/deleteAddess'));
+const EditAccount = React.lazy(() => import('../Myaccount/editAccount'));
+const ChangePassword = React.lazy(() => import('../Myaccount/changePassword'));
+const AddressInfo = React.lazy(() => import('../Myaccount/addressInfo'));
+const AddBagAlert = React.lazy(() => import('../../common/AlertBox/addToBagAlert'));
 
 let avtarImage
 let setAvtarImageFromAPI
@@ -305,6 +313,18 @@ class MyaccountInfo extends Component {
 		const { AddressBookData } = this.props.account
 		return (
 			<div>
+			{createMetaTags(
+					this.props.globals.store_locale === "en"
+						? "My Account | Official LEGO® Online Store Saudi Arabia"
+						: "حساب ليجو الخاص بك | متجر ليغو أونلاين الرسمي بالسعودية ",
+					this.props.globals.store_locale === "en"
+						? "Explore the world of LEGO® through games, videos, products and more! Shop awesome LEGO® building toys and brick sets and find the perfect gift for your kid"
+						: "اكتشف عالم ليغو LEGO من خلال الألعاب، والفيديوهات، والمنتجات وأكثر! تسوق مجموعات ألعاب البناء و المكعبات المدهشة من ليغو LEGO واعثر على الهدية المثالية لطفلك",
+					this.props.globals.store_locale === "en"
+						? "LEGO, Online Store, Saudi Arabia, Bricks, Building Blocks, Construction Toys, Gifts"
+						: "ليغو LEGO، تسوق اونلاين، السعودية، مكعبات، مكعبات بناء، العاب تركيب، هدايا"
+				)}
+				<Suspense fallback={<div></div>}>
 				<div className="MyaccountInfo">
 					<ToastContainer />
 					{/* <LogoSlider /> */}
@@ -657,6 +677,7 @@ class MyaccountInfo extends Component {
 						""
 					)}
 				</div>
+				</Suspense>
 			</div>
 		)
 	}

@@ -120,7 +120,11 @@ class Productlisting extends Component {
 			} else {
 				if (mybutton) mybutton.style.display = "none"
 			}
-		})
+        })
+        
+        if(this.props.plpData && this.props.plpData.category_id)
+            this.setRecommenddedProduct(this.props.plpData.category_id)
+
     }
     next() {
         this.slider.slickNext();
@@ -319,7 +323,7 @@ class Productlisting extends Component {
                     let filter = allProd[Prod].json && allProd[Prod].json.filtersdata;
                     let allFilters = []
                     _.forEach(filter, filterData => {
-                        allFilters = allFilters.concat(Object.values(filterData))
+                        allFilters = allFilters.concat(filterData && Object.values(filterData))
                     })
                     let alreadyPushed = false;
         
@@ -433,7 +437,8 @@ class Productlisting extends Component {
         }
 
         this.setState({
-            products
+            products,
+            selectedSort: attribute.target ? attribute.target.value : this.state.selectedSort
         });
 
         // setTimeout(() => {
@@ -480,6 +485,16 @@ class Productlisting extends Component {
             products
         })
     }
+
+    setRecommenddedProduct = (category_id) => {
+		let { recommendedCategories } = this.props.globals
+
+		if (recommendedCategories.length > 3) {
+			recommendedCategories.shift()
+		}
+		if (!recommendedCategories.includes(category_id)) recommendedCategories.push(category_id)
+		this.props.globals.recommendedCategories = recommendedCategories
+	}
 
     render() {
         if (this.props.loader || this.props.searchLoader || this.state.load) {
@@ -528,7 +543,7 @@ class Productlisting extends Component {
 							backgroundSize: "cover",
 						}}>
                         {plpData.category_img && <img className="category-img" src={plpData.category_img} alt="category"/>}
-						{plpData.category_name}
+						{ !plpData.category_img  && <span className={globals.store_locale === 'ar' && plpData.category_path.includes('themes/') ? 'themesText themesTextCenter':'' }>{plpData.category_name}</span>}
 					</div>
 				) : (
 					this.props.plpSearch.searchWord &&
@@ -610,7 +625,6 @@ const mapStateToProps = state => {
         plpData: state.plp.PlpData,
         loader: state.plp.PlpLoader,
         product: state.plp.product,
-        wishListResult: state.wishList.wishResult,
         plpSearch: state.plp,
         searchLoader: state.plp.searchLoader
 

@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import { FormattedMessage, injectIntl } from '../../../node_modules/react-intl';
-import $ from 'jquery';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 
 class StoreFilter extends Component {

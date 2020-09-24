@@ -24,8 +24,6 @@ import { withRouter } from "react-router-dom"
 import { connect } from "react-redux"
 import * as actions from ".././../redux/actions/index"
 import Spinner2 from "../../components/Spinner/Spinner2"
-import { toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
 import { css } from "glamor"
 import { FormattedMessage, defineMessages, injectIntl } from '../../../node_modules/react-intl'
 
@@ -40,6 +38,7 @@ const messages = defineMessages({
 	}
   });
 var message = ""
+var status = true
 class ResetPassword extends Component {
 	constructor(props) {
 		super(props)
@@ -77,28 +76,17 @@ class ResetPassword extends Component {
 		}
 	}
 	componentWillReceiveProps(nextProps) {
-		if (nextProps.resetPasswordData) {
+		if (nextProps.resetPasswordData && nextProps.resetPasswordData.message) {
 			if (nextProps.resetPasswordData.status) {
+				status= true
 				message = nextProps.resetPasswordData.message
-				this.toastId = toast(nextProps.resetPasswordData.message, {
-					className: css({
-						color: "green !important",
-						fontSize: "13.5px",
-					}),
-					onClose: this.toastClosed,
-				})
-				
+				nextProps.resetPasswordData.message = ''
+				setTimeout(() =>this.props.history.push(`/${this.props.globals.store_locale}/login`), 3000)
 			} else {
+				status= false
 				message = nextProps.resetPasswordData.message
-				this.toastId = toast(nextProps.resetPasswordData.message, {
-					className: css({
-						color: "red !important",
-						fontSize: "13.5px",
-					}),
-					onClose: this.toastClosed,
-				})
+				nextProps.resetPasswordData.message = ''
 			}
-			this.props.history.push(`/${this.props.globals.store_locale}/home`)
 			//document.getElementById("resetBtn").disabled = false
 			// document.getElementById("btnLoader").style.visibility = "hidden"
 		}
@@ -222,7 +210,7 @@ class ResetPassword extends Component {
 											<div id="eyeChange1" className={this.state.classEye1} onClick={() => this.tooglePasswordVisibility("password1","eyeChange1")}></div>
 											{this.state.password1Err && <span className="text-danger">{this.state.password1Err}</span>}
 										</div>
-										{message && <div className="">{message}</div>}
+										{message && <div className={status ? "successMessage" : "ErrorMessage"}>{message}</div>}
 
 										{/* <AvField  placeholder="Your username" name="EmaiUsernameladdress" label="Username" required />
   

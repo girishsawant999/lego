@@ -10,7 +10,7 @@ class Spinner extends Component {
     }
     render() {
         return (<>
-            {createMetaTags(
+            {/* {createMetaTags(
 							this.props.globals.store_locale === "en"
 								? "Home | Official LEGO® Online Store Saudi Arabia"
 								: "الصفحة الرئيسية | متجر ليغو أونلاين الرسمي بالسعودية ",
@@ -20,7 +20,7 @@ class Spinner extends Component {
 							this.props.globals.store_locale === "en"
 								? "LEGO, Online Store, Saudi Arabia, Bricks, Building Blocks, Construction Toys, Gifts"
 								: "ليغو LEGO، تسوق اونلاين، السعودية، مكعبات، مكعبات بناء، العاب تركيب، هدايا"
-						)}
+						)} */}
             <div className="loader"></div>
         </>);
     }

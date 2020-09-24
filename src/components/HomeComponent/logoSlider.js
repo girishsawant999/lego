@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import "bootstrap/dist/css/bootstrap.css"
+// import "slick-carousel/slick/slick.css"
+// import "slick-carousel/slick/slick-theme.css"
+// import "bootstrap/dist/css/bootstrap.css"
 import { Link } from "react-router-dom"
 import { connect } from 'react-redux';
 
@@ -20,6 +20,7 @@ class LogoSlider extends Component {
 	render() {
 		var settings1 = {
 			dots: false,
+			lazyLoad: false,
 			arrows: true,
 			infinite: true,
 			speed: 800,

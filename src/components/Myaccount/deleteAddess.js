@@ -1,15 +1,10 @@
 import React, { Component } from "react"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import { FormattedMessage, injectIntl } from "../../../node_modules/react-intl"
 import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
 import * as actions from "../../redux/actions/index"
 import Spinner2 from "../../components/Spinner/Spinner2"
-
-import { toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
-import { css } from "glamor"
-
 class DeleteAddress extends Component {
 	constructor(props) {
 		super(props)

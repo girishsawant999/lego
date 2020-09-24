@@ -1,16 +1,23 @@
-import React, { Component } from 'react';
+import React, { Suspense, Component } from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter, Redirect } from 'react-router-dom';
 import processFinish from '../../assets/images/processFinish.png';
 import 'bootstrap/dist/css/bootstrap.css';
-import Ordersummary from '../checkOutProcess/checkOutProcessorderSummary';
+// import Ordersummary from '../checkOutProcess/checkOutProcessorderSummary';
 import PhoneNumber from "../../common/login/phoneComponent";
 import * as actions from "../../redux/actions/index";
 import Spinner2 from "../Spinner/Spinner2";
 import { checkoutEvent } from '../utility/googleTagManager';
+import { createMetaTags } from '../utility/meta';
+import $ from 'jquery';
+
+
+const Ordersummary = React.lazy(() => import('../checkOutProcess/checkOutProcessorderSummary'))
 
 let setDeliveryCalled = false;
+let scroll = true;
+
 class CheckoutContactInfo extends Component {
     constructor(props) {
         super(props);
@@ -27,6 +34,7 @@ class CheckoutContactInfo extends Component {
     }
 
     componentWillMount = () => {
+        scroll = true;
         if (!this.props.shipping ||  (this.props.shipping && !this.props.shipping.isShippingSet && !this.props.shipping.defaultAddr && !this.props.shipping.isClickAndCollect)) {
            this.props.history.push(`/${this.props.globals.store_locale}/cart`);
         } else if (this.props.myCart && this.props.myCart.cart_count === 0) {
@@ -191,6 +199,8 @@ class CheckoutContactInfo extends Component {
                 carrier_code: this.state.carrier_code,
                 shipping : "true",
                 billing : "true",
+                AptValue: this.props.shipping.customer_appartment,
+                companyName: this.props.shipping.company,
                 address_object: {
                     country_id: this.props.shipping.country_id,
                     state: this.props.shipping.state,
@@ -223,6 +233,7 @@ class CheckoutContactInfo extends Component {
         this.props.history.push(`/${this.props.globals.store_locale}/shipping`);
     }
 
+    
     render() {
         const { shipping, globals } = this.props;
         let { email, emailErr } = this.state;
@@ -248,8 +259,31 @@ class CheckoutContactInfo extends Component {
             }} />
         }
 
+        if (scroll && $('#ContactInformation').offset()) {
+            scroll = false;
+          $('html, body').animate(
+            {
+              scrollTop: 390,
+            },
+            500
+          );
+          
+        }
+
         return (
+            <Suspense fallback={<div ></div>}>
             <div>
+                {createMetaTags(
+              this.props.globals.store_locale === "en"
+                 ? "Contact Info | Official LEGO® Online Check Saudi Arabia"
+                 : "معلومات للتواصل | متجر ليغو أونلاين الرسمي بالسعودية ",
+              this.props.globals.store_locale === "en"
+                 ? "Explore the world of LEGO® through games, videos, products and more! Shop awesome LEGO® building toys and brick sets and find the perfect gift for your kid"
+                 : "اكتشف عالم ليغو LEGO من خلال الألعاب، والفيديوهات، والمنتجات وأكثر! تسوق مجموعات ألعاب البناء و المكعبات المدهشة من ليغو LEGO واعثر على الهدية المثالية لطفلك",
+              this.props.globals.store_locale === "en"
+                 ? "LEGO, Online Store, Saudi Arabia, Bricks, Building Blocks, Construction Toys, Gifts"
+                 : "ليغو LEGO، تسوق اونلاين، السعودية، مكعبات، مكعبات بناء، العاب تركيب، هدايا"
+           )}
                 <div className="checkoutContactInfo">
                     <div className="cart-grid">
                     <div className="container">
@@ -289,7 +323,7 @@ class CheckoutContactInfo extends Component {
                                                                 <span className="bigDesc">
                                                                 {`${shipping.fname} ${shipping.lname}
                                                                 ${shipping.address_object.street} ${shipping.cityName} 
-                                                                ${shipping.countryName} ${shipping.address_object.postcode}`}
+                                                                ${shipping.address_object.postcode}`}
                                                                 </span>
                                                          </span>
                                                         </li>}
@@ -301,7 +335,7 @@ class CheckoutContactInfo extends Component {
                                                                 <span className="bigDesc">
                                                                 {`${shipping.userFirstName ? shipping.userFirstName : ''} ${shipping.userLastName ? shipping.userLastName : ''} 
                                                                 ${shipping.street ? shipping.street : ''}  ${shipping.city ? shipping.city : ''} 
-                                                                ${shipping.state ? shipping.state : ''} ${shipping.postcode ? shipping.postcode : ''}`}
+                                                                ${shipping.postcode ? shipping.postcode : ''}`}
                                                                 </span>
                                                          </span>
                                                         </li>}
@@ -333,13 +367,13 @@ class CheckoutContactInfo extends Component {
                                                         <div className="step-section">
                                                         
                                                             <div className="StepBadge">
-                                                                <div type="disabled" className="StatusIconCircle">
+                                                                <div id="ContactInformation" type="disabled" className="StatusIconCircle">
                                                                     <span color="grey_medium" className="StatusIconText"><FormattedMessage id="checkoutContactInfo.two" defaultMessage="2" /></span>
                                                                 </div>
                                                                 <span color="grey_medium" className="StatusTitle"><FormattedMessage id="checkoutContactInfo.Contactinformation" defaultMessage="Contact information" /></span>
                                                             </div>
                                                         </div>
-                                                        <div className="border-margin"><hr /></div>  
+                                                        <div className="border-margin"><hr className="mb-0" /></div>  
                                                             <div className="step-section">
                                                     
                                                     <div className="AddressWrapper findAddress">
@@ -412,7 +446,7 @@ class CheckoutContactInfo extends Component {
                                                     </div>
                                                     </div>
                                                     </div>
-                                                                <div className="border-margin"><hr /></div>  
+                                                                <div className="border-margin"><hr className="mb-0" /></div>  
                                                                 <div className="AddressWrapper">
                                                     <div className="StepContainer">
                                                                 <div className="step-section">
@@ -423,7 +457,7 @@ class CheckoutContactInfo extends Component {
                                                                         <span color="grey_medium" className="StatusTitle"><FormattedMessage id="checkoutContactInfo.Payment" defaultMessage="Payment" /></span>
                                                                     </div>
                                                                 </div>
-                                                                <div className="border-margin"><hr /></div>  
+                                                                <div className="border-margin"><hr className="mb-0" /></div>  
                                                             </div>
                                                         </div>
                                                     </div>
@@ -438,6 +472,7 @@ class CheckoutContactInfo extends Component {
                     </div>
                 </div>               
             </div>
+            </Suspense>
         )
     }
 }

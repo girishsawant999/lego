@@ -1225,3 +1225,20 @@ html[dir="rtl"] .mob_Header .topMobile .rightSide ul li .count {
     font-family: CeraPro-Medium;
     font-weight: 500;
 }
+
+@media (max-width:640px){
+    .smallNavigation .navGrid .myBagText {       
+        font-size: 0.625rem;       
+    }
+    .smallNavigation .navGrid .leftArrow {
+        width: 13px;
+    }
+}
+.themesText{
+    display: flex;
+    direction: ltr;
+    justify-content: flex-end;
+}
+.themesTextCenter {
+    justify-content: center;
+}

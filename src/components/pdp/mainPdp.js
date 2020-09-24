@@ -1,20 +1,17 @@
 import React, { Component } from "react"
-import ProductDetails from "../pdp/productDetails"
-import CountDetails from "../pdp/countDetails"
-import PdpAccordion from "../pdp/pdpAccordion"
-import LogoSlider from "../../components/HomeComponent/logoSlider"
-import Breadcrumb from "../../common/breadcrumbNew"
-import RecommandedForYou from "../../components/HomeComponent/recommandedForYou"
 import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
-import * as actions from "../../redux/actions/index"
-import Spinner2 from "../Spinner/Spinner2"
 import { FormattedMessage } from "../../../node_modules/react-intl"
-import AlertBox from '../../common/AlertBox/QTYAlert';
-import AddBagAlert from '../../common/AlertBox/addToBagAlert';
-import cookie from "react-cookies"
-import { visited } from "glamor"
-import { initializeGTMWithEvent, productDetailsEvent } from '../utility/googleTagManager';
+import AddBagAlert from '../../common/AlertBox/addToBagAlert'
+import AlertBox from '../../common/AlertBox/QTYAlert'
+import Breadcrumb from "../../common/breadcrumbNew"
+import RecommandedForYou from "../../components/HomeComponent/recommandedForYou"
+import * as actions from "../../redux/actions/index"
+import CountDetails from "../pdp/countDetails"
+import PdpAccordion from "../pdp/pdpAccordion"
+import ProductDetails from "../pdp/productDetails"
+import Spinner2 from "../Spinner/Spinner2"
+import { productDetailsEvent } from '../utility/googleTagManager'
 import { createMetaTags } from '../utility/meta'
 
 
@@ -39,7 +36,7 @@ class PdpMain extends Component {
 	componentWillMount() {
 		const payload = {
 			store: this.props.globals.currentStore,
-			categories : cookie.load('visitedProducts') ? cookie.load('visitedProducts').toString(',') : '',
+			categories : this.props.globals.recommendedCategories.toString(',') ,
 			cid: this.props.user_details.isUserLoggedIn ? this.props.user_details.customer_details.customer_id : ''
 		 }
 		this.props.onGetRecommendedData(payload)
@@ -51,8 +48,7 @@ class PdpMain extends Component {
 
 		this.props.getProductDetails(data)
 	}
-	
-	
+
 	componentDidUpdate(prevProps, prevState) {
 		if (this.props.location.key !== prevProps.location.key) {
 			const data = {
@@ -138,24 +134,22 @@ class PdpMain extends Component {
 	}
 	componentWillReceiveProps = (nextProps) => {
 		if (nextProps.user_details.isUserLoggedIn) {
-			if (nextProps.wishList && !nextProps.wishList.wishLoader && nextProps.wishList.addwishlist && !nextProps.wishList.removewishlist &&   nextProps.wishList.productWishDetail && nextProps.wishList.productWishDetail.is_in_wishlist
-			   && wishlistClick) {
-				wishlistClick = false;
-			  this.setState({
-				 addMessagePopup: true,
-				 addMessage: nextProps.globals.currentStore == 2 ? ' Item has been Added To Wish List ' : 'تم إضافة المنتج إلى قائمة الأمنيات'
-			  });
-		   } else if ((nextProps.wishList && !nextProps.wishList.wishLoader && !nextProps.wishList.addwishlist && nextProps.wishList.removewishlist &&  nextProps.wishList.productWishDetail && removeWishlistClick &&
-			(nextProps.wishList.productWishDetail.is_in_wishlist ==='' || !nextProps.wishList.productWishDetail.is_in_wishlist))) {
-				removeWishlistClick = false;
+			if (nextProps.wishlistUpdated.wishlistMessage && nextProps.wishlistUpdated.wishlistItemRemoved ) {
 				this.setState({
-					is_wishlist: false,
-					wishlistId: '',
-					Spinner: false,
-					addMessagePopup: true,
-					addMessage: nextProps.globals.currentStore == 2 ? ' Item has been removed from Wish List ' : 'تم إزالة المنتج من  قائمة الأمنيات'
-				});
-		   }
+				   addMessagePopup: true,
+				   addMessage: nextProps.wishlistUpdated.wishlistMessage,
+				})
+				nextProps.wishlistUpdated.wishlistMessage = ""
+				nextProps.wishlistUpdated.wishlistItemRemoved =false
+			 }
+			 if (nextProps.wishlistUpdated.wishlistMessage && nextProps.wishlistUpdated.wishlistItemAdded ) {
+				this.setState({
+				   addMessagePopup: true,
+				   addMessage: nextProps.wishlistUpdated.wishlistMessage,
+				})
+				nextProps.wishlistUpdated.wishlistMessage = ""
+				nextProps.wishlistUpdated.wishlistItemAdded =false
+			 }
 		}
 
 		if(nextProps.product && nextProps.product.status && !isGTMcalled){
@@ -203,6 +197,7 @@ class PdpMain extends Component {
 		removeWishlistClick = true
 		let data = {
 			wishilistitemid: product.wishListId,
+			product_id: product.product_id
 		}
 
 		this.props.onRemoveWishList(data)
@@ -213,16 +208,13 @@ class PdpMain extends Component {
 		})
 	}
 	setRecommenddedProduct = (category_id) => {
-		const days = 1000 * 60 * 60 * 24 * 14
-		const expires = new Date()
-		expires.setDate(Date.now() + days)
-		const visited = cookie.load("visitedProducts") ? cookie.load("visitedProducts") : []
-		const lVisited = visited.length
-		if (lVisited > 8) {
-			visited.shift()
+		let { recommendedCategories } = this.props.globals
+
+		if (recommendedCategories.length > 8) {
+			recommendedCategories.shift()
 		}
-		if (!visited.includes(category_id)) visited.push(category_id)
-		cookie.save("visitedProducts", visited, { path: "/", expires, maxAge: days })
+		if (!recommendedCategories.includes(category_id)) recommendedCategories.push(category_id)
+		this.props.globals.recommendedCategories = recommendedCategories
 	}
 
 	notifyMe = (productId) => {
@@ -264,12 +256,7 @@ class PdpMain extends Component {
 		}
 		let breadcrumbData = []
 		if (product && product.product && product.product[0]) {
-			// this.setRecommenddedProduct(product.product[0].category_id)
-			// let url = product.product[0].breadcrumb
-			// url = url.split("/")
-			// url.push(url.pop().replace(".html", ""))
-			// url.push(product.product[0].name)
-			// breadcrumbData = url
+		    // this.setRecommenddedProduct(product.product[0].category_id)
 			breadcrumbData.push({url_key: "themes.html", name: "THEMES"})
 			breadcrumbData.push({url_key: product.product[0].breadcrumb, name: product.product[0].breadcrumb_cat_name_format})
 			breadcrumbData.push({url_key: "#", name: product.product[0].name})		}
@@ -394,7 +381,7 @@ const mapStateToProps = (state) => {
 		user_details: state.login,
 		myCart: state.myCart,
 		reviews: state.product.reviews,
-		wishList: state.wishList,
+		wishlistUpdated: state.wishlistUpdated,
 		notify: state.notify,
 	}
 }
@@ -405,8 +392,8 @@ const mapDispatchToProps = (dispatch) => {
 		onGuestAddToCart: (payload, myCart, eventObj) => dispatch(actions.guestAddToCart(payload, myCart, eventObj)),
 		onAddToCart: (payload, myCart, eventObj) => dispatch(actions.addToCart(payload, myCart, eventObj)),
 		onGetRecommendedData: (payload) => dispatch(actions.getRecommendedData(payload)),
-		onAddToWishList: (payload) => dispatch(actions.addToWishlist(payload)),
-		onRemoveWishList: (payload) => dispatch(actions.removeWishList(payload)),
+		onAddToWishList: (payload) => dispatch(actions.addToWishlistUpdated(payload)),
+		onRemoveWishList: (payload) => dispatch(actions.removeWishListUpdated(payload)),
 		onNotifyMe: (payload) =>dispatch(actions.notifyMe(payload))
 
 	}

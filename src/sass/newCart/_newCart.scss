@@ -1,0 +1,647 @@
+/* main Basket page */
+.main_BasketPage{
+    width:94%;
+    margin: 20px auto 0;
+}
+.main_BasketPage .mainBasketTitle{
+    font-size: 2rem;
+    line-height: 2.6875rem;
+    color: inherit;
+    font-weight: 400;
+    text-transform: inherit;
+    text-align: center;
+    font-family: CeraPro-Medium;
+}
+/* my_Basket */
+.my_Basket{
+    margin-right: 20px;
+}
+
+.my_Basket .border-outer{
+    border-top: 1px solid #cac5c5;
+    border-bottom: 1px solid #cac5c5;
+}
+.my_Basket .Item_title{
+    padding: 10px 0px;
+}
+.my_Basket .Item_title p{
+    color: #4f4f4f;
+    margin-bottom: 0px;
+    font-family: CeraPro-Regular;    
+    font-size: .875rem;
+    font-weight: 500;
+}
+.my_Basket .Item_price{
+    padding: 10px 0px;
+    text-align: center;
+}
+.my_Basket .Item_subtotal{
+    padding: 10px 0px;
+    text-align: right;
+}
+.my_Basket .Item_subtotal p{
+    color: #4f4f4f;
+    margin-bottom: 0px;
+    font-family: CeraPro-Regular;    
+    font-size: .875rem;
+    font-weight: 500;
+}
+.my_Basket .Item_price p{
+    color: #4f4f4f;
+    margin-bottom: 0px;
+    font-family: CeraPro-Regular;    
+    font-size: .875rem;
+    font-weight: 500;
+}
+.my_Basket .Product_Details {
+    margin-top:15px;
+    border-bottom: 1px solid #cac5c5;    
+    padding: 15px 0px;
+
+}
+
+.Quenty-Counter {
+    width: 130px;
+    position: relative;
+}
+.Quenty-Counter .minus {
+    position: absolute;
+    width: 40px;
+    border-right: 1px solid #c4c2c2;
+    height: 40px;
+    display: inline-block;
+    padding: 7px 12px;
+    cursor: pointer;
+}
+.Quenty-Counter .minus img {
+    width: 14px;
+}
+.Quenty-Counter  input {
+    display: inline;
+    width: 130px;
+    height: 40px;
+    padding: 4px 45px;
+    text-align: center;
+    outline: none;
+    overflow: visible;
+}
+.Quenty-Counter .plus {
+    position: absolute;
+    right: 0;
+    height: 40px;
+    border-left: 1px solid #c4c2c2;
+    width: 40px;
+    vertical-align: middle;
+    padding: 7px 12px;
+    cursor: pointer;
+}
+.Quenty-Counter .plus img {
+    width: 14px;
+}
+.my_Basket .Product_Details .pd-0{
+    padding: 0px;
+}
+
+.my_Basket .Product_Details .Item_image img{
+    max-height: 10rem;
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+.my_Basket .Product_Details .productTitle{
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #000;
+    font-size: .975rem;
+    line-height: 1.1875rem;
+    font-weight: 500;
+    text-transform: inherit;
+    font-family: CeraPro-Medium;
+}
+.my_Basket .Product_Details .age{
+    color: #4f4f4f;
+    margin-bottom: 0px;
+    font-family: CeraPro-Regular;
+    font-size: .875rem;
+    font-weight: 500;
+}
+.my_Basket .Product_Details .p_code{
+    color: #4f4f4f;
+    margin-bottom: 0px;
+    font-family: CeraPro-Regular;
+    font-size: .875rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.my_Basket .Product_Details .wishListLabel{
+    padding: 0px 10px;
+    font-size: 0.875rem;
+    color: #4f4f4f;
+    font-family: CeraPro-Regular;
+    font-size: .875rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.my_Basket .Product_Details .wishList{
+    cursor: pointer;
+}
+.my_Basket .Product_Details .product_price{
+    font-size: 1rem;
+    color: #000000;
+    text-align: center;
+    font-family: CeraPro-Medium;
+    font-weight: 500;
+}
+
+.my_Basket .Product_Details .product_subtotal {    
+    font-size: 1rem;
+    color: #000000;
+    text-align: right;
+    font-family: CeraPro-Medium;
+    font-weight: 500;
+}
+.my_Basket .Product_Details .closeIcon{
+    width: 12px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.my_Basket .Product_Details .availableFor{    
+    margin-bottom: 0px;
+    font-size: 0.875rem; 
+    text-align: right;
+    color: #4f4f4f;   
+    font-family: CeraPro-Regular;
+}
+.my_Basket .Product_Details .Product_delivery{
+    margin-top: 35px;
+}
+.my_Basket .Product_Details .Product_delivery p{
+    font-size: 0.875rem; 
+    text-align: right;
+    color: #4f4f4f;   
+    font-family: CeraPro-Regular;
+    
+}
+
+.my_Basket .Product_Details .Product_delivery .homeDel{
+    border-right: 1px solid #cac5c5;    
+    padding-right: 10px;
+    cursor: pointer;
+} 
+.my_Basket .Product_Details .Product_delivery .homeDel svg{ 
+    margin: 0px 7px;
+}
+.my_Basket .Product_Details .Product_delivery .pickStore {
+    cursor: pointer;
+} 
+
+.my_Basket .Product_Details .Product_delivery .pickStore svg{
+    margin: 0px 7px;
+}
+.my_Basket .Product_Details .Product_delivery .disableStore{
+    color: #b3b3b3;
+}
+.my_Basket .Product_Details .soldOut p{
+    font-size: 0.975rem;
+    color: #fd8024;
+    text-align: right;
+    font-family: CeraPro-Medium;
+    font-weight: 500;
+    margin-top: 35px;
+}
+.soldOutOpacity{
+    opacity: 0.5;
+}
+
+.continueShopping{
+    text-align: center;
+    padding: 20px;
+}
+.continueShopping button{
+    background-color: #fff;
+    color: #000;
+    border: solid 1px #006DB7;
+    border-radius: .2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1rem;
+    padding: 12px 15px;
+    width: 100%;
+    font-family: CeraPro-Medium;
+    font-weight: 500;
+   
+} 
+
+.continueShopping button:hover {
+    background-color: #006DB7;
+    border: solid 1px #006DB7;
+    color: #FFF;
+}
+.continueShopping svg{
+    transform: rotate(-180deg);
+    width: 13px;
+    height: 13px;    
+    margin-right: 10px;
+}
+html[dir="rtl"] .continueShopping svg{     
+    margin-right: 0px;
+    margin-left: 10px;
+    transform: rotate(0deg);
+}
+html[dir="rtl"] .my_Basket{
+    margin-right: 0px;
+    margin-left: 20px;
+}
+html[dir="rtl"] .my_Basket .Item_title {  
+    text-align: right;
+}
+html[dir="rtl"] .my_Basket .Item_subtotal {   
+    text-align: left;
+}
+html[dir="rtl"] .my_Basket .Product_Details .product_subtotal{
+    text-align: left;
+}
+html[dir="rtl"] .my_Basket .Product_Details .closeIcon {   
+    margin-left: 0px;
+    margin-right: 10px;
+}
+html[dir="rtl"] .my_Basket .Product_Details .Product_delivery p {  
+    text-align: left;
+}
+html[dir="rtl"] .my_Basket .product_Info{
+    text-align: right;
+}
+html[dir="rtl"] .my_Basket .Product_Details .Product_delivery .p_code {
+    text-align: left;
+    display: flex;
+    direction: rtl;
+    float: left;
+}
+html[dir="rtl"] .my_Basket .Product_Details .Product_delivery .homeDel {
+    border-right: none;
+    padding-right: 0px;
+    cursor: pointer;
+    border-left: 1px solid #cac5c5;
+    padding-left: 10px;
+}
+html[dir="rtl"] .my_Basket .Product_Details .soldOut p{
+   text-align: left;
+}
+html[dir="rtl"] .Quenty-Counter .minus {   
+    left: 0;
+}
+.mobileBasket{
+    display: none;
+}
+/* order summary */
+.NewCartorderSummary{
+    background-color: #F7F7F7;
+    padding: 20px;
+    -webkit-box-shadow: 0px 4px 10px -4px #9e9e9e;
+   -moz-box-shadow: 0px 4px 10px -4px #9e9e9e;
+    box-shadow: 0px 4px 10px -4px #9e9e9e;
+    
+}
+.NewCartorderSummary .Order_heading{
+    font-size: 1rem;
+    color: #000;
+    font-weight: 500;
+    font-family: CeraPro-Medium;
+}
+.NewCartorderSummary .subTotal{
+    font-size: 0.875rem;
+    color: #4f4f4f;
+    margin-bottom: 10px;
+    font-family: CeraPro-Regular;
+}
+
+.NewCartorderSummary .borderBottom{
+    border-bottom: 1px solid #cac5c5; 
+}
+.NewCartorderSummary .TotalAmt {
+    font-size: 1.2rem;
+    color: #000;    
+    font-family: CeraPro-Medium;
+    font-weight: 500;
+} 
+.NewCartorderSummary button{
+    background-color: #fd8024;   
+    border: solid 1px #fd8024;
+    border-radius: .2rem;    
+    color: #000;    
+    font-family: CeraPro-Medium;
+    font-weight: 500;   
+    text-align: center;
+    margin-top: 8px !important;   
+    font-size: 1rem;
+    padding: 12px 0px;
+    width: 100%;
+}
+// .NewCartorderSummary button:hover {
+//     background-color: #dF0C00;
+//     border: solid 1px #dF0C00;
+// }
+.NewCartorderSummary .flexAround{
+    display: flex;
+    justify-content: space-between;
+}
+html[dir="rtl"] .NewCartorderSummary .Order_heading{
+    text-align: right;
+}
+html[dir="rtl"] .my_Basket .Product_Details .p_code{
+    display: flex;
+}
+@media (max-width:768px){
+    .mobileBasket{
+        display: block;
+        margin-bottom: 20px;
+    }
+    .my_Basket{
+        display: none;
+    }
+    .main_BasketPage {       
+        margin: 13px auto 0;
+    }
+    .NewCartorderSummary {
+        background-color: #F7F7F7;
+        padding: 20px 20px 0px;
+        box-shadow: 0px 4px 10px -4px #9e9e9e;
+    }
+    .main_BasketPage .mainBasketTitle {
+        font-size: 1rem;
+        line-height: 2.6875rem;
+        color: inherit;
+        font-weight: 400;
+        text-transform: inherit;
+        text-align: left;
+        font-family: CeraPro-Medium;
+        border-bottom: 1px solid #cac5c5;
+    }
+    .mobileBasket  .Item_image img{
+        max-height: 10rem;
+        max-width: 100%;
+        height: auto;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .mobileBasket .pdZ{
+        padding: 0px;
+    }
+    .mobileBasket  .productTitle{
+        color: #000;
+        font-size: .875rem;
+        line-height: 1.1875rem;
+        font-weight: 500;
+        text-transform: inherit;
+        font-family: CeraPro-Medium;
+        margin-bottom: 8px;
+    }
+    .mobileBasket .age{
+        color: #4f4f4f;
+        margin-bottom: 0px;
+        font-family: CeraPro-Regular;     
+        font-weight: 500;
+    }
+    .mobileBasket .p_code{
+        color: #4f4f4f;     
+        font-family: CeraPro-Regular;       
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    .mobileBasket .wishListLabel{
+        padding: 0px 10px;      
+        color: #4f4f4f;
+    }
+    .mobileBasket .wishList{
+        cursor: pointer;
+        margin-bottom: 0px;
+        text-align: center;
+        font-family: CeraPro-Regular;
+    }
+    .mobileBasket .product_price{
+        font-size: 1rem;
+        color: #4f4f4f;
+        text-align: center;
+    }
+    
+    .mobileBasket .product_subtotal {
+        font-size: 1rem;
+        color: #0D943F;
+        font-weight: 700;
+        text-align: right;
+    }
+    .mobileBasket  .closeIcon{
+        width: 10px;
+        cursor: pointer;
+       margin: 0px 5px;
+    }
+    
+    .mobileBasket  .availableFor{       
+        color: #cac5c5;
+        text-align: left;
+        margin-bottom: 0px;
+    }
+    .mobileBasket .Product_delivery{
+        margin-top: 0px;
+    }
+    .mobileBasket .Product_delivery p{             
+        color: #4f4f4f;
+        font-family: CeraPro-Regular;
+    }
+    
+    .mobileBasket  .Product_delivery .homeDel{
+        border-right: 1px solid #cac5c5;
+        padding-right: 6px;
+        cursor: pointer;
+    }  
+    .mobileBasket  .Product_delivery .homeDel svg {
+        margin: 0px 7px 0px 0px;
+        width: 20px;
+        display: none;
+    }
+    .mobileBasket  .Product_delivery .pickStore{
+        padding-left: 6px;
+    }
+    .mobileBasket  .Product_delivery .pickStore svg{
+        cursor: pointer;
+        width: 20px;
+        margin-right: 4px;
+        display: none;
+    } 
+    .mobileBasket .soldOut p {
+        font-size: 0.875rem;
+        color: #fd8024;      
+        font-family: CeraPro-Medium;
+        font-weight: 500;       
+        margin-bottom: 0;
+    }
+    .mobileBasket .product_subtotal {
+        font-size: 1rem;
+        color: #cac5c5;
+        font-weight: 700;
+        text-align: right;
+    }
+    .mobileBasket .remove{
+        border-top: 1px solid #cac5c5;
+        border-bottom: 1px solid #cac5c5;
+        padding: 12px 0px;
+    }
+    .mobileBasket .remove .removeLabel {
+        padding: 0px 10px;      
+        color: #4f4f4f;
+        margin-bottom: 0px;
+        text-align: center;
+       
+    }
+    .mobileBasket .remove .borderRightSide{
+        border-right: 1px solid #cac5c5;
+    }
+    
+    .NewCartorderSummary .checkBottom{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 10px 15px 63px;
+        z-index: 1;
+    }
+    .mobileBasket  .MobilePrice{
+        font-size: .975rem;
+        color: #000000;        
+        font-family: CeraPro-Medium;
+        font-weight: 500;
+    }
+    html[dir="rtl"] .mobileBasket .product_Info{
+       text-align: right;    
+    }
+    html[dir="rtl"] .mobileBasket .Product_delivery p {    
+       
+        text-align: right;
+    }
+    html[dir="rtl"] .mobileBasket .remove .removeLabel {           
+        border-right: none;       
+    }
+    html[dir="rtl"] .mobileBasket .soldOut p {
+        text-align: right;
+    }
+    .mobileBasket .remove .removeLabel {
+        padding: 5px 0px 0px;
+        font-family: CeraPro-Regular;
+    }
+    .Quenty-Counter {
+        width: 100px;
+        position: relative;       
+        margin: 0 auto;
+    }
+    .Quenty-Counter input{
+        width: 100px;
+        height: 35px;
+        padding: 4px 30px;
+    }
+    .Quenty-Counter .minus img {
+        width: 10px;
+    }
+    .Quenty-Counter .plus img {
+        width: 10px;
+    }
+    .Quenty-Counter .minus {
+        position: absolute;
+        width: 30px;
+        border-right: 1px solid #c4c2c2;
+        height: 35px;
+        display: inline-block;
+        padding: 4px 0px;
+        cursor: pointer;
+        text-align: center;
+    }
+    .Quenty-Counter .plus {
+        position: absolute;
+        right: 0;
+        height: 35px;
+        border-left: 1px solid #c4c2c2;
+        width: 30px;
+        vertical-align: middle;
+        padding: 4px 0px;
+        cursor: pointer;
+        text-align: center;
+    }
+    .mobileBasket .maTopBottom{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .mobileBasket .paLeRit{
+        padding: 0px 10px;
+    }
+    html[dir="rtl"] .mobileBasket .MobilePrice{
+         text-align: right;
+    }
+    html[dir="rtl"] .main_BasketPage .mainBasketTitle{
+        text-align: right;
+    }
+    html[dir="rtl"]  .mobileBasket .remove .borderRightSide {
+        border-right: none;
+        border-left: 1px solid #cac5c5;
+    }
+    html[dir="rtl"] .mobileBasket .Product_delivery .homeDel {
+        border-right: none;
+        border-left: 1px solid #cac5c5; 
+        padding-right: 6px;      
+        padding-left: 0px;      
+    }
+    html[dir="rtl"] .mobileBasket .Product_delivery .pickStore {
+        padding-left: 0px;
+        padding-right: 6px;
+    }
+    .continueShopping {
+        text-align: center;
+        padding: 20px 0;
+    }
+ 
+    
+}
+@media only screen  and (min-width: 360px)  and (max-width: 768px) {
+    .mobileBasket .age {     
+        font-size: .875rem;       
+    }
+    .mobileBasket .p_code{
+        font-size: .875rem;  
+    }
+    .mobileBasket .Product_delivery p, .mobileBasket .availableFor{
+        font-size: .875rem;  
+    }
+    .mobileBasket .remove .removeLabel {
+        padding: 0px 0px 0px;
+        font-size: .875rem;  
+    }
+    .mobileBasket .wishList{
+        font-size: .875rem;  
+    }
+    }
+@media (max-width:360px){
+    .mobileBasket .age {     
+        font-size: .775rem;       
+    }
+    .mobileBasket .p_code{
+        font-size: .775rem;  
+    }
+    .mobileBasket .Product_delivery p, .mobileBasket .availableFor{
+        font-size: .775rem;  
+    }
+    .mobileBasket .remove .removeLabel {
+        padding: 0px 0px 0px;
+        font-size: .775rem;  
+    }
+    .mobileBasket .wishList{
+        font-size: .775rem;  
+    }
+    .Quenty-Counter input {
+        width: 90px;
+    }
+    .Quenty-Counter {
+        width: 90px;       
+    }
+}

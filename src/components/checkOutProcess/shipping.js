@@ -1,20 +1,27 @@
-import React, { Component } from 'react';
+import React, { Suspense, Component } from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import Collapsible from 'react-collapsible';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import Ordersummary from '../checkOutProcess/checkOutProcessorderSummary';
+// import Ordersummary from '../checkOutProcess/checkOutProcessorderSummary';
 import * as actions from "../../redux/actions/index";
+import Spinner2 from "../Spinner/Spinner2";
 import PlusIcon from '../../assets/images/icons/arrowDown.png';
 import minusIcon from '../../assets/images/icons/arrowDown.png';
 import shipicon from '../../assets/images/icons/shipIcon.png';
 import Clickicon from '../../assets/images/icons/clickCollectIcon.png';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { css } from 'glamor';
 import { checkoutEvent } from '../utility/googleTagManager';
-import AddBagAlert from '../../common/AlertBox/addToBagAlert';
+// import AddBagAlert from '../../common/AlertBox/addToBagAlert';
+import { createMetaTags } from '../utility/meta';
+
+
+const Ordersummary = React.lazy(() => import('../checkOutProcess/checkOutProcessorderSummary'))
+const AddBagAlert = React.lazy(() => import('../../common/AlertBox/addToBagAlert'))
 
 var _ = require('lodash');
 let language = 'en';
@@ -23,6 +30,7 @@ let allStoreList = [];
 let countryCityChange = true;
 let addressSubmited = false;
 let isSaveAddreSelected = false;
+let isDisabledChecked = false;
 class CheckOutForm extends Component {
     toastId = null;
     constructor(props) {
@@ -58,6 +66,7 @@ class CheckOutForm extends Component {
         allStoreList = [];
         addressData = [];
         isSaveAddreSelected = false;
+        isDisabledChecked = false;
     }
     closeOther = (value) => {
         let collapses = document.getElementsByClassName('open');
@@ -88,7 +97,7 @@ class CheckOutForm extends Component {
     // }
 
     componentDidMount() {
-
+        window.scrollTo(0,0);
         let item = this.props.myCart.products;
         let productList = [];
 
@@ -494,7 +503,7 @@ class CheckOutForm extends Component {
         let quote_id = "";
         let email = "";
         if (user_details.customer_details.quote_id) {
-            customer_id = user_details.customer_details.customer_id
+            customer_id = user_details.customer_details.customer_id || ''
             quote_id = user_details.customer_details.quote_id;
             email = user_details.customer_details.email
         } else if (guest_user.new_quote_id) {
@@ -564,6 +573,7 @@ class CheckOutForm extends Component {
                 shippingData.defaultAddr = true;
                 shippingData.isClickAndCollect = false;
                 shippingData.isShippingSet = false;
+                shippingData.cnumber = shippingData.cnumber || '';
                 this.props.setShippingDetails(shippingData);
                 addressSubmited = true;
                 this.setState({
@@ -625,43 +635,45 @@ class CheckOutForm extends Component {
     }
 
     setAddr = (data) => {
-        addressData.forEach(addr => {
-            if (addr.Id === data.Id) {
-                addr.isSelected = !addr.isSelected;
-            } else if (addr.isSelected) {
-                addr.isSelected = false;
+        if (data.isDisables) {
+            addressData.forEach(addr => {
+                if (addr.Id === data.Id) {
+                    addr.isSelected = !addr.isSelected;
+                } else if (addr.isSelected) {
+                    addr.isSelected = false;
+                }
+            });
+            if (this.state.setSaveAddr.Id && this.state.setSaveAddr.Id === data.Id) {
+                this.setState({
+                    setSaveAddr: {},
+                    selectedSaveAddr: false,
+                    firstName: '',
+                    lastName: '',
+                    AptValue: '',
+                    streetValue: '',
+                    companyName: '',
+                    zipCode: '',
+                    selectedCity: '714',
+                    selectedCityName: 'Abha',
+                });
+    
+                isSaveAddreSelected = false;
+            } else {
+                this.setState({
+                    setSaveAddr: data,
+                    selectedSaveAddr: true,
+                    firstName: data.userFirstName,
+                    lastName: data.userLastName,
+                    AptValue: data.customer_appartment,
+                    streetValue: data.street,
+                    companyName: data.company,
+                    zipCode: data.postcode,
+                    selectedCity: data.region_id,
+                    selectedCityName: data.city,
+                });
+    
+                isSaveAddreSelected = true;
             }
-        });
-        if (this.state.setSaveAddr.Id && this.state.setSaveAddr.Id === data.Id) {
-            this.setState({
-                setSaveAddr: {},
-                selectedSaveAddr: false,
-                firstName: '',
-                lastName: '',
-                AptValue: '',
-                streetValue: '',
-                companyName: '',
-                zipCode: '',
-                selectedCity: '714',
-                selectedCityName: 'Abha',
-            });
-
-            isSaveAddreSelected = false;
-        } else {
-            this.setState({
-                setSaveAddr: data,
-                selectedSaveAddr: true,
-                firstName: data.userFirstName,
-                lastName: data.userLastName,
-                AptValue: data.customer_appartment,
-                streetValue: data.street,
-                companyName: data.company,
-                zipCode: data.postcode,
-                selectedCity: data.region_id,
-                selectedCityName: data.city,
-            });
-
-            isSaveAddreSelected = true;
         }
     }
 
@@ -707,15 +719,35 @@ class CheckOutForm extends Component {
                 addMessage: `Click and Collect not available.`
             })
         }
-	}
+    }
+    
+    componentWillUnmount() {
+        addressData.forEach(addr => addr.isSelected = false);
+    }
+
+    checkForDisable = () => {
+        addressData.forEach(addr => {
+            if (addr.region_id && addr.region_id !== '') {
+                addr.isDisables = this.state.CityList.find(city => {
+                    return city.id == addr.region_id;
+                });
+            }
+        });
+
+        isDisabledChecked = true;
+    }
 
     render() {
         let { firstNameErr, firstName, lastName, lastNameErr, AptValue, streetValue, streetValueErr,
-            companyName, zipCode, zipCodeErr, selectedTab, selectedSaveAddr } = this.state;
+            companyName, zipCode, zipCodeErr, selectedTab, selectedSaveAddr, CityList } = this.state;
         let { user_details, myCart, storeList } = this.props;
 
         if (myCart.addressData && user_details.isUserLoggedIn && addressData.length === 0 && myCart.addressData.length > 0) {
             addressData = myCart.addressData;
+        }
+
+        if (addressData && addressData.length > 0 && !isDisabledChecked && CityList && CityList.length > 0) {
+            this.checkForDisable();
         }
         
         if (storeList && allStoreList !== storeList) {
@@ -733,10 +765,29 @@ class CheckOutForm extends Component {
 				message={this.state.addMessage}
 				alertBoxStatus={true}
 				closeBox={this.closeAddBag} />
-		}
+        }
+
+        if (this.props.globals.loading) {
+            return (
+                <div className="mobMinHeight">
+                    <Spinner2 />
+                </div>
+            )}
 
         return (
+            <Suspense fallback={<div></div>}>
             <div>
+            {   createMetaTags(
+            this.props.globals.store_locale === "en"
+                ? "Checkout | Official LEGO® Online Check Saudi Arabia"
+                : "الدفع | متجر ليغو أونلاين الرسمي بالسعودية ",
+            this.props.globals.store_locale === "en"
+                ? "Explore the world of LEGO® through games, videos, products and more! Shop awesome LEGO® building toys and brick sets and find the perfect gift for your kid"
+                : "اكتشف عالم ليغو LEGO من خلال الألعاب، والفيديوهات، والمنتجات وأكثر! تسوق مجموعات ألعاب البناء و المكعبات المدهشة من ليغو LEGO واعثر على الهدية المثالية لطفلك",
+            this.props.globals.store_locale === "en"
+                ? "LEGO, Online Store, Saudi Arabia, Bricks, Building Blocks, Construction Toys, Gifts"
+                : "ليغو LEGO، تسوق اونلاين، السعودية، مكعبات، مكعبات بناء، العاب تركيب، هدايا"
+        )}
                 {alertOnClickAndCollect}
                 <ToastContainer />
                 <div className="checkOutForm">
@@ -895,12 +946,12 @@ class CheckOutForm extends Component {
                                                 </Tabs>
                                             </div>
                                             <div className="StepContainerShipping">
-                                                <div className="border-margin"><hr /></div>
+                                                <div className="border-margin"><hr className="mb-0" /></div>
                                                 {selectedTab === 0 && <div>
                                                 <div className="styled-input bUgSOh customField w-100 col-md-12">
                                                         <div className="inputControl removeHeight">
                                                             <div className="CollapsDiv border-0 pl-0">
-                                                                {user_details.isUserLoggedIn && myCart.addressData.length > 0 &&
+                                                                {user_details.isUserLoggedIn && myCart.addressData.length > 0 && CityList && CityList.length > 0 &&
                                                                     <Collapsible trigger={
                                                                         <div onClick={() =>
                                                                             this.closeOther(0)} className="Collapsible_text_container">
@@ -923,13 +974,15 @@ class CheckOutForm extends Component {
                                                                                 </div>
                                                                             </div>
                                                                         }>
-                                                                        <div className="PannelDiv">
+                                                                        <div className="PannelDiv row">
                                                                             {addressData.map(data => {
                                                                                 return (
-                                                                                    <div onClick={() => this.setAddr(data)} class="custom-control d-flex col-6 float-left custom-checkbox mb-2 selectAddress">
+                                                                                    <div className="col-6">
+                                                                                    <div onClick={() => this.setAddr(data)} className={(data.isDisables ? '' : 'disabled') + " custom-control  custom-checkbox mb-2 selectAddress"}>
                                                                                         <input
                                                                                             value={data.isSelected}
                                                                                             checked={data.isSelected}
+                                                                                            disabled={data.isDisables ? false : true}
                                                                                             type="checkbox"
                                                                                             class="checkBoxFixDropDown custom-control-input fixHeightBox"
                                                                                             id={data.Id} name={data.Id} />
@@ -937,8 +990,12 @@ class CheckOutForm extends Component {
                                                                                             for="customCheck">
                                                                                             {`${_.upperFirst(data.userFirstName)} ${_.upperFirst(data.userLastName)} `}<br />
                                                                                             {`${_.upperFirst(data.street)}  ${_.upperFirst(data.city)} `}<br />
-                                                                                            {` ${_.upperFirst(data.state)} ${data.postcode}`}</label>
-                                                                                    </div>)
+                                                                                            {`${_.upperFirst(data.customer_appartment)}  ${_.upperFirst(data.company)} `}{ (data.customer_appartment || data.company) && <br />}
+                                                                                            {`${data.postcode}`}</label>
+                                                                                    </div>
+                                                                                   
+                                                                                    </div>
+                                                                                )
                                                                             })}
                                                                         </div>
                                                                     </Collapsible>
@@ -998,11 +1055,11 @@ class CheckOutForm extends Component {
                                                                         type="text" />
                                                                     <label><FormattedMessage id="shipping.Apt" defaultMessage="Apt / Suite (optional)" /></label>
                                                                     <div className="greenCheck">
-                                                                        {AptValue && AptValue.length > 0 && <svg width="20px" height="13px" className="Inputstyles__StatusIconTick-sc-12nwzc4-5 bBiyIO" viewBox="0 0 20 13" data-di-res-id="8f6a84aa-8d165f58" data-di-rand="1587975367013">
+                                                                        {AptValue && AptValue.length > 0 && !isSaveAddreSelected && <svg width="20px" height="13px" className="Inputstyles__StatusIconTick-sc-12nwzc4-5 bBiyIO" viewBox="0 0 20 13" data-di-res-id="8f6a84aa-8d165f58" data-di-rand="1587975367013">
                                                                             <path d="M0 5.703L7.177 13 20 0h-4.476L7.177 8.442 4.476 5.723H2.238z" fill="currentColor" fill-rule="evenodd"></path>
                                                                         </svg>}
                                                                     </div>
-                                                                    {AptValue && AptValue.length > 0 && <span class="greenLine"></span>}
+                                                                    {AptValue && AptValue.length > 0 && !isSaveAddreSelected && <span class="greenLine"></span>}
                                                                     {/* <span class="redLine"></span> */}
 
                                                                 </div>
@@ -1035,11 +1092,11 @@ class CheckOutForm extends Component {
                                                                         type="text" />
                                                                     <label><FormattedMessage id="shipping.CompanyName" defaultMessage="Company Name (optional)" /></label>
                                                                     <div className="greenCheck">
-                                                                        {companyName && companyName.length > 0 && <svg width="20px" height="13px" className="Inputstyles__StatusIconTick-sc-12nwzc4-5 bBiyIO" viewBox="0 0 20 13" data-di-res-id="8f6a84aa-8d165f58" data-di-rand="1587975367013">
+                                                                        {companyName && companyName.length > 0 && !isSaveAddreSelected && <svg width="20px" height="13px" className="Inputstyles__StatusIconTick-sc-12nwzc4-5 bBiyIO" viewBox="0 0 20 13" data-di-res-id="8f6a84aa-8d165f58" data-di-rand="1587975367013">
                                                                             <path d="M0 5.703L7.177 13 20 0h-4.476L7.177 8.442 4.476 5.723H2.238z" fill="currentColor" fill-rule="evenodd"></path>
                                                                         </svg>}
                                                                     </div>
-                                                                    {companyName && companyName.length > 0 && <span class="greenLine"></span>}
+                                                                    {companyName && companyName.length > 0 && !isSaveAddreSelected && <span class="greenLine"></span>}
                                                                 </div>
                                                             </div>
                                                             <div className="styled-input bUgSOh customField inputMaxHeight">
@@ -1094,11 +1151,11 @@ class CheckOutForm extends Component {
                                                                         type="number" />
                                                                     <label><FormattedMessage id="shipping.POBox" defaultMessage="PO Box" /></label>
                                                                     <div className="greenCheck">
-                                                                        {zipCode && zipCode.length > 0 && <svg width="20px" height="13px" className="Inputstyles__StatusIconTick-sc-12nwzc4-5 bBiyIO" viewBox="0 0 20 13" data-di-res-id="8f6a84aa-8d165f58" data-di-rand="1587975367013">
+                                                                        {zipCode && zipCode.length > 0 && !isSaveAddreSelected && <svg width="20px" height="13px" className="Inputstyles__StatusIconTick-sc-12nwzc4-5 bBiyIO" viewBox="0 0 20 13" data-di-res-id="8f6a84aa-8d165f58" data-di-rand="1587975367013">
                                                                             <path d="M0 5.703L7.177 13 20 0h-4.476L7.177 8.442 4.476 5.723H2.238z" fill="currentColor" fill-rule="evenodd"></path>
                                                                         </svg>}
                                                                     </div>
-                                                                    {zipCode && zipCode.length > 0 && <span class="greenLine"></span>}
+                                                                    {zipCode && zipCode.length > 0 && !isSaveAddreSelected && <span class="greenLine"></span>}
                                                                     {/* <div className="redClose">
                                                                         {zipCodeErr === '' && <svg width="20px" height="13px" className="Inputstyles__StatusIconTick-sc-12nwzc4-5 bBiyIO" viewBox="0 0 20 13" data-di-res-id="8f6a84aa-8d165f58" data-di-rand="1587975367013">
                                                                             <path d="M0 5.703L7.177 13 20 0h-4.476L7.177 8.442 4.476 5.723H2.238z" fill="currentColor" fill-rule="evenodd"></path>
@@ -1149,7 +1206,7 @@ class CheckOutForm extends Component {
                                                             <button onClick={() => this.continueToContact()} type="button" className="dNUJxY"><FormattedMessage id="shipping.ContinueContactInformation" defaultMessage="Continue to Contact Information" /></button>
                                                         </form>
                                                     </div>} */}
-                                                <div className="border-margin"><hr /></div>
+                                                <div className="border-margin"><hr className="mb-0" /></div>
                                                 <div className="AddressWrapper">
                                                     <div className="StepContainer">
                                                         <div className="step-section">
@@ -1185,6 +1242,7 @@ class CheckOutForm extends Component {
                     </div>
                 </div>
             </div>
+            </Suspense>
         )
     }
 }

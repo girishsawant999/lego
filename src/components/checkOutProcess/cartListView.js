@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React, { Suspense, Component } from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import Ordersummary from '../checkOutProcess/checkOutProcessorderSummary';
+import Spinner2 from "../Spinner/Spinner2";
+// import Ordersummary from '../checkOutProcess/checkOutProcessorderSummary';
+
+const Ordersummary = React.lazy(() => import('../checkOutProcess/checkOutProcessorderSummary'))
 
 class CartListView extends Component {
     constructor(props) {
@@ -26,6 +29,7 @@ class CartListView extends Component {
     render() {
         return (
             <div>
+                <Suspense fallback={<div></div>}>
                 <div className="checkOutProcess">
                     <div className="cart-grid">
                     <div className="container">
@@ -113,6 +117,7 @@ class CartListView extends Component {
                 <div>
                    After Login div show
                 </div> */}
+                </Suspense>
             </div>
         )
     }

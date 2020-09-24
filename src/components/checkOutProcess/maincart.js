@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import CartListView from './checkoutprocess';
 
-
-
 class Maincart extends Component {
    constructor(props) {
        super(props);

@@ -5,13 +5,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import 'bootstrap/dist/css/bootstrap.css';
 //import feature1 from '../../assets/images/feature1.jpeg';
-import footerLogo from '../../assets/images/icons/footerLogo.png';
-import fbLogo from '../../assets/images/icons/facebook.png';
-import instaLogo from '../../assets/images/icons/instagram.png';
-import PlusIcon from '../../assets/images/icons/arrowDown.png';
-import minusIcon from '../../assets/images/icons/arrowDown.png';
-import paypalIcon from '../../assets/images/icons/paypal.png';
-import cardblock from '../../assets/images/quicklink2.jpeg';
+// import footerLogo from '../../assets/images/icons/footerLogo.png';
+// import fbLogo from '../../assets/images/icons/facebook.png';
+// import instaLogo from '../../assets/images/icons/instagram.png';
+// import PlusIcon from '../../assets/images/icons/arrowDown.png';
+// import minusIcon from '../../assets/images/icons/arrowDown.png';
+// import paypalIcon from '../../assets/images/icons/paypal.png';
+// import cardblock from '../../assets/images/quicklink2.jpeg';
 import { FormattedMessage } from 'react-intl';
 import { Link } from "react-router-dom"
 import { withRouter } from "react-router-dom"
@@ -81,7 +81,7 @@ class ThankyouSidebar extends Component {
                                                 <FormattedMessage id="cart.Qty" defaultMessage="Qty" />
                                                 : {parseInt(item.qty_orderded)}</p>
                                                 <div className="price">
-                                                    {item.special_price === null ?
+                                                    {!item.special_price || parseInt(item.special_price) === 0 ?
                                                         <span className="price-label"><span className="zzz">{item.currency}</span>&nbsp;{item.price}</span> :
                                                         <span className="price-label"> <span style={{ textDecoration: 'line-through' }}>{`${item.currency} ${item.price}`}</span> &nbsp;
 																				<span>{`  ${item.currency} ${parseInt(item.special_price)}`}</span></span>}

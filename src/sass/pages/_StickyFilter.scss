@@ -972,8 +972,9 @@
         @supports (-webkit-overflow-scrolling: touch) {
             /* CSS specific to iOS devices */ 
             .stickeyFilterSecton #filterOpen .bottomButton {
-                position: fixed;
+               bottom: 120px;
             }
+            
         
             .priceFilter.selectedFilter label:before {
                 width: 1.75em;

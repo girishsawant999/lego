@@ -56,6 +56,11 @@ class MyAccSideBar extends Component {
 									<FormattedMessage id="myAccountInfo.myWishlist" defaultMessage="My Wishlist" />
 									</Link>
 								</li>
+								<li id="saveCards" className="mobHide">
+									<Link to={`/${store_locale}/saveCards`}>
+									<FormattedMessage id="myAccountInfo.saveCards" defaultMessage="Credit/Debit Card" />
+									</Link>
+								</li>
 							</ul>
 						</div>
 					</div>

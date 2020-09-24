@@ -445,7 +445,7 @@ class ContactUs extends Component {
 									
 									</ul>
 									<div className="whatAppDivC">
-                              <a href="https://api.whatsapp.com/send?phone=966580353071&text=I Initiate This Chat From Lego Website" className="wApp">  
+                              <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=966580353071&text=I%20initiate%20this%20chat%20from%20Lego%20website%20" className="wApp">  
                               <img src={WhatApp} alt="footerLogo" />message on whatsapp </a>
                                  </div>
 								</div>

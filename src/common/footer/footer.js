@@ -63,12 +63,14 @@ class Footer extends Component {
    insiderObject = () => {
       const currentStore = this.props.globals.currentStore;
       let language = this.props.globals.store_locale;
-
+      let localSpUID = localStorage.getItem('spUID');
+      let spUID = localSpUID ? JSON.parse(localSpUID) : '';
       if (this.props.location.pathname.includes('order-summary')) {
          window.insider_object = {
             "page": {
                "type": "Confirmation"
-            }
+            },
+            spUID:spUID
          };
       }
       else {
@@ -85,14 +87,16 @@ class Footer extends Component {
                   sms_optin: this.props.customer_details.phone_number ? true : false,
                   gdpr_optin: true,
                   language: language
-               }
+               },
+               spUID:spUID
             }
          } else {
             window.insider_object = {
                user: {
                   gdpr_optin: null,
                   language: language,
-               }
+               },
+               spUID:spUID
             }
          }
       }
@@ -113,7 +117,8 @@ class Footer extends Component {
       else if (this.props.location.pathname.includes('/checkoutprocess')
          || this.props.location.pathname.includes('/shipping')
          || this.props.location.pathname.includes('/checkoutContactInfo')
-         || this.props.location.pathname.includes('/checkoutPaymentMethod')) {
+         || this.props.location.pathname.includes('/checkoutPaymentMethod')
+         || this.props.location.pathname.includes('/paymentProcessing')) {
          isCheckout = true;
          document.body.style.paddingTop = "0px";
          document.body.style.paddingBottom = "250px";
@@ -167,9 +172,9 @@ class Footer extends Component {
                                  <li className="list-inline-item"><Link to={`/${store_locale}/contact-us`}> <FormattedMessage id="footer.ContactUsText" defaultMessage="Contact Us" /></Link></li>
                                  <li>
                                     <div className="pieces d-flex">
-                                       <Link to={`/${store_locale}/contact-us`}><img src={Missing_Pieces_2} alt="pices" />
+                                       <a target="_blank" rel="noopener noreferrer" href="https://www.lego.com/en-us/service/replacementparts"><img src={Missing_Pieces_2} alt="pices" />
                                           <p> <FormattedMessage id="footer.missingtext" defaultMessage="Missing any pieces or instructions? Let us know and we’ll deliver it to you." /></p>
-                                       </Link>
+                                       </a>
                                     </div>
                                  </li>
                               </ul>
@@ -183,7 +188,7 @@ class Footer extends Component {
                                 
                               </ul>  
                               <div className="whatAppDiv">
-                              <a href="https://api.whatsapp.com/send?phone=966580353071&text=I Initiate This Chat From Lego Website" className="wApp">  
+                              <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=966580353071&text=I%20initiate%20this%20chat%20from%20Lego%20website%20" className="wApp">  
                               <img src={WhatApp} alt="footerLogo" />message on whatsapp </a>
                                  </div>                           
                            </div>
@@ -458,9 +463,9 @@ class Footer extends Component {
                                  <li className="list-inline-item borderTop"><Link to={`/${store_locale}/contact-us`}><FormattedMessage id="footer.ContactUsText" defaultMessage="Contact Us" /></Link></li>
                                  <li>
                                     <div className="pieces">
-                                       <Link to={`/${store_locale}/contact-us`}><img src={Missing_Pieces_2} alt="pices" />
+                                    <a target="_blank" rel="noopener noreferrer" href="https://www.lego.com/en-us/service/replacementparts"><img src={Missing_Pieces_2} alt="pices" />
                                           <p> <FormattedMessage id="footer.missingtext" defaultMessage="Missing any pieces or instructions? Let us know and we’ll deliver it to you." /></p>
-                                       </Link>
+                                       </a>
                                     </div>
                                  </li>
                               </ul>
@@ -493,7 +498,7 @@ class Footer extends Component {
                               </div>
                            </div>
                            <div className="whatAppDiv">
-                              <a href="https://api.whatsapp.com/send?phone=966580353071&text=I Initiate This Chat From Lego Website" className="wApp">  
+                              <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=966580353071&text=I%20initiate%20this%20chat%20from%20Lego%20website%20" className="wApp">  
                               <img src={WhatApp} alt="footerLogo" />message on whatsapp </a>
                                  </div>
                            <div className="container">

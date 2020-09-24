@@ -68,6 +68,13 @@ export const setBillingDetails = (payload) => {
     };
 }
 
+export const clearShippingReducer = () => {
+    return {
+        type: actionType.CLEAR_SHIPPING_REDUCER,
+        payload: {}
+    }
+}
+
 export const setShippingSuccess = (payload) => {
 
     return {
